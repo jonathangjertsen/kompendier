@@ -1,0 +1,124 @@
+\ctitle{Elektrostatikk}
+\paragraph{Dette kapittelet}
+For å ta hensyn til elektriske interaksjoner i termodynamiske modeller, kan Coulombs lov brukes til å utlede et generelt uttrykk for elektrostatisk potensiell energi. Gyldighetsområdet til enkle modeller begrenses av at elektriske interaksjoner har lang rekkevidde.
+
+\cstitle{Introduksjon til elektrostatikk}
+Dette kapittelet følger forelesningene, som har en litt annen vinkling enn boka. Det meste bør være kjent fra et kurs i elektromagnetisme. Det er en kort introduksjon til elektrostatikk som begynner med Coulombs lov, og ender opp med et generelt uttrykk for elektrostatisk potensiell energi. Denne energien kan legges til den indre energien $U$, slik at vi kan ta hensyn til elektriske interaksjoner i det termodynamiske rammeverket vi har bygget opp i de tidligere kapitlene. 
+
+\paragraph{Elektrostatisk potensiell energi} 
+Den elektrostatiske potensielle energien $V$ mellom to punktladninger $q_i$ og $q_j$ med en innbyrdes avstand $R_{i,j}$ er gitt ved \i{Coulombs lov},
+\begin{equation}
+	V(q_i,q_j,R_{i,j}) = \frac{q_iq_j}{4\pi\epsilon_0R_{i,j}}
+\end{equation}
+der $\epsilon_0$ er permittiviteten til fritt rom, som er en universell konstant. Ofte ser man Coulombs lov i form av en kraftlov, men denne er helt ekvivalent. Hvis vi ser på interaksjonen mellom en testladning $q_t$ og en mengde ladninger $q_i$, og ser bort ifra innbyrdes elektriske interaksjoner (ladningene kan for eksempel være elektronene i et molekyl), får vi:
+\begin{equation}
+	V_t=\sum_{i=1}^N\frac{q_iq_t}{4\pi\epsilon_0R_{i,t}}
+\end{equation}
+Vi definerer \i{elektrostatisk potensial} $\psi_i$, ved ladning $q_i$, ved at $\psi_i$ må oppfylle
+\begin{equation}
+	\label{elpot}
+	V_t=\sum_{i=1}^Nq_i\psi_i
+\end{equation}
+altså er
+\begin{equation}
+	\psi_i=\frac{q_t}{4\pi\epsilon_0R_{i,t}}
+\end{equation}
+Vi kan også snu på det og skrive
+\begin{equation}
+	V_t=q_t\psi_t
+\end{equation}
+der vi får fra definisjonen \eqref{elpot} at
+\begin{equation}
+	\psi_t=\sum_{i=1}^N\frac{q_i}{4\pi\epsilon_0R_{i,t}}
+\end{equation}
+\paragraph{Multipol-ekspansjon} Potensialet kan også uttrykkes som en Taylorrekkeutvidelse rundt et vilkårlig sentrum for molekylet. I én dimensjon blir det
+\begin{equation}
+	\label{psitaylor}
+	\psi_i=\psi_i\rvert_{x=0}+r_{i,x}\frac{\partial \psi_i}{\partial x}\rvert_{x=0}+...
+\end{equation}
+Dette kan fint generaliseres til flere dimensjoner, men gjøres ikke her. Vi putter \eqref{psitaylor} inn i \eqref{elpot} og får at
+\begin{align}
+	V&=\sum_{i=1}^Nq_i\psi_i=\sum_{i=1}^N q_i\left(\psi_i\rvert_{x=0}+r_{i,x}\frac{\partial \psi_i}{\partial x}\rvert_{x=0}+...\right) \\
+	&=\left(\sum_{i=1}^Nq_i\right)\psi_i\rvert_{x=0}+\left(\sum_{i=1}^Nq_ir_{i,x}\right)\frac{\partial \psi_i}{\partial x}\rvert_{x=0}+...
+\end{align}
+Hver av summene i rekka er et elektromagnetisk \emph{moment}. Vi definerer \i{molekylær ladning} eller (vi kunne også kalt det monopolmoment) $q_{\text{mol}}$ som
+\begin{equation}
+	q_{\text{mol}}=\sum_{i=1}^N q_i
+\end{equation}
+og \i{molekylært dipolmoment} $\boldsymbol{\mu}_{mol}$ som
+\begin{equation}
+	\boldsymbol{\mu}_{mol} = \sum_{i=1}^N q_i\vec{r}_i
+\end{equation}
+I én dimensjon blir disse vektorene i uttrykket til skalarer: $\mu_{mol}$ og $r_i$. Vi kunne gått videre og definert kvadropolmoment og oktopolmoment, men det blir perifert - men det kan nevnes at CO$_2$-molekylet, som verken har molekylær ladning eller molekylært dipolmoment (på grunn av symmetri), \emph{har} et kvadropolmoment.
+
+Det \emph{elektriske feltet} \index{Elektrisk felt} $\vec{E}$ ved sentrum av molekylet er 
+\begin{equation}
+	\label{enabla}
+	\vec{E}=-\nabla\psi
+\end{equation}
+I en dimensjon er det elektriske feltet ved sentrum av molekylet dermed
+\begin{equation}
+	E\rvert_{x=0}=-\frac{\partial \psi}{\partial x}\rvert_{x=0}
+\end{equation}
+Det endelige uttrykket vårt for elektrostatisk potensiell energi er
+\begin{equation}
+	V=q_{mol}\psi\rvert_{x=0}-\boldsymbol{\mu}_{mol}\cdot\vec{E}\rvert_{x=0}+...
+\end{equation}
+Rekka approksimeres ofte med de første to eller tre leddene. Denne potensielle energien kan legges til den indre energien $U$ og brukes sammen med resten av det termodynamiske maskineriet.
+
+\paragraph{Elektriske interaksjoner i medier} Elektriske interaksjoner er svakere i medier, siden mediet blir \emph{polarisert}. \index{Polarisering} Polariseringen innebærer flere fenomener som alle bidrar til å gjøre det elektriske feltet fra frie ladninger svakere:
+\begin{itemize}
+	\item I medier med dipoler, orienteres dipolene i motsatt retning av feltet fra de frie ladningene.
+	\item Elektronene i molekylene polariseres (elektronisk polariserbarhet).
+	\item Atomene i molekylene endrer sin posisjon i molekylet (vibrasjons\-polariserbarhet)
+\end{itemize}
+Denne effekten beskrives med en \i{dielektrisk konstant} $D$ (også kjent som en \i{relativ permittivitet} $\epsilon_r$). Den innebærer intet mer enn en liten modifikasjon av Coulombs lov:
+\begin{equation}
+	V(r)=\frac{q_iq_j}{4\pi\epsilon_0DR}
+\end{equation}
+Noen verdier for $D$ er ca. 1 for luft, ca. 2 for hydrokarboner og proteiner, og ca. 78 for vann.
+
+\cstitle{Begrensninger med nærmeste-nabo-modeller}
+Elektriske interaksjoner har en ganske lang rekkevidde. Siden $V\propto 1/r$ vil også andre og tredje nærmeste nabo ha en innvirkning på $V$ fordi $1/r$ ikke har blitt tilstrekkelig liten til at vi kan se bort i fra den. Det er derfor ikke tilstrekkelig med gittermodeller som kun tar hensyn til nærmeste nabo, som vi har gjort tidligere. Et godt mål på hvor mange naboer vi trenger å ta hensyn til er gitt ved \i{Bjerrum-lengden} $l_B$, som er avstanden der den elektrostatiske potensielle energien er den samme som den termiske energien $RT$:
+\begin{equation}
+	RT=\frac{q_iq_j}{4\pi\epsilon_0Dl_B}
+\end{equation}
+dvs.:
+\begin{equation}
+	l_B=\frac{q_iq_j}{4\pi\epsilon_0DRT}
+\end{equation}
+Noen vanlige verdier er 56nm i luft og 0.7nm i vann. 
+
+\cstitle{Elektrostatiske krefter}
+Kraften $\vec{f}$ mellom ladninger er gitt som gradienten av det elektrostatiske potensialet:
+\begin{equation}
+	\vec{f}=-\nabla\frac{q_iq_j}{4\pi\epsilon_0DR}=\frac{q_iq_j}{4\pi\epsilon_0Dr^3}\vec{r}
+\end{equation}
+I tillegg har vi at Coulombs lov er additiv:
+\begin{equation}
+	V_{tot}=\frac{1}{2}\sum_{i}\sum_{j\neq i}\frac{q_iq_j}{4\pi\epsilon_0Dr_{ij}}
+\end{equation}
+der vi deler på to fordi vi summerer over hvert par to ganger.
+
+Kraften fra en ladning $q$ på en testladning med størrelse lik enheten vi bruker ($q_{test}=1$) defineres som det $elektrostatiske feltet$:
+\begin{equation}
+	\vec{E}(\vec{r})=\frac{q}{4\pi\epsilon_Dr^3}\vec{r}
+\end{equation}
+
+\cstitle{Elektrisk fluks}
+\i{Elektrisk fluks} $\Phi$ gjennom en flate $S$ er definert som
+\begin{equation}
+	\Phi=\int_S D\vec{E}\cdot\dS
+\end{equation}
+Et nyttig uttrykk for fluksen ut av en kuleflate med en punktladning $q$ i sentrum, er
+\begin{equation}
+	\Phi=DE(r)\int_SdS=DE(r)4\pi r^2=\frac{q}{\epsilon_0}
+\end{equation}
+\i{Gauss' lov} er at dette forholdet gjelder for \emph{alle} lukkede flater:
+\begin{equation}
+	\Phi=\frac{1}{\epsilon_0}\sum_{i=1}^n q_i
+\end{equation}
+eller, hvis vi har en ladningsfordeling (med ladningstetthet $\rho(\vec{r})$):
+\begin{equation}
+	\Phi=\frac{1}{\epsilon_0}\int_V \rho(\vec{r})\dv
+\end{equation}

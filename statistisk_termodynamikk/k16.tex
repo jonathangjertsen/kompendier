@@ -1,0 +1,248 @@
+\ctitle{Solvatering og transport av molekyler mellom faser}
+\paragraph{Dette kapittelet} Det kjemiske potensialet beskriver molekylers tendens til å dele seg opp i faser, og til overføring av molekyler mellom faser. Mange egenskaper er \i{kolligative egenskaper}: de er avhengige av antall molekyler løst stoff i løsemiddelet. Noen slike egenskaper er hvordan damptrykket senkes av oppløste stoffer, hvorfor salt smelter is og kondenserer kokende vann, osmotisk trykk, partisjonskoeffisienter og dimerisering av et løsemiddel.
+
+Vi ser på et system av to komponenter der komponenten med høy konsentrasjon kalles løsemiddelet og det med lav konsentrasjon er det oppløste stoffet.
+
+Vi har to konkurrerende drivkrefter:
+\begin{itemize}
+	\item Molekyler vil bevege seg fra områder med høy konsentrasjon til områder med lav konsentrasjon for å \emph{øke entropien}.
+	\item Molekyler vil bevege seg til områder der de har høy kjemisk affinitet for å \emph{senke den frie energien}.
+\end{itemize}
+
+\cstitle{Solvatering}
+Solvatering er overføringen av molekyler mellom gass- og væskefaser. Modellsystemet vårt er en blanding av to komponenter $A$ og $B$, der $B$ er flyktig ($B$-molekyler kan bytte mellom gass- og væskefasen) og $A$ ikke er det ($A$-molekyler holder seg til væskefasen). Vi bruker det isobar-isoterme ensemblet (konstant $(T,p,N_A,N_B)$, Gibbs fri energi er minimert), samt at $N_B^{\text{gass}}+N_B^{\text{væske}}=N_B$. Ved konstant $p$ og $T$ er likevektsbetingelsen vår, som utledet tidligere, at
+\begin{equation}
+	\label{muquilibrium}
+	\mu_B^{\text{gass}}=\mu_B^{\text{væske}}
+\end{equation}
+
+\paragraph{En gittermodell for solvatering} For en ideell gass er 
+\begin{equation}
+	\mu_B^{\text{gass}}=k_BT\ln\frac{p_B}{p_{B,\text{int}}^o}
+\end{equation}
+og for blandingen har vi funnet ut at
+\begin{equation}
+	\mu_B^{\text{væske}}=k_BT\ln x_B+\frac{zw_{BB}}{2}+k_BT\chi_{AB}(1-x_B)^2
+\end{equation}
+dermed får vi ved likevekt \eqref{muquilibrium} at
+\begin{align}
+	\ln\frac{p_B}{p_{B,\text{int}}^o}&=\ln x_B +\frac{zw_{BB}}{2k_BT}+\chi_{AB}(1-x_B)^2 \\
+	\frac{p_B}{p_{B,\text{int}}^o}&=x_B \exp\left(\chi_{AB}(1-x_B)^2+\frac{zw_{BB}}{2k_BT}\right)
+\end{align}
+som vi kan skrive om til (legg merke til hvordan uttrykket nedenfor ligner på Bolzmannfaktorer når man husker at $\chi_{AB}$ inneholder et $1/k_BT$-ledd)
+\begin{equation}
+	\label{vaporpressurek16}
+	p_B=p_B^ox_Be^{\chi_{AB}(1-x_B)^2},
+\end{equation}
+der
+\begin{equation}
+	p_B^o = p_{B,\text{int}}e^{\frac{zw_{BB}}{2k_BT}}
+\end{equation}
+er damptrykket til det rene stoffet, som vi så i \eqref{vaporpressure}. $p_B$ i \eqref{vaporpressurek16} er damptrykket til løsningen av $A$- og $B$-molekyler. Se figur 16.1 i boka for å se hvordan dette damptrykket avhenger av $\chi_{AB}$.
+
+\cstitle{To ekstreme situasjoner}
+To eksempler som vi skal se på er natriumkloridsalt ($A$) oppløst i vann ($B$) og karbondioksidgass ($B$) oppløst i vann ($A$).
+
+\paragraph{Situasjon 1: salt i vann} Her er det løsemiddelet vann som er den flyktigste komponenten, så vann noteres som $B$. Da er $x_B\approx 1$ fordi det er mye mer vann enn salt, så \eqref{vaporpressurek16} blir til $p_B=p_B^ox_B$ - som er det samme uttrykket vi hadde fått hvis vi antok en ideell løsning. Uttrykket kalles \i{Raoults lov}. Ved å legge til salt synker $x_B$, så damptrykket til saltvann er lavere enn damptrykket til rent vann. Siden vi har samme situasjon som for en ideell løsning, tolker vi denne senkingen av damptrykket som en entropisk effekt; det finnes flere unike måter å organisere vannmolekyler i en saltvannsløsning enn i en løsning rent vann, så salt vil gå inn og trykke ut vannet fra løsningen.
+
+\paragraph{Situasjon 2: karbondioksid i vann} Her er det karbondioksid som er den relativt flyktige komponenten og noteres $B$. Da er $x_B\approx0$ siden det er mye mer vann enn det er karbondioksid, så \eqref{vaporpressurek16} blir til $p_B=p_B^oe^{\chi_{AB}}x_B$, som er \i{Henrys lov}. Dette tolkes som en energetisk effekt, se neste delkapittel. Dette resultatet brukes i laboratorieeksperimenter for å måle $\chi_{AB}$ eksperimentelt (ved å variere $x_B$).
+
+\cstitle{Henrys lov}
+I literaturen kalles $k_H=p_{B,\text{int}}^oe^{\chi_{AB}}$ Henrys konstant. Hvis vi utvider $\chi_{AB}$ ser vi at
+\begin{align}
+\begin{split}
+	k_H&=p_{B,\text{int}}^o\exp\left(\frac{1}{k_BT}\left(zw_{AB}-\frac{1}{2}zw_{AA}\right)\right) \\
+	&=p_{B,\text{int}}^o\exp\left(\frac{\Delta h_{\text{løsning}}^o}{k_BT}\right)
+\end{split}
+\end{align}
+Løsningsentalpien $\Delta h_{\text{løsning}}^o$ er den frie energien involvert i å fjerne et $A$-molekyl fra et gitter av $A$-molekyler (slik at man bryter $z/2$ $AA$-bindinger) og så sette inn et $B$-molekyl (slik at man danner $z$ $AB$-bindinger).
+
+Dette viser at $B$ kommer til å løse seg i $A$ dersom enten $w_{AB}$ er sterk (i så fall vil det være energetisk fordelaktig å danne $AB$-bindinger) eller $w_{AA}$ er svak (da koster det så lite å bryte $AA$-bindinger at entropiske effekter lett kan overkomme energibarrieren assosiert med dette).
+
+\cstitle{Oppløste stoffer øker kokepunktet til løsemiddelet}
+Kokepunktet $T_b$ er temperaturen der damptrykket er lik det atmosfæriske trykket. La oss føst anta at vi har en ren væske med kokepunkt $T_{b0}$ ved et trykk $p_{\text{atm}}$, slik at \eqref{vaporpressurek16} reduseres til
+\begin{equation}
+	p_{\text{atm}}=p_{b,\text{int}}^o\exp\left(\frac{zw_{BB}}{2RT_{b0}}\right)
+\end{equation}
+La oss så anta at vi har en løsning med saltkonsentrasjon $x_A$ ved sitt eget kokepunkt $T_{b1}$, som også står ved et trykk $p_{\text{atm.}}$. Med en ideell løsning som følger Raoults lov får vi at \begin{equation}
+	p_{\text{atm}}=p_{b,\text{int}}^ox_B\exp\left(\frac{zw_{BB}}{2RT_{b1}}\right)
+\end{equation}
+Settes disse like hverandre får vi at 
+\begin{equation}
+	\ln x_B=\frac{zw_{BB}}{2R}\left(1/T_{b0}-1/T_{b1}\right)
+\end{equation}
+En Taylorekspansjon rundt $T_{b0}$ gir et nyttigere uttrykk for $\left(1/T_{b0}-1/T_{b1}\right)$:
+\begin{equation}
+	\left(1/T_{b0}-1/T_{b1}\right)\approx1/T_{b0}+(T_{b1}-T_{b0})\frac{-1}{T_{b0}^2}=\frac{\Delta T}{T_{b0}^2}
+\end{equation}
+I tillegg har vi at 
+\begin{equation}
+	\ln x_B = \ln (1-x_A) \approx -x_A - \frac{x_A^2}{2} - \frac{x_A^3}{3} - ...
+\end{equation}
+som vi forkorter til det første leddet i rekka.
+
+Til slutt introduserer vi
+\begin{equation}
+	\label{vapenthalpy}
+	\Delta h_{\text{vap}}^o = \Delta h_{\text{gas}}^o - \Delta h_{\text{liq}}^o = \frac{-zw_{BB}}{2}
+\end{equation}
+for å få det vanlige uttrykket i literaturen:
+\begin{equation}
+	\Delta T = \frac{RT_{b0}^2x_A}{\Delta h_{\text{vap}}^o}
+\end{equation}
+Modellen vår hjelper oss med å forklare hvorfor $\Delta T>0$, dvs. hvorfor kokepunktet øker når vi legger til salt. $R$, $T_{b0}^2$ og $x_A$ er positive, men $\Delta h_{\text{vap}}^o$ er også positiv fordi den avhenger av de attraktive kreftene $w_{BB}$ som beskrevet i \eqref{vapenthalpy}. Dette gjelder for en ideell løsning og kan tolkes som en entropisk effekt - ved å legge til salt øker man den maksimale entropien til løsningen slik at endringen i entropi ved å gå over til gassfase blir mindr, så de attraktive interaksjonskreftene kan holde sammen løsningen ved en litt høyere temperatur.
+
+%\cstitle{Oppløste stoffer senker frysepunktet til løsemiddelet}
+%Hvis saltet bare er tilstede i vann i væskefase og ikke i is, får vi tilsvarende uttrykk: \footnote{11/21 - der har man lagt til correction terms fra taylorekspansjonen}. Dette kan igjen forklares som en entropisk effekt.
+
+\cstitle{Konsentrasjon}
+Noen ganger bruker vi andre enheter enn molfraksjoner $x_A=\frac{n_A}{n_A+n_B}\approx\frac{n_A}{n_B}$: \i{molaritet}en er $c_A=\frac{n_A}{V}$ og \i{molalitet}en er $m_A\approx\frac{x_A}{M_B}$ der $M_B$ er molar masse. Hvis man kun inkluderer det lineære leddet i endringen av kokepunktet får man at 
+\begin{equation}
+	\Delta T = K_bm_A=\frac{RT_b^2M_B}{\Delta h_{\text{vap}}^o}m_A,
+\end{equation} der $K_b$ kun avhenger av egenskapene til det rene løsemiddelet.
+
+\cstitle{Osmotisk trykk}
+Modellsystemet vårt er en ren væske $B$ som er adskilt fra en blanding av $A$ og $B$ ved en halvgjennomtrengelig membran der $B$ kan slippe gjennom, men ikke $A$. $B$-molekyler vil trekkes fra den rene væsken til blandingen for å øke entropien (det kan hende entropien til blandingen synker, men totalt sett vil entropien øke for det samlede systemet).
+
+Ved å akkumulere et ekstra volum på toppen av blandingen får vi et hydrostatisk trykk $\pi$ som motvirker effekten beskrevet i forrige avsnitt. $\pi$ kalles \i{osmotisk trykk}.
+
+Likevektsbetingelsen vår er at 
+\begin{equation}
+	\label{yetanotherequilibrium}
+	\mu_B^{\text{rent stoff}}(p)=\mu_B^{\text{blanding}}(p+\pi,x_B)
+\end{equation}
+Siden fri energi er en tilstandsfunksjon kan vi dele opp prosessen i to trinn: ett hvor vi kun øker trykket, og ett hvor vi kun legger til $A$-molekyler.
+
+\paragraph{Økning av trykk ved konstant temperatur} I første trinn er 
+\begin{equation}
+	\mu_B^{\text{rent stoff}}(p+\pi) = \mu_B^{\text{rent stoff}}(p) + \int_{p}^{p+\pi}\spdif{\mu_B}{p}\dpp.
+\end{equation}
+Vi kan bruke Maxwell-relasjonen
+\begin{equation}
+	\spdif{\mu_B}{p}=\spdif{V}{N_B}=v_B
+\end{equation}
+for å få at
+\begin{align}
+\begin{split}
+	\mu_B^{\text{rent stoff}}(p+\pi) &= \mu_B^{\text{rent stoff}}(p) + \int_{p}^{p+\pi}v_B\dpp \\
+	&=\mu_B^{\text{rent stoff}}(p) + \pi v_B.
+\end{split}
+\end{align}
+
+\paragraph{Tilsetning av oppløst stoff ved konstant trykk} I andre trinn gjelder \eqref{bullshit} (for en fortynnet løsning er $\gamma_B\approx 1$), så
+\begin{equation}
+	\mu_B^{\text{blanding}}(p+\pi,x_B) = \mu_B^{\text{rent stoff}}(p+\pi) + RT\ln(\gamma_B x_B)
+\end{equation}
+
+\paragraph{Ved likevekt} blir dermed \eqref{yetanotherequilibrium} til
+\begin{equation}
+	-\pi v_B = RT\ln x_B
+\end{equation}
+Hvis vi så bruker Taylorutvidelsen
+\begin{equation}
+	\ln x_B = \ln (1-x_A) \approx -x_A - \frac{x_A^2}{2} - \frac{x_A^3}{3} - ...
+\end{equation}
+og bare tar med det første leddet, får vi ``lærebok-resultatet''
+\begin{equation}
+	\pi = \frac{RT}{v_B}x_A\approx\frac{n_ART}{V}=c_ART,
+\end{equation}
+som vi kan utvide systematisk ved å ta med flere ledd i Taylorutvidelsen.
+
+\cstitle{Partisjonskoeffisienter}
+La oss så se på et system med to ublandbare løsemidler $A$ og $B$ (for eksempel olje og vann), der et løsemiddel $s$ kan bevege seg mellom de to fasene. Partisjonskoeffisienten $K_A^B$ er da definert som 
+\begin{equation}
+	\label{partitioncoefficient}
+	K_A^B=x_s^B/x_S^A,
+\end{equation}
+der $x_s^A$ er molfraksjonen av $s$ i løsemiddelet $A$. 
+
+Likevektsbetingelsen er stadig at kjemisk potensial er det samme overalt, her betyr det at det kjemiske potensialet er det samme i hver av de to fasene,
+\begin{equation}
+	\mu_s^A=\mu_s^B.
+\end{equation}
+Vi setter inn \eqref{anotherchemicalpotentialA} og \eqref{anotherchemicalpotentialB} for å få at
+\begin{equation}
+	\frac{zw_{ss}}{2k_BT}+\ln x_s^A+\chi_{sB}(1-x_s^A)^2 = \frac{zw_{ss}}{2k_BT}+\ln x_s^B+\chi_{sB}(1-x_s^B)^2, 
+\end{equation}
+og
+\begin{equation}
+	\ln K_A^B = \ln x_s^B/x_S^A = \chi_{sA}(1-x_s^A)^2-\chi_{sB}(1-x_s^B)^2
+\end{equation}
+så tilnærmer vi ved å bruke at $x_s^A \ll 1$ og $x_s^B \ll 1$ for å få det endelige resultatet
+\begin{equation}
+	\ln K_A^B \approx \chi_{sA}-\chi_{sB}.
+\end{equation}
+
+\cstitle{Dimerisering}
+La oss til slutt se på likevekten mellom en solvatert dimer $AB$ og to solvaterte monomerer $A$ og $B$ i samme løsning av $s$-molekyler. Likevektskonstanten for reaksjonen \ce{A + B <-> AB} er 
+\begin{equation}
+	K_{\text{dimer}}=\frac{x_{AB}}{x_Ax_B}
+\end{equation}
+Vi gjør så en tilnærming ved å anta at $A$, $B$ og $AB$ er \emph{uendelig fortynnet} i løsemiddelet, slik at hvert molekyl av $A$, $B$ eller $AB$ kun interagerer med $s$-molekyler, og ikke med andre $A$-, $B$- eller $AB$-molekyler.
+Ved konstant trykk og temperatur er
+\begin{equation}
+	\dG=\mu_A\dN_A+\mu_B\dN_B+\mu_{AB}\dN_{AB}=0
+\end{equation}
+Massebevaring gir at
+\begin{equation}
+	\dN_{AB}=-\dN_A=-\dN_B,
+\end{equation}
+slik at
+\begin{equation}
+	(\mu_A-\mu_B+\mu_{AB})\dN_{AB}=0,
+\end{equation}
+altså er 
+\begin{equation}
+	\mu_{AB}=\mu_A+\mu_B.
+\end{equation}
+som innsatt \eqref{bullshit} og \eqref{gammaprox} blir til
+\begin{equation}
+	\left(\frac{\mu_{AB}^o}{k_BT}+\ln x_{AB}\right)=\left(\frac{\mu_{A}^o}{k_BT}+\ln x_{A}\right)+\left(\frac{\mu_{B}^o}{k_BT}+\ln x_{B}\right),
+\end{equation}
+slik at
+\begin{align}
+\label{baaaaa}
+\begin{split}
+	\ln K_{\text{dimer}}&=\ln\frac{x_{AB}}{x_Ax_B} \\
+	&=-\frac{1}{k_BT}(\mu_{AB}^o-\mu_A^o-\mu_B^o) \\
+	&=-\frac{\Delta \mu^o}{k_BT}
+\end{split}
+\end{align}
+La oss se litt nærmere på $\mu_A^o$ (og $\mu_B^o$). Vi kan utvide \eqref{anotherchemicalpotentialA} til
+\begin{align}
+\begin{split}
+	\frac{\mu_A^o}{k_BT}&=\frac{zw_{AA}}{2}+\chi_{sA}(1-x_A)^2-\ln q_A \\
+	&\approx \frac{zw_{AA}}{2}+\chi_{sA}-\ln q_A \\
+	&=\frac{z}{k_BT}\left(w_{sA}-\frac{w_{ss}}{2}\right)-\ln q_A
+\end{split}
+\end{align}
+der vi har tilnærmet med $\chi_{sA}(1-x_A)^2\approx\chi_{sA}$ i en uendelig fortynnet løsning, og vi har inkludert partisjonsfunksjonen. Dette har vi gjort fordi dimeriseringen forandrer frihetsgrader assosiert med rotasjon og vibrasjon - i kapittel 15 så vi bare på reaksjoner der disse frihetsgradene var bevart slik at vi kunne se bort i fra bidrag fra rotasjons- og vibrasjonsfrihetsgrader til partisjonsfunksjonen (siden disse bidragene ikke endret seg i løpet av reaksjonen), men nå kan vi altså ikke se bort i fra slikt.
+
+Så må vi finne $\mu_{AB}^o$ for å få et uttrykk for $\Delta \mu^o$. $\mu_{AB}^o$ er den frie energien man får fra en prosess der man fjerner to $s$-molekyler og setter inn en $AB$-dimer i et gitter av $s$-molekyler (normalisert med $k_BT$). Denne energien finner vi med følgende ressonement: 
+\begin{enumerate}[nolistsep,noitemsep]
+	\item Du et hulrom ved å fjerne to tilstøtende $s$-molekyler. Disse to $s$-molekylene hadde til sammen $2(z-1)$ naboer (siden en av naboene var det andre $s$-molekylet), så ved å lage hulrommet har du brutt $\frac{2(z-1)}{2}=z-1$ bindinger. Derfor er kostnaden assosiert med en slik prosess lik $(-w_{ss})(z-1)$.
+	\item Så setter du inn ett $A$-molekyl og ett $B$-molekyl i hulrommet. Da får du en energi $(z-1)w_{sA}$ fra å sette inn $A$-molekylet, en energi $(z-1)w_{sB}$ fra å sette inn $B$-molekylet, og en energi $w_{AB}$ fra bindingen mellom $A$ og $B$-molekylet.
+	\item Samtidig må du slenge på et bidrag $k_BT\ln q_{AB}$ for å ta hensyn til endring av rotasjons- og vibrasjonsfrihetsgrader.
+\end{enumerate}
+Dermed blir
+\begin{equation}
+	\frac{\mu_{AB}^o}{k_BT}=\frac{z-1}{k_BT}\left(w_{sA}+w_{sB}-w_{ss}\right)+\frac{w_{AB}}{k_BT}-\ln q_{AB}.
+\end{equation}
+så setter vi inn i \eqref{baaaaa}, 
+\begin{align}
+\begin{split}
+	\ln K_{\text{dimer}} &= -\frac{\Delta \mu^o}{k_BT} \\
+	&=\frac{1}{k_BT}(w_{sA}+w_{sB}-w_{ss}-w_{AB})+\ln\frac{q_{AB}}{q_Aq_B}\\
+	&=\frac{1}{z}\left(\chi_{sA}+\chi_{sB}-\chi{AB}\right)+\ln\frac{q_{AB}}{q_Aq_B}
+\end{split}
+\end{align}
+Litt visdom som ligger i dette uttrykket, er:
+\begin{enumerate}[nolistsep,noitemsep]
+	\item Forskjellen i partisjonsfunksjoner kan utgjøre et substansielt bidrag til likevektskonstanten, siden $q_A$ og $q_B$ typisk bare inkluderer translasjon, mens $q_{AB}$ også inneholder bidrag fra vibrasjon og rotasjon.
+	\item Sterke interaksjoner mellom $A$- og $B$-molekyler vil drive likevekten mot dimerisering.
+	\item Sterke interaksjoner mellom $A$- og $s$-molekyler, eller mellom $B$- og $s$-molekyler, vil drive likevekten vekk fra dimerisering.
+	\item Sterke interaksjoner mellom $s$- og $s$-molekyler vil også drive likevekten mot dimerisering. Et eksempel på dette er den hydrofobiske effekten - dimerisering av to upolare molekyler i vann - som forårsakes av en stor $w_{ss}$.
+\end{enumerate}
+
+Med dette har vi nådd høyden av kompleksitet i TKJ4215. Vi har bygget opp et ``termodynamisk maskineri'' som kan brukes på mange forskjellige fysiske fenomener, som er det vi kommer til å gjøre i de resterende kapitlene. Kapitlene i del 2 er derfor mindre sammenhengende enn kapitlene i del 1, og det er ikke nødvendig å gå gjennom dem i noen bestemt rekkefølge.
+%\pagebreak

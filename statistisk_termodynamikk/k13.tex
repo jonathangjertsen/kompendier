@@ -1,0 +1,198 @@
+\ctitle{Kjemisk likevekt}
+\paragraph{Dette kapittelet}
+Kjemisk potensial beskriver tendensen for partikler til å bevege seg fra en kjemisk konfigurasjon til en annen. Når partikkelkonsentrasjoner kan variere, får kjemisk potensial samme rolle for kjemisk likevekt som temperaturen har for termisk likevekt. Som nevnt, vi kommer til å bruke \eqref{idealgaschemicalpotential} masse. 
+
+I kjemi kontrollerer vi som regel trykket, ikke volumet. Derfor bytter vi nå til det isobar-isoterme ensemblet, eller $(T,p,\vN)$-ensemblet, der det er Gibbs fri energi som skal minimeres.
+
+\cstitle{Betingelser for kjemisk likevekt}
+La oss først se på systemer med to kjemiske specier $A$ og $B$. Vi kan skrive en likevekt mellom to tilstander som $A\xrightarrow{K}B$, der likevektskonstanten $K$ er definert som
+\begin{equation}
+	K = \frac{N_B}{N_A}
+\end{equation}
+vi har også at
+\begin{equation}
+	K = \frac{N_B}{N_A} = \frac{x_B}{x_A} = \frac{p_B}{p_A}
+\end{equation}
+der $x_A=p_A=\frac{N_A}{N_A+N_B}$ er molfraksjonen, som uttrykker sannsynligheten for at en tilfeldig partikkel i systemet er av type $A$.
+
+Likevektskonstanten er, i dette ene tilfellet, forholdet mellom konsentrasjonene av hver type partikkel ved likevekt. Den mer generelle formen på likevektskonstanten introduseres i delkapittelet om ``mer komplekse likevekter''.
+
+\cstitle{Rollen til kjemisk potensial}
+Vi minimerer Gibbs fri energi, $dG=-SdT+Vdp+\mu_AdN_a+\mu_BdN_B$. Ved konstant trykk og temperatur er 
+\begin{equation}
+	dG=\mu_AdN_a+\mu_BdN_B=0.	
+\end{equation}
+Siden det totale antallet partikler er bevart ($N_A+N_B=N$) er 
+\begin{equation}
+	dN_A+dN_B=0.	
+\end{equation}
+Derfor kan vi skrive om likevektsbetingelsen som 
+\begin{equation}
+	(\mu_A-\mu_B)dN_A=0,
+\end{equation}
+altså at 
+\begin{equation}
+	\mu_A=\mu_B.
+\end{equation} 
+Da ser vi at kjemisk potensial har den samme rollen for kjemisk likevekt som temperaturen har for termisk likevekt: ved kjemisk likevekt er det kjemiske potensialet likt i de to systemene.
+
+\cstitle{Partisonsfunksjonen ved kjemisk likevekt}
+Nå skal vi relatere kjemisk potensial til partisjonsfunksjonen. Av praktiske årsaker definerer vi
+\begin{equation}
+	q' = \sum_{j=0}^t e^{-\beta\epsilon_j}
+\end{equation}
+og redefinerer partisjonsfunksjonen som
+\begin{equation}
+	q = e^{\beta\epsilon_0}q' = 1 + e^{-\beta(\epsilon_1-\epsilon_0)}+...+e^{-\beta(\epsilon_t-\epsilon_0)}
+\end{equation}
+som betyr at energien til grunntilstanden har blitt forskjøvet fra $\epsilon_0$ til 0. Dette går fint fordi vi sjelden er interessert i absoluttverdien til partisjonsfunksjonen.
+
+OK. Vi har fra før av at 
+\begin{align}
+	\mu_A&=-k_BT\ln\frac{q_A'}{N_A}\\
+	q_A'&=-\frac{\mu_A N_A}{k_BT}
+\end{align}
+Dette ble utledet for det kanoniske ensemblet i kapittel 11, men resultatet for det isobar-isoterme ensemblet blir det samme. En rask nesten-rettferdiggjøring av dette får vi fra definisjonen av $G$ og $F$: $G=H-TS=U+pV-TS$, mens $F=U-TS$, slik at $G=F+pV$. Da blir $\dG=\dFh+p\dV+v\dpp$. Siden vi er interessert i hvordan $G$ avhenger av $N$ når vi behandler potensialet, blir de to siste leddene i uttrykket for $\dG$ irrelevante.
+
+Ved likevekt er $\mu_A=\mu_B$, slik at
+\begin{align}
+	-k_BT\ln\frac{q_A'}{N_A}&=-k_BT\ln\frac{q_B'}{N_B} \\
+	\frac{q_B'}{q_A'}&=\frac{N_B}{N_A}
+\end{align}
+så likevektskonstanten blir
+\begin{equation}
+	\label{equilibriumconstant}
+	K = \frac{N_B}{N_A}=\frac{q_B'}{q_A'}=\frac{q_B}{q_A}e^{-\beta(\epsilon_0^B-\epsilon_0^A)}
+\end{equation}
+vi får altså en faktor som avhenger av forskjellen mellom grunntilstanden til de to systemene $A$ og $B$.
+
+\cstitle{Mer komplekse likevekter}
+I en generell reaksjon $aA+bB\xrightarrow{K}cC$, ved konstant trykk og temperatur, blir betingelsen for kjemisk likevekt at 
+\begin{equation}
+	dG=\mu_AdN_A+\mu_bdN_B+\mu_CdN_C=0.
+\end{equation}
+Vi inkluderer nå prinsippet om massebevaring i beregningene våre. For hver reaksjon som produserer $c$ molekyler av type $C$, må man bruke opp $a$ molekyler av type $A$ og $b$ molekyler av type $B$. Dette representeres best gjennom et \i{reaksjonskoordinat} $\xi$: 
+\begin{align}
+	\dN_C&=c\text{d}\xi \\
+	\dN_B&=-b\text{d}\xi \\ 
+	\dN_A&=-a\text{d}\xi,
+\end{align}
+slik at 
+\begin{equation}
+	(c\mu_C-b\mu_B-a\mu_A)\text{d}\xi=0.	
+\end{equation}
+Så setter vi inn uttrykket for $\mu$ og får at
+\begin{align}
+\begin{split}
+	c\left(-k_BT\ln\frac{q_C'}{N_C}\right)= \\ a\left(-k_BT\ln\frac{q_A'}{N_A}\right)+b\left(-k_BT\ln\frac{q_B'}{N_B}\right)
+\end{split}
+\end{align}
+Vi generaliserer nå $K$ til å være
+\begin{equation}
+	\label{generalK}
+	K=\frac{N_C^c}{N_A^aN_B^b},
+\end{equation}
+slik at
+\begin{equation}
+	K=\frac{(q_C')^c}{(q_A')^a(q_B')^b}=\frac{q_C^c}{q_A^aq_B^b}e^{-\beta(c\epsilon_0^C-a\epsilon_0^A-b\epsilon_0^B)}
+\end{equation}
+Vi definerer \i{dissosieringsenergien} $D=-\epsilon_0$ ved at 
+\begin{equation}
+	-\Delta D=\Delta \epsilon_0 = c\epsilon_0^C-a\epsilon_0^A-b\epsilon_0^B
+\end{equation}
+så
+\begin{equation}
+	K=\frac{q_C^c}{q_A^aq_B^b}e^{\beta\Delta D},
+\end{equation}
+som er en mer konvensjonell ligning for $K$.
+
+\cstitle{Likevektskonstant basert på trykk}
+For ideelle gasser er det mer hendig å uttrykke likevektskonstanten via trykk. Hvis vi setter inn den ideelle gassloven i \eqref{generalK}, får vi at
+\begin{equation}
+	K=\left(\frac{p_CV}{k_BT}\right)^c\left(\frac{p_AV}{k_BT}\right)^{-a}\left(\frac{p_BV}{k_BT}\right)^{-b}
+\end{equation}
+Hvis vi multipliserer opp med $\left(\frac{V}{k_BT}\right)^{a+b-c}$ får vi en ny likevektskonstant $K_p$
+\begin{equation}
+	K_p=\frac{p_C^c}{p_A^ap_B^b}=(k_BT)^{c-a-b}\frac{q_{0C}^c}{q_{0A}^aq_{0B}^b}e^{\beta\Delta D}
+\end{equation}
+der
+\begin{equation}
+	q_0=\frac{q}{V}=\frac{q_{\text{trans.}}}{V}q_{\text{rot.}}q_{\text{vib.}}q_{\text{el.}}
+\end{equation}
+for hver av speciene.
+
+\cstitle{Le Chateliers prinsipp}
+Dette prinsippet beskriver hvordan et system responderer på en forstyrrelse. En forstyrrelse kan tolkes som at populasjonen til $B$ fluktuerer med $dN_B$. Hvis vi ser på den gamle likevekten mellom to tilstander, får vi en endring i fri energi $dG=(\mu_B-\mu_A)d\zeta$. Siden systemet skal drives tilbake til likevekt, må $dG\leq0$. Det betyr at enten $\text{d}\zeta$ er negativ hvis $\mu_B-\mu_A$ er positiv (altså hvis $\mu_B>\mu_A$) må være negativ, og vice versa. $\text{d}\zeta$ ``stiller seg inn'' til å motvirke den ytre forstyrrelsen, med andre ord. Dette er Le Chateliers prinsipp.
+
+\cstitle{van't Hoffs ligning}
+Vi skal nå beskrive hvordan $K_p$ avhenger av temperaturen. Dette gjør vi ved å gå omveien om $\ln K_p$. Hvis vi går tilbake til et to-speciesystem og regner ut $K_p$ (som altså er definert ved likevekt, der $\mu_B=\mu_A$), får vi at
+\begin{equation}
+	\label{vanthoff}
+	\ln K_p=\ln\frac{p_B}{p_A}.
+\end{equation}
+Siden $\ln p = \frac{\mu-\mu^o}{k_BT}$, blir 
+\begin{align}
+\begin{split}
+	\ln K_p&=\ln\frac{p_B}{p_A}\\
+	&=\frac{\mu_B-\mu_B^o-\mu_A+\mu_A^o}{k_BT}\\
+	&=-\frac{\mu_B^o-mu_A^o}{k_BT} \\
+	&=-\frac{\Delta \mu^o}{k_BT}
+\end{split}
+\end{align}
+Siden vi bruker det isobar-isoterme ensemblet kan vi uttrykke $\Delta \mu^o$ som en partiell molar størrelse som er en sum av en entalpikomponent og en entropikomponent,
+\begin{equation}
+	\Delta \mu^o=\Delta h^o-T\Delta s^o
+\end{equation}
+slik at
+\begin{equation}
+	\pdif{\ln K_p}{T}{p,N}=-\spdif{}{T}\left(\frac{\Delta h^o-T\Delta s^o}{k_BT}\right)
+\end{equation}
+Gjør så en tilnærming der vi antar at $\Delta h^o$ og $\Delta s^o$ er uavhengige av temperaturen. Da er
+\begin{equation}
+	\pdif{\ln K_p}{T}{p,N}=\frac{\Delta h^o}{kT^2}.
+\end{equation}
+Hvis dette omformes med relasjonen $\text{d}(1/T)=-(1/T^2)\text{d}T$, får vi \emph{van't Hoffs ligning},
+\begin{equation}
+	\pdif{\ln K_p}{1/T}{p,N}=-\frac{\Delta h^o}{k_B}.
+\end{equation}
+Grunnen til at vi vil uttrykke relasjonen mellom $K_p$ og $T$ på denne tullete formen, er at vi får en lineær graf når vi plotter $T^{-1}$ mot $\ln K_p$ (så lenge $\Delta h^o$ og $\Delta s^o$ er uavhengige av temperaturen, som ofte er en rimelig antagelse). Da kan vi måle de aktuelle størrelsene for bestemte verdier, plotte verdiene, og så trekke en regresjonslinje som forutsier verdien til $\ln K_p(1/T)$ for andre verdier av $T$. Så kan vi transformere tilbake til $K_p(T)$ om vi ønsker.
+
+\cstitle{Gibbs-Helmholtz-ligningen}
+Ligningene vi kommer frem til i slutten av dette delkapittelet er generaliseringer av van't Hoffs ligning. De beskriver hvordan $G$ (eventuelt $F$) avhenger av $T$ for vilkårlige systemer, ikke bare ideelle gasser ved kjemisk likevekt.
+
+Vi kan omforme $G=H-TS$ til
+\begin{equation}
+	H=G+TS=G-T\pdif{G}{T}{p}
+\end{equation}
+så gjør vi litt partiellderiveringsakrobatikk (basert på $\text{d}u/\text{d}v=(vu'-uv')/v^2$) som tilfeldigvis gir et nyttig resultat,
+\begin{align}\begin{split}
+	\pdif{G/T}{T}{p}&=\frac{1}{T}\pdif{G}{T}{p}-\frac{G}{T^2}\\&=-\frac{1}{T^2}\left(G-T\pdif{G}{T}{p}\right)
+\end{split}\end{align}
+vi kombinerer de to ligningene for å få \emph{Gibbs-Helmholtz-ligningen}
+\begin{equation}
+	\pdif{G/T}{T}{p}=-\frac{H(T)}{T^2}
+\end{equation}
+Denne er nyttig fordi vi nå kan finne temperaturavhengigheten til Gibbs fri energi ved å måle entalpien som en funksjon av temperaturen. Det får vi til, for temperaturen kan kontrolleres, og entalpien kan måles med bombekalorimeter.
+
+Vi har en tilsvarende, men ikke fullt så nyttig (fordi $U$ er vanskeligere å måle enn $H$) relasjon for det kanoniske ensemblet,
+\begin{equation}
+	\pdif{F/T}{T}{V}=-\frac{U(T)}{T^2}
+\end{equation}
+
+\cstitle{Trykkavhengigheten til likevektskonstanten}
+La oss til slutt finne ut hva som skjer med likevekten når vi påfører et ytre trykk. Vi bruker det vi allerede har funnet ut,
+\begin{equation}
+	\spdif{\ln K_p}{p}=\spdif{}{p}\left(-\frac{\mu_B^o-\mu_A^o}{k_BT}\right)=-\frac{1}{k_BT}\spdif{\Delta \mu^o}{p}
+\end{equation}
+Nå kan vi enten bruke Gibbs-Duhem-ligningen, eller følgende Maxwell-relasjon
+\begin{equation}
+	\pdif{\mu}{p}{T,N}=\pdif{V}{N}{T,p}=v
+\end{equation}
+slik at
+\begin{equation}
+	\label{thingymabob}
+	\spdif{\ln K_p}{p}=-\frac{\Delta v^o}{k_BT}
+\end{equation}
+$v_A^o$ er volumet til komponent $A$ når $p=p^o$ (1 bar), og tilsvarende for $v_B^o$. Fortegnet til $\Delta v^o=v_B^o-v_A^o$ forteller dermed om det er $A$ (hvis $\Delta v^o$ er positiv) eller $B$ (hvis $\Delta v^o$ er negativ) som er tilstanden med minst volum (størst tetthet). 
+
+La oss se på tilfellet der $\Delta v^o$ er positiv. Da er $A$ den tetteste tilstanden. Da er også høyresiden i \eqref{thingymabob} negativ. Derfor må en økning i trykk gjøre at $\ln K_p$ synker - dermed synker også $K_p$. Dette betyr at konsentrasjonen av $B$ synker og konsentrasjonen av $A$ øker. Dette stemmer med det vi vet fra før: trykk driver likevekten mot den tetteste tilstanden.

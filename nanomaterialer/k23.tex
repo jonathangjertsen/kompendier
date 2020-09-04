@@ -1,0 +1,49 @@
+%!TEX root = Nanomat.tex
+\ctitle{Selvorganisering av magnetiske nanopartikler}
+I dette kapittelet fortsetter vi på forrige kapittel, men fokuserer på systemer der de magnetiske egenskapene til partiklene bestemmer egenskapene til produktet. Som i forrige kapittel begynner vi med en væske med nanopartikler -- når disse er magnetiske kaller vi væsken et \emph{ferrofluid}. Strukturene vi observerer etter å ha deponert et ferrofluid og latt løsemiddelet fordampe, har ofte sammenheng med strukturene som allerede eksisterer i ferrofluidet. 
+
+\paragraph{Motivasjon} Polykrystalline magnetiske materialer består gjerne av flere magnetiske domener (men magnetiske domener trenger ikke å ha noe å gjøre med korngrensene). En enkelt nanopartikkel er så liten at hele partikkelen kan være ett bestemt magnetisk domene. Dersom man kan ordne magnetiske nanopartikler på riktig måte, kan man få en lagringstetthet som er mye større enn i dagens harddisker, som er basert på \ce{CoCr}-legeringer.
+
+\paragraph{Ting som kan påvirke de magnetiske egenskapene til nanopartikler} I tillegg til de iboende magnetiske egenskapene til materialet man jobber med (f.eks at jern er ferromagnetisk, mens sølv ikke er det), kan de magnetiske egenskapene til nanopartikler påvirkes av ting som avstand mellom partikler, temperatur under annealing, og surfaktanter eller andre molekyler som adsorberes på overflaten av partiklene.
+
+\paragraph{Krav for at en sammensetning av magnetiske nanopartikler skal fungere} Det er noen ekstra krav forbundet med magnetiske nanopartikler:
+\begin{itemize}
+	\item Nanopartiklene må danne en veldig regulær 2D-struktur som dekker en størrelse på ca. \SI{200}{\nano\meter}. Vi må altså fortsatt ha en veldig spiss størrelsesfordeling.
+	\item Orienteringen til de magnetiske dipolene må være stabil ved temperaturen der man skal bruke produktet. Dette er et problem hvis vi skal bruke nanopartikler, siden energien som kreves for å snu magnetiseringen på en partikkel er proporsjonal med volumet til partikkelen: $\Delta E = KV$. Her er $K$ \emph{anisotropi-konstanten} til materialet, så vi ønsker å bruke materialer der denne konstanten er høy. 
+	\item Det må være mulig å lese og skrive informasjon til produktet. Hvert område som skal representere en bit, må kunne måles og manipuleres på en fornuftig måte.
+\end{itemize}
+
+\paragraph{Selvorganisering av magnetiske nanopartikler uten et eksternt felt: hvilken effekt har partiklenes størrelse og form?} Når vi ikke bruker et eksternt magnetfelt, er det nanopartiklenes magnetiske egenskaper samt størrelse og form som bestemmer hva slags struktur vi ender opp med. En fellesnevner for magnetiske nanopartikler er at de gjerne danner kjeder som minimerer energien forbundet med magnetismen. Kjeder oppstår når de attraktive kreftene forbundet med de magnetiske dipolene er mye større enn den termiske energien i miljøet (den termiske energien ``ønsker'' jo å spre partiklene i en tilfeldig konfigurasjon for å maksimere entropien). Jo større partiklene blir, jo større blir magnetismen i forhold til den termiske energien, og jo mer vil partiklene foretrekke å danne kjeder.
+
+Sfæriske partikler får sin mest stabile posisjon når sørpolen hos én partikkel er i kontakt med nordpolen på den andre. Hvis partiklene er avlange, og magnetiseringsvektoren er i lengderetningen, vil den mest stabile konfigurasjonen være den der de står side ved side, med alternerende retning på magnetiseringen.
+
+\paragraph{Selvorganisering av magnetiske nanopartikler med et eksternt felt som står normalt på substratet} La oss først se på tilfellet der vi bruker et eksternt felt som står normalt på substratet, samtidig som vi lar løsemiddelet i ferrofluidet fordampe. La oss også anta at vi bruker nanopartikler av kobolt, fordi det er det noen gjorde en gang. 
+
+Hvis det eksterne feltet er svakt, vil nanopartiklene samle seg i dotter, som organiserer seg i en heksagonal struktur.
+
+Hvis det eksterne feltet er sterkt, vil det dannes et labyrintaktig system av kanaler. Denne strukturen minner om strukturen man får når man lar en legering stivne ved det eutetiske punktet, og oppstår på grunn av det samme overordnede prinsippet: i begge tilfeller dannes kanalene på grunn av konkurranse mellom attraktive krefter med kort rekkevidde, og frastøtende krefter med lang rekkevidde. I tilfellet med de magnetiske nanopartiklene er de attraktive kreftene de samme som i forrige kapittel (overflatespenning mellom ferrofluidet og omgivelsene fører til at partiklene trekkes mot hverandre). De frastøtende kreftene oppstår på grunn av interaksjoner mellom det eksterne feltet og nanopartiklene.
+
+La oss se på det kvantitativt. Den attraktive energien er
+\begin{equation}
+	E_a = \sigma A,
+\end{equation}
+der $\sigma$ er overflatespenning og $A$ er arealet til fluidet. Den frastøtende energien er
+\begin{equation}
+	\label{eq:mag_force}
+ 	E_m=\frac{-\mu_0}{2}\left<M\right>H_0LA',\footnote{...señorita.}
+ \end{equation} 
+der $H_0$ er det eksterne magnetiske feltet og $\left<M\right>$ er den gjennomsnittlige magnetiseringen til strukturen. $LA'$ er volumet til ferrofluidet, men $A'$ inneholder kun den delen av ferrofluidet som dekker substratet. $L$ er høyden på strukturene som oppstår.
+
+$M$ er den totale magnetiseringen og oppstår både på grunn av det eksterne feltet $H_0$, og på grunn av feltet som oppstår når de magnetiske partiklene orienterer seg i motsatt retning av det eksterne feltet (la oss kalle det $H_d$). Altså er den totale magnetiseringen alltid mindre enn magnetiseringen på grunn av $H_0$. Uttryket for $M$ er 
+\begin{equation}
+	M = \chi(H_0+H_d),
+\end{equation}
+der $\chi$ er den magnetiske susceptibiliteten fra Elektromagnetisme. $H_0$ og $H_d$ har naturligvis motsatt fortegn, og $H_0$ har større absoluttverdi enn $H_d$. Når strukturer dannes, blir absoluttverdien til $H_d$ mindre, så da blir absoluttverdien til $M$ større. Denne effekten blir større jo større bredden på kanalene er. Dermed blir også absoluttverdien til $E_m$ større jo større kanalene er, jfr. ligning \eqref{eq:mag_force}.
+
+Likevekt oppstår der $E_i + E_m$ er på sitt laveste, altså ved minimum for
+\begin{equation}
+	E_{\text{tot}} = \sigma A - \frac{-\mu_0}{2}\left<M\right>H_0LA'.\footnote{(hun svarte meg aldri, 'cause she ain't no $H_0LA'$-back girl)}
+\end{equation}
+Det som systemet ``selv'' kan endre er $A$, $A'$ og $L$. Systemet vil endre disse til det når minimum, og dette avhenger igjen av $H_0$. Når $H_0$ er liten vil $E_{\text{tot}}$ ha sitt minimum når labyrintene er ganske brede (i grensetilfellet med et veldig svakt felt vil labyrintene være så brede at de ikke lenger er labyrinter, men heller den ovennevnte strukturen med dotter i et heksagonalt gitter). Når $H_0$ er stor vil $E_{\text{tot}}$ ha sitt minimum når labyrintene er relativt smale.
+
+\paragraph{Selvorganisering av magnetiske nanopartikler med et eksternt felt som går parallelt med substratet} I dette tilfellet har vi ikke like gode teoretiske modeller for å beskrive strukturene som oppstår. Det som er å si om dette tilfellet er at det er litt som tilfellet uten noe felt -- det vil dannes kjeder på grunn av interaksjoner mellom partikler. Siden vi har et eksternt felt, vil disse kjedene gå parallelt med det eksterne feltet. Det vil også være attraktive interaksjoner mellom kjeder, som fører til at det dannes sigarformede sammensetninger parallelt med det eksterne feltet.

@@ -1,0 +1,60 @@
+\ctitle{Ekstremverdiprinsipper og likevekt}
+\paragraph{Dette kapittelet} forklarer at alt som noensinne skjer i verden kan formuleres som at et system beveger seg mot en likevekt der en eller annen tilstandsfunksjon er minimert (eller maksimert).
+
+\cstitle{Ekstremverdiprinsipper I: energi}
+\paragraph{Frihetsgrader}
+En frihetsgrad er en variabel som systemet står fritt til å endre. Alternativet til en frihetsgrad er en \i{begrensning}, som er når en variabel $x$ er ``låst'' til å ha en verdi $x_0$. Begrensninger er bestemt av ytre faktorer, og kan ikke endres av systemet. Et system der et ekstremverdiprinsipp gjelder, vil endre på sine frihetsgrader til den når et maksimum eller minimum for viss en funksjon som er bestemt av begrensningene. I dette punktet vil summen av krefter være 0, og vi sier at systemet er i \i{likevekt}.
+
+\paragraph{Likevekt}
+Vi kan forutsi tendensene til et system ved å regne på minima og maksima for visse matematiske funksjoner. La oss si at vi har en eller annen type ``energi'' $V$ som avhenger av en frihetsgrad $x$, og at vi vet av $V$ er en funksjon som minimeres (hvorfor visse typer energi minimeres, skal vi komme tilbake til senere). Hvis systemet er i likevekt, det vil si hvis $x=x^*$ slik at $\frac{dV}{dx}\at{x^*}=0$, da er vi i en av fire situasjoner:
+\begin{itemize}
+	\item \i{Stabil likevekt}: Energien er i et globalt minimum. Hvis en forstyrrelse flytter systemet vekk fra $x=x^*$, vil systemet ha en tendens til å gå tilbake mot $x=x^*$.
+	\item \i{Nøytral likevekt}: Funksjonen som beskriver den potensielle energien er flat. $\frac{dV}{dx}=0$ for alle $x$. Systemet responderer ikke på ytre endringer.
+	\item \i{Metastabil likevekt}: Energien er i et lokalt minimum, men ikke et globalt minimum. Etter en forstyrrelse vil systemet kun ha en tendens til å gå tilbake til $x=x^*$ dersom $|x-x^*|$ er liten nok.
+	\item \i{Ustabil likevekt}: Energien er i et lokalt maksimum. Hvis en forstyrrelse flytter systemet vekk fra $x=x^*$, vil systemet ha en tendens til å fortsette å bevege seg vekk fra $x=x^*$.
+\end{itemize}
+
+Stort mer er det egentlig ikke å si om den saken før vi ser på typer energi som det faktisk finnes ekstremverdiprinsipper for, slik som Helmholz fri energi og Gibbs fri energi. Merk at det ikke finnes noe ekstremverdiprinsipp for den totale indre energien til et system.
+
+\cstitle{Ekstremverdiprinsipper II: Entropi}
+
+\paragraph{Systemer går mot makrotilstanden med størst multiplisitet} Alternativt til å tenke på en en stabil likevekt som den tilstanden med minimal energi, kan man tenke på den som den makrotilstanden som har flest korresponderende mikrotilstander, altså den som har størst multiplisitet. 
+
+Det \i{fundamentale postulatet i statistisk mekanikk}, også kalt \i{postulatet om like a priori sannsynligheter}, er at alle mikrotilstander som stemmer overens med en gitt makrotilstand er like sannsynlige. Dette er nesten det eneste man trenger å påstå om den fysiske verden for å utlede mesteparten av statistisk mekanikk, resten følger av matematisk nødvendighet. For eksempel detter termodynamikkens andre lov rett ut av det fundamentale postulatet: siden alle mikrotilstander er like sannsynlige, vil ethvert system ha en tendens til å gå mot makrotilstanden med størst multiplisitet fordi \emph{en slik makrotilstand inneholder det største antallet mikrotilstander}, og dermed rett og slett er mest sannsynlig. Siden $W$ øker med tida, må også $S$ gjøre det på grunn av \eqref{bolzmannearly}. Under dette paradigmet blir termodynamikkens andre lov nærmest en tautologi; den sier bare at det som er mest sannsynlig skjer oftest.
+
+De tre påfølgende eksemplene demonstrerer slagkraften til det nye verdenssynet vårt ved å vise hvordan prinsippet om økende multiplisitet gir opphav til trykk, kjemisk potensial og elastisiteten til gummi.
+
+\paragraph{Eksempel: trykk} Gasser har en tendens til å utvide seg - til å gå mot en større $V$. La oss si at vi har en gass som består av $N$ partikler. Volumet kan vi beskrive med antallet plasser som er tilgjengelige for hver partikkel, altså $M$. Hvis dette er frihetsgraden til systemet, vil systemet ha en tendens til å gå mot en stadig større $M$, fordi en større $M$ gir en større multiplisitet $W(N,M)$. At dette er tilfelle, kan vises ved å bruke uttrykket fra \eqref{latticemultiplicity} til å se at $W(N,M+1) > W(N,M)$, altså at multiplisiteten øker når vi legger til en plass i gitteret:
+\begin{align}
+\begin{split}
+	W(N,M+1)&=\frac{(M+1)!}{N!(M-N+1)!} \\
+	&= \frac{M!(M+1)}{N!(M+1-N)!} \\
+	&= \frac{M!}{N!(M-N)!}\cdot\frac{M+1}{M+1-N} \\
+	&= W(N,M)\cdot\frac{M+1}{M+1-N} \\
+	&> W(N,M)
+\end{split}
+\end{align}
+Denne tendensen gasser har til å utvide seg er grunnlaget for drivkraften som vi kaller \i{trykk}. 
+
+\paragraph{Eksempel: kjemisk potensial} La oss si at vi har en væske som består av $M/2$ partikler av type $A$ og $M/2$ partikler av type $B$ som tar opp et helt gitter med $M$ plasser. Hvis vi deler inn i to kamre som hver har $M/2$ plasser, hvordan regner vi med at $A$- og $B$-partiklene er fordelt utover de to kamrene? Vel, multiplisiteten til hele systemet må være produktet av multiplisitetene til høyre og venstre system, så $W=W_{\text{venstre}}W_{\text{høyre}}$. Hvert system er bestemt av hvor mange $A$-partikler det er i systemet (antall $B$-partikler må være $M/2-N_A$), og på grunn av symmetri er $W_{\text{venstre}}=W_{\text{høyre}}$, så $W=W_{\text{høyre}}^2$. La oss kalle antall partikler av type $A$ i høyre kammer for $N_A$ og $B$-partikler i høyre kammer for $N_B$. Da er
+\begin{align}
+\begin{split}
+	W_{\text{høyre}}=W(N_A,M/2)&=W(N_A,N_A+N_B)\\ &=\frac{(N_A+N_B)!}{N_A!N_B!}
+\end{split}
+\end{align}
+Vi postulerer så at, hvis $N_A+N_B$ er konstant slik det er her, da er $f(N_A,N_B)=\frac{(N_A+N_B)!}{N_A!N_B!}$ størst hvis $N_A=N_B$. For å vise dette, la oss sammenligne verdien til $f(N_A,N_A)$ og verdien til funksjonen når vi har byttet ut en partikkel fra $N_A$ til $N_B$, altså $f(N_A-1,N_A+1)$. For det første er 
+\begin{equation}
+    f(N_A,N_A)=\frac{(N_A+N_A)!}{N_A!^2}=\frac{(2N_A)!}{N_A!^2}
+\end{equation}
+For det andre er 
+\begin{align}
+\begin{split}
+    f(N_A+1,N_A-1)&=\frac{(N_A+1+N_A-1)!}{(N_A+1)!(N_A-1)!}\\&=\frac{(2N_A)!}{N_A!(N_A+1)\frac{N_A!}{N_A-1}}\\
+    &=\frac{(2N_A)!}{N_A!^2\frac{N_A+1}{N_A-1}}\\
+    &=f(N_A,N_A)\frac{N_A-1}{N_A+1}\\
+    &<f(N_A,N_A)
+\end{split}
+\end{align}
+Det blir naturligvis det samme om det var $N_A$ som økte og $N_B$ som ble mindre. Så $W_{\text{høyre}}$, og dermed $W$, er størst når $N_{A}=N_{B}$. Ifølge prinsippet om maksimal multiplisitet forventer vi derfor at det er like mange partikler av type $A$ som av type $B$ i høyre del av systemet, altså at det er halvparten av hver. Da er det også halvparten av hver type i venstre kammer. Siden vi kan fortsette å dele inn venstre og høyre kammer i mindre kamre helt ned til atomnivå, og gjøre samme utregning, betyr dette at $A$- og $B$-partiklene vil spre seg jevnt utover. Denne tendensen for partikler til å blande seg er grunnlaget for drivkraften som vi kaller \i{kjemisk potensial}.
+
+\paragraph{Eksempel: elastisitet i gummi} Elastisitet i gummi kan forklares med at multiplisiteten maksimeres. En polymer kan modelleres som en sammenhengende kjede av $n$ partikler som hver opptar en plass i gitteret. Hvis den ene enden av polymeren er bundet til en vegg, vil det finnes få konformasjoner der kjeden er strukket helt eller nesten helt ut. Det vil også finnes få konformasjoner der kjeden er veldig kort (trykt inntil veggen og strukket ut på tvers). Det vil finnes flest konformasjoner et sted i mellom. Dette rettferdiggjør at noen polymerer spretter tilbake når du strekker dem eller trykker dem sammen: de går tilbake til tilstanden med høyest multiplisitet.

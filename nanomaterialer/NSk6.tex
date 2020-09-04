@@ -1,0 +1,34 @@
+%!TEX root = Nanomat.tex
+\ctitletwo{NS6 Nye metoder for nanolitografi}
+\addcontentsline{toc}{section}{NS6 NYE METODER FOR NANOLITOGRAFI}
+Nanolitografi spiller en viktig rolle i fundamental forskning og i mange områder i forskningen. Litografi med fotoner, elektroner og ioner er fint, men vi støter på problemer med diffraksjon og spredning av partikler. Derfor har man utviklet alternative metoder som er fundamentalt forskjellige fra å skyte på substratet med partikler.
+
+\cstitletwo{Nanoimprint-litografi (NIL)}
+I nanoimprint-litografi har man et substrat, og resist spredt jevnt utover substratet, og så bruker man en støpeform til å presse en struktur inn i resisten (støpeformen kan man lage med andre mer tidkrevende metoder som elektronstråle-litografi, for når man først har laget formen kan man bruke den igjen og igjen). Etterpå bruker man RIE for å etse ned resisten, helt til man har etset bort de områdene av resisten som ble trykket ned. Deretter deponerer man metall og gjør lift-off. Med denne metoden kan man få resultater som er sammenlignbare med resultatene man får med andre litografiske metoder. Hvis man bruker varme mens man presser ned støpeformen, kalles prosessen \emph{termoplastisk nanoimprint-litografi}.
+
+Fordeler med NIL er at man kan oppnå veldig høy oppløsning, det er billig og enkelt, det er lett å implementere, og det kan brukes i mange forskjellige situasjoner. Ulempen er at man trenger en støpeform som må varmes opp og kjøles ned.
+
+\paragraph{Resisten} Vi bruker gjerne PMMA eller polykarbonat som resist. Imprinting gjøres ved en temperatur som er høyere enn glassomvandlingstemperaturen til resisten (altså der den begynner å bli myk og formbar), samtidig som man presser ned formen. Så senker man temperaturen samtidig som man trykker, for å gjøre resisten fast igjen. Så fjerner man støpeformen og sitter igjen med en negativ av støpeformen i resisten.
+
+\paragraph{Tykkelsen til resisten er viktig} Tykkelsen man bør bruke på resisten avhenger av strukturen man ønsker å lage, eller mer spesifikt hvor stor andel av arealet til strukturen som skal trykkes ned. For å få korrekt resultat må forholdet mellom den opprinnelige tykkelsen $h_i$, tykkelsen $h_c$ til de nedtrykte områdene og tykkelsen $h_m$ til områdene som ikke trykkes ned, være
+\begin{equation}
+	h_i = h_c + fh_m,
+\end{equation}
+der $f$ er andelen av strukturen som er trykket ned og senere skal etses bort.
+
+\paragraph{Triks for å øke maksimalt høyde/bredde-forhold} For å øke høyde/bredde-forholdet (aspect ratio) til strukturene (altså lage dype, men tynne kanaler i resisten) kan man bruke et lag av \ce{Ge}, som ikke blir etset ned av RIE i samme grad som PMMA. Det man gjør er å først legge på et lag av PMGI (en annen type resist som \emph{ikke} blir myk ved temperaturen som PMMA blir myk ved), så et lag av \ce{Ge}, og til slutt et lag av PMMA. Man presser inn strukturen i PMMA som vanlig, og etser bort så man har bar \ce{Ge} på områdene som ble trykt ned, og rester av PMMA på områdene man ikke trykte ned. Så bytter man til et annet løsemiddel som kun løser opp \ce{Ge}, men ikke PMMA. Dermed vil områdene som ble trykt ned være frie for \ce{Ge}, mens det fortsatt er \ce{Ge} på områdene som ikke ble trykt ned. Så bytter man tilbake til RIE, som etser bort PMGI men ikke \ce{Ge}. 
+
+\paragraph{UV-nanoimprint-litografi} Dette er en variant av NIL der man bruker UV-lys i stedet for økt temperatur. Dette er naturligvis kjekt å ha hvis strukturene man skal lage ikke tåler høy temperatur. 
+
+Beskrivelse av metoden kommer. 
+
+\cstitletwo{Ander metoder}
+\paragraph{Nanopreging / nanoembossing}
+I denne metoden har man også en støpeform, men i dette tilfellet bruker man små kuler av materialet man vil lage en struktur i. Så presser man formen mot en flat \ce{Si}-wafer ved høy temperatur slik at materialet danner en negativ av støpeformen. Til slutt fjerner man det fra støpeformen og beundrer verket sitt.
+
+\paragraph{Soft lithography}
+Dette er som NIL, men støpeformen man bruker er laget av PDMS, som er bøyelig og fleksibelt. Dette gjør at man også kan mønstre bøyde overflater med en slik fleksibel støpeform. Ulempen ved denne metoden er at formen lettere blir deformert og fordreid.
+
+\paragraph{Near-field lithography} Probemikroskoper som STM, AFM og SNOM kan også brukes til å manipulere overflater. Med STM kan man for eksempel flytte på enkeltatomer til formen man vil. Dette er naturligvis altfor sakte og lokalt til å være en fornuftig fabrikasjonsmetode.
+
+\paragraph{Dip-pen lithography (DPN)} Med denne metoden har man en AFM-tipp som er dekket med en løsning av organiske molekyler (for eksempel tioler). Denne tippen fører man over et substrat (hvis vi bruker tioler vil substratet typisk være gull), og der man har pennen vil det deponeres tioler lokalt. Med denne metoden kan man lage kompliserte mønstre med forskjellige molekyler. Man kan også parallellisere prosessen ved å bruke mange tipper samtidig, og dermed få det til å gå temmelig raskt. I IBM sitt ``millipede''-system har man en oppstilling av 55000 AFM-tipper som kjører parallelt. 

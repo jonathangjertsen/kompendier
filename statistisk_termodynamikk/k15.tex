@@ -1,0 +1,179 @@
+\ctitle{Løsninger og blandinger}
+\paragraph{Dette kapittelet} Kjemisk potensial forklarer også oppførselen til systemer som består av to forskjellige kjemiske specier, eller løsninger som danner faser med forskjellige konsentrasjoner av hvert specie. Her ser vi på $(T,V,N)$-ensemblet (det kanoniske) fordi det gir de enkleste gittermodellene. Derfor er størrelsen vi ønsker å minimere $F=U-TS$.
+
+\cstitle{Entropi for blandinger}
+Vi ser på en gittermodell med $N_A$ molekyler av type $A$ og $N_B$ molekyler av type $B$, slik at de $N=N_A+N_B$ molekylene fyller opp gitteret fullstendig. $A$ og $B$ antas å ha samme størrelse. I utgangspunktet er de adskilt med en vegg eller noe lignende, og deretter fjernes veggen slik at de to fasene blandes. Multiplisiteten til blandingen blir 
+\begin{equation}
+	W_{AB}=\frac{N!}{N_A!N_B!}
+\end{equation}
+Siden multiplisiteten til de ublandede systemene er 1, blir entropiendringen for blandingsprosessen lik den absolutte entropien til blandingen:
+\begin{equation}
+	\Delta S_{\text{mix}}=S_{AB}-(S_A+S_B)=S_{AB} = k_B\ln W_{AB}
+\end{equation}
+Denne entropien blir, med Stirlings formel:
+{\small \begin{align}
+	\Delta S_{\text{mix}} &=k_B\ln W_{AB} \\ &=k_B(N\ln N-N_A\ln N_A-N_B\ln N_B) \\
+	&=k_B(N_A\ln N + N_B \ln N - N_A \ln N_A - N_B\ln N_B) \\
+	&=-k_B(N_A\ln\frac{N_A}{N}+N_B\ln\frac{N_B}{N})
+\end{align}}
+Uttrykt ved molfraksjoner $x_j=\frac{N_j}{N}$ blir 
+\begin{equation}
+	\Delta S_{\text{mix}} = -k_B(N_A\ln x_A + N_B \ln x_B)
+\end{equation}
+Siden $x_B=1-x_A$, lar vi $x=x_A$ og får at
+\begin{equation}
+	\frac{\Delta S_{\text{mix}}}{Nk_B}=-x\ln x-(1-x)\ln(1-x)
+\end{equation}
+
+\cstitle{Ideelle løsninger}
+Hvis vi ser bort ifra interaksjonene mellom partikler får vi at
+\begin{equation}
+	\Delta F_{\text{mix}}=-T\Delta S_{\text{mix}}
+\end{equation}
+Dette er analogt med forenklingen vi gjør når vi ser på en ideell gass. Å se bort i fra interaksjonene mellom partikler i kondensert fase er imidlertid helt urealistisk, så denne modellen bruker vi ikke videre.
+
+\cstitle{Energi i blandinger}
+Med samme gittermodell som i tidligere kapitler (kun nærmeste nabo-interaksjoner) blir
+\begin{equation}
+	\label{mixenergy}
+	U=m_{AA}w_{AA}+m_{BB}w_{BB}+m_{AB}w_{AB}
+\end{equation}
+der $m_{XY}$ er antallet bindinger mellom en partikkel av type $X$ og en partikkel av type $Y$, og $w_{XY}$ er energien assosiert med en slik binding. Hver plass i gitteret har $z$ sider, så da er
+\begin{align}
+	zN_A&=2m_{AA}+m_{AB} \\
+	zN_B&=2m_{AB}+m_{AB}
+\end{align}
+Grunnen til at en faktor 2 dukker opp i det ene leddet og ikke det andre, er at det totale antallet sider som grenser til en partikkel av type $A$ er 
+\begin{align}
+\begin{split}
+	&\text{antall AA-bindinger}\times\text{2 A-sider pr. AA-binding} \\
+	+&\text{antall AB-bindinger}\times\text{1 A-side pr. AB-binding}
+\end{split}
+\end{align}
+og tilsvarende for $B$. Vi får at
+\begin{align}
+    m_A=\frac{zN_A-m_{AB}}{2} \\
+    m_B=\frac{zN_B-m_{AB}}{2}
+\end{align}
+Da blir \eqref{mixenergy} til en funskjon av kun $m_{AB}$,
+\begin{align}\begin{split}
+	\label{mixenergy2}
+	U=\\&\frac{zN_A-m_{AB}}{2}w_{AA}\\+&\frac{zN_B-m_{AB}}{2}w_{BB}\\+&m_{AB}w_{AB}
+\end{split}\end{align}
+Så må vi finne $m_{AB}$. Vi kan finne en tilnærming til den ved hjelp av Bragg-Williams-modellen.
+
+\cstitle{Bragg-Williams-modellen}
+I Bragg-Williams-modellen antar vi at partiklene er blandet så tilfeldig og uniformt som mulig, i samsvar med prinsippet om maksimering av entropi. Da vil sannsynligheten for at en plass er opptatt av en $B$-partikkel, være
+\begin{equation}
+	p_B\approx\frac{N_B}{N}=x_B=1-x.
+\end{equation}
+I virkeligheten avhenger denne sannsynligheten av interaksjonsenergiene $w_{XY}$, men dette ser vi altså bort i fra her. Siden det er $z$ naboer til et gitt $A$-molekyl, vil det gjennomsnittlige antallet $AB$-kontaktpunkter for et $A$-molekyl være det gjennomsnittlige antallet bindinger per molekyl ganger sannsynligheten for at en naboplass i gitteret opptas av et $B$-molekyl,
+\begin{equation}
+	zp_B=\frac{zN_B}{N}.
+\end{equation}
+Siden det er $N_A$ molekyler av type $A$ får vi at
+\begin{equation}
+	m_{AB}=N_Azp_B=N_A\frac{zN_B}{N}=zNx(1-x)
+\end{equation}
+Da blir \eqref{mixenergy2} etter litt regning til
+\begin{align}
+	U &= \\
+	&\frac{zw_{AA}}{2}N_A \\
+	+&\frac{zw_{BB}}{2}N_B \\
+	+&z\left(w_{AB}-\frac{W_{AA}+W_{BB}}{2}\right)\frac{N_AN_B}{N} \\
+	&=\frac{zW_{AA}}{2}N_A+\frac{zW_{BB}}{2}N_B+k_BT\chi_{AB}\frac{N_AN_B}{N}
+\end{align}
+der vi har definert et ``exchange parameter'' $\chi_{AB}$ som
+\begin{equation}
+	\label{chi}
+	\chi_{AB}=\frac{z}{k_BT}\left(w_{AB}-\frac{w_{AA}+w_{BB}}{2}\right)
+\end{equation}
+Hvis interaksjonsenergiene $w_{AB}$, $w_{AA}$ og $w_{BB}$ er veldig forskjellige, fungerer ikke Braggs-Williams-modellen. Dette er fordi vi da har molekyler som foretrekker å sitte nær molekyler av en bestemt type i så stor grad at antakelsen om tilfeldig spredte molekyler ikke lenger stemmer. Hvis for eksempel $w_{BB}$ er veldig stor, vil det dannes klumper av $B$-molekyler, og slike situasjoner klarer vi ikke å modellere med denne modellen. Et eksempel på en slik situasjon er olje og vann (merk at de to ikke skiller seg fra hverandre fordi $w_{wo}$ er stor og positiv, slik man kanskje skulle tro intuitivt, men fordi $w_{ww}$ er negativ og mye mye større enn både $w_{wo}$ og $w_{oo}$).
+
+Merk at $\chi_{AB}$ er definert til å avhenge av $k_BT$, noe som er uheldig (den skal jo uansett ganges opp med $k_BT$ i uttrykket for indre energi!)
+
+Siden $F=U-TS$ blir
+\begin{align}
+\begin{split}
+	\frac{F(N_A,N_B)}{k_BT}=N_A\ln\frac{N_A}{N}&+N_B\ln\frac{N_B}{N}\\+\frac{zw_{AA}}{2k_BT}N_A&+\frac{zw_{BB}}{2k_BT}N_B\\&+\chi_{AB}\frac{N_AN_B}{N}
+\end{split}
+\end{align}
+de første to leddene er entropiledd og de tre siste er energiledd. Vanligvis er vi interessert i endringen i fri energi mellom blandingen og de opprinnelige rene tilstandene:
+\begin{equation}
+	\Delta F_{\text{mix}}=F(N_A,N_B)-F(N_A,0)-F(0,N_B)
+\end{equation}
+De frie energiene til de opprinnelige rene tilstandene har kun ledd for indre energi:
+\begin{align}
+    F(N_A,0) &= \frac{zw_{AA}N_A}{2} \\
+    F(0,N_B) &= \frac{zw_{BB}N_B}{2}
+\end{align}
+og det endelige uttrykket for $\Delta F_{\text{mix}}$ blir 
+\begin{equation}
+	\frac{\Delta F_{\text{mix}}}{Nk_BT} = x\ln x + (1-x) \ln(1-x)+\chi_{AB}x(1-x)
+\end{equation}
+dette kalles \i{regular solution model}. $\Delta F_{\text{mix}}$ er temperaturavhengig, men den temperaturavhengigheten er skjult i denne ligningen på grunn av definisjonen av $\chi_{AB}$. Fortegnet til $\chi_{AB}$ bestemmer om $\chi_{AB}$ dytter systemet mot en blanding eller mot de rene stoffene,
+\begin{itemize}[nolistsep,noitemsep]
+	\item Hvis $\chi_{AB}>0$, foretrekker molekylene å holde seg for seg selv i egne faser.
+	\item Hvis $\chi_{AB}<0$, foretrekker molekylene å binde seg til hverandre, slik at de blander seg jevnt.
+	\item Hvis $\chi_{AB}=0$, blandes molekylene fritt etter prinsippet om maksimal multiplisitet. Da er vi tilbake til en ideell løsning der det ikke er noen interaksjon mellom molekyler.
+\end{itemize}
+
+\cstitle{Det kjemiske potensialet}
+Det kjemiske potensialet for molekyl $A$ blir, etter en forferdelig utregning,
+\begin{align}
+\label{anotherchemicalpotentialA}
+\begin{split}
+	\frac{\mu_A}{k_BT} &= \frac{1}{k_BT}\left(\frac{\partial F}{\partial N_A}\right)_{T,V,N_B} \\ &= \ln x_A+\frac{zw_AA}{2k_BT}+\chi_{AB}(1-x_A)^2.
+\end{split}
+\end{align}
+En tilsvarende utregning for $\mu_B$ gir
+\begin{equation}
+\label{anotherchemicalpotentialB}
+	\frac{\mu_B}{k_BT} = \ln x_B+\frac{zw_BB}{2k_BT}+\chi_{AB}(1-x_B)^2
+\end{equation}
+I termodynamikken uttrykkes det kjemiske potensialet ofte via et standard kjemisk potensial,
+\begin{equation}
+	\label{bullshit}
+	\mu=\mu^o+k_BT\ln a,
+\end{equation}
+der $a$ er \emph{aktiviteten}
+\begin{equation}
+	a=\gamma x
+\end{equation}
+$\gamma$, som kalles \i{aktivitetskoeffisient}en, er en faktor vi legger til for å ta hensyn til løsninger som avviker fra ideelle løsninger. Situasjonen kompliseres imidlertid av at $\gamma$ selv kan avhenge av $x$. I svært fortynnede løsninger er 
+\begin{equation}
+	\label{gammaprox}
+	\gamma \approx 1.
+\end{equation}
+\eqref{anotherchemicalpotentialA}, \eqref{anotherchemicalpotentialB}, \eqref{bullshit} og \eqref{gammaprox} er grunnlaget for kapittel 16. 
+
+\cstitle{Grenseflatespenning}
+Vi ser på grenseflaten mellom to konsenserte faser. Grenseflatespenningen $\gamma_{AB}$ (som ikke har noe å gjøre med aktivitetskoeffisienten i forrige delkapittel) er den frie energien det koster å øke grenseflatearealet. Derfor vil grenseflatearealet være lite hvis $\gamma_{AB}$ er stor. Vi utvider gittermodellen for overflatespenning:
+\begin{align}
+\begin{split}
+	U&=(N_A-n)\frac{zw_{AA}}{2}\\&+n\frac{(z-1)w_{AA}}{2}\\&+(N_B-n)\frac{zw_{BB}}{2}\\&+n\frac{(z-1)w_{BB}}{2}\\&+nw_{AB}
+\end{split}
+\end{align}
+De forskjellige leddene representerer henholdsvis bulken i $A$, overflateatomene i $A$, bulken i $B$, overflateatomene i $B$, og bindingene gjennom grenseflaten.
+Når fasene ikke blandes er entropien 0 slik at
+\begin{align}
+\begin{split}
+	\gamma_{AB}&=\pdif{F}{A}{N_A,N_B,T}\\&=\pdif{U}{A}{N_A,N_B,T}\\&=\pdif{U}{n}{N_A,N_B,T}\frac{dn}{dA}
+\end{split}
+\end{align}
+der 
+\begin{equation}
+	\frac{\partial U}{\partial n} = w_{AB} - \frac{w_{AA}+w_{BB}}{2}
+\end{equation}
+Arealet er proporsjonalt til antall overflatemolekyler med proporsjonalitetskonstant $a$, så $\frac{dn}{dA}=\frac{1}{a}$. Dermed blir $\gamma_{AB}$ til
+\begin{equation}
+	\gamma_{AB} = \frac{1}{a}\left(w_{AB}-\frac{w_{AA}+w_{BB}}{2}\right)=\frac{k_BT}{za}\chi_{AB}
+\end{equation}
+Merk at $\gamma_{AB}$ ikke egentlig avhenger av $T$, siden man deler på $T$ i $\chi_{AB}$ \eqref{chi}. 
+
+$\gamma_{AB}$ kan ha begge fortegn, avhengig av fortegnet til $\chi_{AB}$. Men det er en konkurranse mellom blanding og dannelsen av en grenseflate: fasene vil blandes hvis $\Delta F_{\text{mix}}<0$. Derfor er det nødvendig å sjekke om man får en blanding før man regner ut grenseflatespenningen.
+
+\paragraph{Hvilke forenklinger har blitt gjort?}
+Den ene forenklingen vi har gjort er å anta at den makrotilstanden med høyest multiplisitet er den eneste makrotilstanden systemet kan være i (dette var grunnantakelsen for Bragg-Williams-modellen). En mer presis modell ville tatt hensyn til alle makrotilstandene, også de som er mindre sannsynlige enn den ene som er aller mest sannsynlig.
+
+Den andre forenklingen vi har gjort er å se bort i fra frihetsgrader assosiert med rotasjon, vibrasjon og elektroniske interaksjoner. Disse frihetsgradene er som regel de samme i blandingsfase og i ren fase, og siden vi kun er interessert i \emph{forskjeller} i fri energi, har det ikke noe å si om vi tar dem med i utgangspunktet. Denne forenklingen gir vi slipp på i kapittel 27, når vi ser på molekyler som enten kan være i gassfase eller binde seg til en overflate. I dét tilfellet vil molekylene på overflaten ha færre måter å rotere på enn de i gassfase, slik at bidraget fra frihetsgrader i rotasjon ikke kan ses bort i fra.

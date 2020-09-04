@@ -1,0 +1,48 @@
+\cstitle{Digresjon: entropi i informasjonsteori}
+\eqref{shannonfirst} er, i slides, antatt som et ``kjent'' resultat fra informasjonsteori som vi tar med oss inn i termodynamikken. Det er likevel fint å forstå hva høyresiden i likheten egentlig betyr, men hopp for all del over dette delkapittelet om det ikke er interessant.
+
+For å fortelle noen hvilken side som landet opp i et myntkast, trenger du bare å sende dem ett binært tall, så lenge dere har blitt enige om hvorvidt $0$ er kron eller mynt. Derfor sier vi at informasjonen $I$ som er inneholdt i resultatet av et myntkast er $1$ bit.
+
+Informasjonen som er inneholdt i resultatet av $n$ myntkast er $n$ bits: systemet av alle myntene har $2^n$ mulige tilstander, og du trenger $n=\log_2 2^n$ bits for å fortelle noen av dem hvilken av dem som faktisk hendte.
+
+Hvis vi ser for oss at vi i stedet har en $m$-sidet terning med sider fra $1$ til $m$, så er antallet bits vi trenger for å fortelle noen resultatet av terningkastet, lik antall bits vi trenger for å representere et tall fra $1$ til $m$, altså $\ceil{\log_2 m}$. Hvis vi tenker hakket mer abstrakt og ikke ser for oss at vi trenger å skrive ned resultatet, kan vi si at informasjonen inneholdt i resultatet av terningkastet er eksakt 
+\begin{equation}
+	I=\log_2 m.
+\end{equation}
+Hvis vi lar $X$ være den stokastiske variabelen som representerer resultatet fra et kast av denne $m$-sidede terningen, er sannsynligheten $p_i$ for at $X=x_i$ (at terningen landet på $x_i$) lik $1/m$ for alle $i$. Derfor er
+\begin{equation}
+	\label{info2}
+	I(x_i)=\log_2 m=\log_2 (1/p_i)=-\log_2 p_i.
+\end{equation}
+\eqref{info2} er en god definisjon av informasjonen som er inneholdt i en hendelse også når $p_i$ ikke er den samme for alle $i$ (altså gjelder den for vilkårlige sannsynlighets\-fordelinger for $X$), av mange grunner: 
+\begin{enumerate}
+	\item Det er mer informasjon i en sjelden hendelse og mindre informasjon i en vanlig hendelse; $I(x_i)$ er større hvis $p_i$ er liten. $I(x_i)$ kan derfor uformelt kalles en ``sjeldenhetsfunksjon'' som forteller hvor overraskende det er hvis $X=x_i$. 
+	\item Uttrykt som funksjon av $p_i$ har $I(p_i)$ den hendige egenskapen at $I(p_1p_2)=I(p_1) + I(p_2)$; informasjonen fra to uavhengige hendelser er summen av informasjonen fra hver hendelse.
+	\item Garanterte hendelser formidler ikke informasjon; hvis $p_i=1$ er $I(x_i)=0$.
+\end{enumerate}
+Mer kompakt kan vi skrive opp $I(X)$ som en stokastisk variabel,
+\begin{equation}
+	I(X)=-\log_2 P(X)
+\end{equation}
+$I$ kan oppgis med forskjellige enheter. Vi kunne for eksempel brukt trits, altså et tall i base 3-systemet. Med 3 tilgjengelige symboler (0, 1 og 2) ville vi brukt færre symboler for å representere resultatet av hendelsen, nærmere bestemt $\log_3 m$, men til gjengjeld inneholder hver trit mer informasjon. Derfor er $I(x_i)=-\log_3 p_i$ når vi bruker trits som enhet for $I$. 1 trit er da informasjonen som er inneholdt i en hendelse med sannsynlighet $1/3$. Enheten vi skal bruke videre er nats, der 1 nat er informasjonen som er inneholdt i en hendelse med sannsynlighet $1/e$. Oppgitt i nats får vi da at
+\begin{equation}
+	I(X)=-\ln P(X).
+\end{equation}
+\i{Shannon-entropi}en $H$ til $X$ er definert som forventningsverdien til $I(X)$:
+\begin{equation}
+	H(X)=E[I(X)]=E[-\ln P(X)]
+\end{equation}
+Siden $X$ er en diskret variabel er $E[f(X)]=\sum_{i=1}^m p_if(x_i)$, så
+\begin{equation}
+	\label{shannon}
+	H(X)=\sum_{i=1}^m p_iI(x_i) = \sum_{i=1}^m -p_i\ln p_i
+\end{equation}
+Shannon-entropien har mange av egenskapene vi forbinder med termodynamisk entropi (men det tok mange år før likheten ble fastslått, og det gjøres ikke her): den er maksimal hvis alle utfall er like sannsynlige, og den øker med antall mulige utfall. \eqref{shannon} er ofte oppgitt som \emph{definisjonen} på Shannon-entropien, fordi det viser seg at det er den eneste funksjonen som tilfredsstiller visse egenskaper man ønsker at entropi-funksjonen skal ha i informasjonsteori. Eller, det er ikke helt sant - hvis man ganger opp uttrykket med en konstant, vil resultatet tilfredsstille de samme betingelsene. Hvis vi lar denne konstanten være $k_B$, får vi uttrykket for termodynamisk entropi,
+\begin{equation}
+	\label{thermo-entropy}
+	S = -k_B\sum_{i=1}^m p_i\ln p_i
+\end{equation}
+Så Bolzmanns konstant er på et vis en konstant vi bruker for å konvertere nats til enheter for varmekapasitet. Forøvrig er $p_i$ gjerne sannsynligheten for en vilkårlig mikrotilstand, og hvis alle $W$ slike mikrotilstander er like sannsynlige blir $p_i=1/W$ og $\sum_{i=1}^W p_i\ln p_i=Wp_i\ln p_i=\ln p_i$, slik at vi får Bolzmanns lov på enda enklere vis:
+\begin{equation}
+	S =-k_B\ln p_i = k_B\ln 1/p_i = k_B\ln W
+\end{equation}

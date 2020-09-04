@@ -1,0 +1,82 @@
+\ctitle{Gittermodeller}
+
+\paragraph{Dette kapittelet} introduserer gittermodeller og multiplisitet, to fundamentale konsepter i det matematiske rammeverket vi kommer til å bruke for å lage og utforske fysiske modeller.
+
+\cstitle{Multiplisitet}
+\paragraph{Multinomalkoeffisient} Det meste av det man må vite om kombinatorikk og sannsynlighet i statistisk termodynamikk skal være kjent fra et grunnleggende kurs i statistikk. Men det kan være lurt å huske på hva en \i{multinomialkoeffisient} er. Størrelsen dukker opp når vi stiller følgende spørsmål: \emph{på hvor mange måter kan vi plassere $n_0$ identiske partikler på energinivå $0$, $n_1$ partikler på energinivå $1$, og så videre opp til energinivå $m$?} Vi kaller det totale antallet partikler $N$, slik at $\sum_{i=0}^m n_i = N$. Svaret på dette spørsmålet er en multinomialkoeffisient.
+En gitt konstellasjon av energinivåer $\{0,...,m\}$ og antall ``plasser'' $\{n_0,...,n_m\}$ i hvert energinivå kalles en \emph{makrotilstand}, og sier noe om hvordan et system ser ut ``på makronivå''. Svaret på spørsmålet vårt kalles systemets \emph{multiplisitet} og er antallet \emph{mikrotilstand}er per makrotilstand, altså hvor mange forskjellige konfigurasjoner av de individuelle partiklene som oppfyller kravet om at det er $n_i$ partikler på energinivå $i$ for alle $i$ fra $0$ til $m$. 
+
+\paragraph{Utregning av multiplisiteten} La oss først se for oss at partiklene \emph{ikke} er identiske. Vi begynner ved å plassere partikler på energinivå $0$. Vi har $N$ muligheter for vårt valg av første partikkel, $N-1$ muligheter for andre partikkel, og så videre ned til vi har $N-n_0+1$ muligheter for partikkel nummer $n_0$. Dermed blir $W_0'$, det totale antallet måter vi kan plassere $n_0$ ikke-identiske partikler på energinivå $0$ på, lik
+\begin{align}
+\begin{split}
+	\label{w_zero}
+	W_0' &= N(N-1)...(N-n_0+1) \\ &= \frac{N!}{(N-n_0)!}
+\end{split}
+\end{align}
+Siden partiklene i virkeligheten \emph{er} identiske, kan vi ikke se forskjell på dem. Derfor kan ikke rekkefølgen vi brukte for å plassere partiklene på energinivå $0$ ha noe å si. Blant de $n_0$ partiklene på energinivå $0$ kunne vi valgt $n_0!$ forskjellige rekkefølger, så vi må dele på $n_0$ for å få $W_0$, det sanne antallet måter vi kan plassere $n_0$ identiske partikler på energinivå $1$ på:
+\begin{equation}
+	\label{w_zero_true}
+	W_0 = \frac{W_0'}{n_0!} = \frac{N!}{(N-n_0)!n_0!}
+\end{equation}
+Når vi er ferdige med å plassere partikler på energinivå $0$ (vi har valgt oss $1$ av de $W_0$ mulige måtene å gjøre dette på), begynner vi å plassere partikler på energinivå $1$. Prosedyren blir som før, men nå har vi $N-n_0$ muligheter for første partikkel og $N-n_0-n_1+1$ muligheter for partikkel nummer $n_0-n_1$. Tilsvarende som i \eqref{w_zero} blir
+\begin{align}
+\begin{split}
+	\label{w_one}
+	W_1' &= (N-n_0)(N-n_0-1)...(N-n_0-n_1+1) \\ 
+	&= \frac{(N-n_0)!}{(N-n_0-n_1)!}
+\end{split}
+\end{align}
+og 
+\begin{equation}
+	\label{w_one_true}
+	W_1 = \frac{W_1'}{n_1!} = \frac{(N-n_0)!}{(N-n_0-n_1)!n_1!}
+\end{equation}
+Nå blir $W_{0,1}$, det totale antallet måter vi kan plassere $n_0$ partikler på energinivå $0$ og samtidig plassere $n_1$ partikler på energinivå $1$ på, lik produktet av $W_0$ og $W_1$:
+\begin{align}
+\begin{split}
+	W_{0,1} &= W_0W_1 \\
+	&= \frac{N!(N-n_0)!}{(N-n_0)!(N-n_0-n_1)!n_1!}\\
+	&= \frac{N!}{(N-n_0-n_1)!n_0!n_1!}
+\end{split}
+\end{align}
+Hvis vi fortsetter til energinivå $2$, får vi til slutt at 
+\begin{equation}
+	W_{0,1,2} = W_0W_1W_2 = \frac{N!}{(N-n_0-n_1-n_2)!n_0!n_1!n_2!},
+\end{equation}
+og når vi omsider er ferdige med å plassere partiklene på energinivå $m$, blir svaret på det opprinnelige spørsmålet vårt
+\begin{equation}
+	W=W_{0,1,...,m} = \frac{N!}{(N-\sum_{i=0}^m n_i)!\prod_{i=0}^m n_i!},
+\end{equation}
+som vi altså kalte systemets multiplisitet. Siden $\left(N-\sum_{i=0}^m n_i\right)! = (N-N)!=0!=1$, blir det endelige uttrykket for denne multiplisiteten så enkelt som
+\begin{equation}
+	W=\frac{N!}{\prod_{i=0}^m n_i!}.
+\end{equation}
+Dette er en størrelse vi skal komme tilbake til mange, mange ganger. Den skal om ikke lenge brukes til å finne entropien til en ideell gass gjennom Bolzmanns lov, 
+\begin{equation}
+	\label{bolzmannearly}
+	S=k_B\ln W.
+\end{equation}
+
+\cstitle{Gittermodeller}
+\paragraph{Gittermodell} En gittermodell (lattice model) er en fysisk modell av et system som er definert på et gitter i stedet for et kontinuum. Gittermodeller er nyttige modeller for å forutsi makroskopiske fenomener ut i fra grunnleggende, mikroskopiske prinsipper.
+Det som ble vist i forrige delkapittel er at antall måter man kan plassere $n_0$ av $N$ partikler på energinivå 0, $n_1$ partikler på energinivå 1, og så videre opp til energinivå $m$, er gitt som multinomialkoeffisienten $W = \frac{N!}{\prod_{i=1}^m n_i!}$.
+Når vi bruker de enkleste gittermodellene, er vi interessert i et helt analogt problem: \emph{på hvor mange måter kan man å plassere $N$ identiske partikler på $M$ tilgjengelige plasser i et gitter}? $M$ er nødt til å være større enn eller lik $N$, så vi vil ende opp med et gitter med $N$ ``opptatte'' plasser og $M-N$ ``ledige'' plasser. I dette tilfellet stopper vi allerede ved \eqref{w_zero_true}. Uttrykket for multiplisiteten blir en funksjon av kun $N$ og $M$:
+\begin{equation}
+	\label{latticemultiplicity}
+	W(N,M)=\frac{M!}{N!(M-N)!}
+\end{equation}
+Her får $M$ rollen som $N$ spilte i kapittel 1.1, mens $N$ får rollen som $n_1$ spilte.
+
+\paragraph{Stirlings formel} \index{Stirlings formel} Fakultetsfunksjonen kan approks\-imeres med $n!\approx(2\pi n)^{1/2}\left(\frac{n}{e}\right)^n$, som er ganske nøyaktig hvis $n$ er stor nok. Dermed blir $\ln n!\approx\frac{1}{2}\ln(2\pi)+(n+\frac{1}{2})\ln n-n$. Det første leddet, samt $\frac{1}{2}$ i andre ledd, blir neglisjerbart når $n$ er større enn ca. 10. Dermed kan man forenkle videre til 
+\begin{equation}
+	\label{stirlingln}
+	\ln n!\approx n\ln n - n,	
+\end{equation}
+og, om vi vil,
+\begin{equation}
+	\label{stirling}
+	n!\approx\left(\frac{n}{e}\right)^n,
+\end{equation}
+så lenge $n$ er større enn ca. 100, noe den i praksis alltid er i statistisk termodynamikk. \eqref{stirlingln} og \eqref{stirling} er ekstremt nyttige fordi høyresiden i ligningene er relativt greie å integrere eller derivere (i hvert fall i \eqref{stirlingln} - vi jobber oftere med $\ln n!$ enn med $n!$ selv), slik at vi kan bruke kalkulus på uttrykkene vi får når vi regner på multiplisiteter.
+
+\paragraph{Gittermodeller som fysiske modeller} Et standard triks å bruke når gittermodeller skal beskrive virkelige fenomener, er at volumet til systemet er proporsjonalt med antall plasser i gitteret: $M=kV$. Siden $k=\frac{M}{V}$, blir $\frac{dM}{dV}=k=\frac{M}{V}$. Dette kommer til å bli nyttig fra og med kapittel 6, da kan vi bruke kjerneregelen til å skrive $\spdif{S}{V}=\spdif{S}{M}\frac{dM}{dV}=\spdif{S}{M}\frac{M}{V}$. Grunnen til at dette var nyttig, er at vi (om noen kapitler) kan finne $S(M)$, og dermed $\spdif{S}{M}$, ved hjelp av Bolzmanns lov.

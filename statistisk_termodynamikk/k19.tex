@@ -1,0 +1,121 @@
+\ctitle{Kjemisk kinetikk}
+\paragraph{Dette kapittelet} Her går vi fort og gæli gjennom kjemisk kinetikk. Det er for det meste formlene på slutten av hvert delkapittel som er interessante, rettferdiggjøringen er veldig tynn her og er uansett ganske perifert.
+
+\cstitle{Reaksjonshastighet avhenger av konsentrasjon}
+\noindent Vi ser på en reaksjon \ce{A <-->[k_f][k_r] B} der $k_f$ og $k_r$ er reaksjonsratekoeffisienter for henholdsvis \ce{A -> B} og \ce{B -> A} med enhet invers tid. Reaksjonsratene må bli
+\begin{align}
+\begin{split}
+	\label{coupleddiff}
+	\frac{d[A](t)}{dt} &= -k_f[A](t) + k_r[B](t) \\
+	\frac{d[B](t)}{dt} &= k_f[A](t) - k_r[B](t)
+\end{split}
+\end{align}
+Disse koblede differensialligningene kan løses med standard teknikker fra lineær algebra. Ofte kan en av koeffisientene neglisjeres; for eksempel, hvis $k_r\ll k_f$, blir
+\begin{equation}
+	\frac{d[A](t)}{dt}=-k_f[A](t)
+\end{equation}
+Løsningen på dette er eksponensiell reduksjon av konsentrasjonen,
+\begin{equation}
+	[A](t)=[A](0)e^{-k_ft},
+\end{equation}
+og $[B]$ må bli det som er igjen,
+\begin{equation}
+	[B](t)=[B](0)+[A](0)(1-e^{-k_ft})
+\end{equation}
+Ved likevekt endrer ikke konsentrasjonene seg,
+\begin{equation}
+	\frac{d[A](t)}{dt}=\frac{d[B](t)}{dt}=0,
+\end{equation}
+og kombinert med \eqref{coupleddiff} blir
+\begin{equation}
+	k_f[A]_{\text{eq}}=k_r[B]_{\text{eq}}
+\end{equation}
+slik at likevektskonstanten blir
+\begin{equation}
+	K = \frac{[B]_{\text{eq}}}{[A]_{\text{eq}}} = \frac{k_f}{k_r}
+\end{equation}
+
+\cstitle{Reaksjonshastighet avhenger sterkt av temperatur}
+\noindent Vi har en reaksjon \ce{A + B ->[k] P}. I begynnelsen vil 
+\begin{equation}
+	\frac{d[P]}{dt}=k[A][B]
+\end{equation}
+$k$ er per definisjon uavhengig av konsentrasjonene av \ce{A} og \ce{B}. Vi skal se at $k$ avhenger sterkt av temperaturen. van't Hoffs ligning \eqref{vanthoff} beskriver hvordan $K$ avhenger sterkt av $T$,
+\begin{equation}
+	\frac{d\ln K}{dT}=\frac{\Delta h^o}{k_BT^2},
+\end{equation}
+og Arrhenius foreslo (og det viser seg å være tilfelle) at lignende relasjoner kunne gjelde for ratekonstantene,
+\begin{align}
+	\label{arrheniusproposal}
+    \frac{d\ln k_f}{dT}&=\frac{E_a}{k_BT^2} \\
+    \frac{d\ln k_r}{dT}&=\frac{E_a'}{k_BT^2}
+\end{align}
+der $E_a$ og $E_a'$ er \i{aktiveringsenergi}er for henholdsvis forover- og reversreaksjonen. Hvis vi integrerer opp \eqref{arrheniusproposal} får vi \i{Arrhenius' ligning},
+\begin{equation}
+	\label{arrheniusratelaw}
+	k_f=Ae^{-E_a/RT}=Ae^{-\beta E_a},
+\end{equation}
+der $A$ er en konstant som kan bestemmes ved å utføre kinetikk-eksperimenter ved forskjellige temperaturer (da plotter man $\ln k_f$ mot $1/T$, tilsvarende bruken av van't Hoffs ligning i kapittel 13). Eventuelt, hvis vi er spesielt machochistiske, kan vi også få det til med overgangstilstandsteori. Det endelige resultatet i neste delkapittel er et uttrykk for $A$.
+
+\cstitle{Overgangstilstander}
+I overgangstilstandsteori, som er det verste i hele verden, deles reaksjonen opp i to trinn, 
+\rx{ A + B <=>[K^\ddag] (AB)^\ddag}
+og
+\rx{ (AB) ->[k^\ddag] P }
+der \ce{(AB)^\ddag} er en overgangstilstand. Det første trinnet er likevekten mellom reaktantene og overgangstilstandene, som har en likevektskonstant $K^\ddag$. I det andre trinnet går man ned fra overgangstilstanden til det mer stabile produktet. Dette beskrives med ratekonstanten $k^\ddag$. Likevektskonstanten er
+\begin{equation}
+	K^\ddag=\frac{[(AB)^\ddag]}{\ce{[A][B]}},
+\end{equation}
+selv om \ce{(AB)^\ddag} ikke egentlig er en likevektstilstand på linje med likevektstilstandene som tidligere har blitt beskrevet med en $K$; \ce{(AB)^\ddag} er en ustabil likevekt som er et topp-punkt på energikurven (som beskrevet i kapittel 2).
+
+Den totale produktdannelsesraten blir antallet molekyler i overgangstilstanden ganger reaksjonsraten for å gå fra overgangstilstanden til produktet,
+\begin{equation}
+	\frac{\text{d}\ce{[P]}}{\dt}=k^\ddag[\ce{(AB)^\ddag}]=k^\ddag K^\ddag \ce{[A][B]}
+\end{equation}
+$K^\ddag$ kan også formuleres gjennom partisjonsfunksjonen,
+\begin{equation}
+	K^\ddag=\frac{q_{\ce{(AB)^\ddag}}}{q_Aq_B}e^{\Delta D^\ddag / k_BT},
+\end{equation}
+der $\Delta D^\ddag$ er forskjellen mellom dissosieringssenergien til overgangstilstanden og dissosieringsenergien til reaktantene. $q_{\ce{(AB)^\ddag}}$ kan faktoriseres som
+\begin{equation}
+	q_{\ce{(AB)^\ddag}} = \overline{q^\ddag}q_\xi,
+\end{equation}
+der $\overline{q^\ddag}$ er partisjonsfunksjonen for overgangstilstanden, og $q_\xi$ representerer den ene vibrasjonsfrihetsgraden som er assosiert med bindingen som utgjør forskjellen mellom overgangstilstanden og produktet. Subskript $\xi$ kommer av at man bryter denne bindingen ved å gå langs reaksjonskoordinatet. Etter mye kvantemekanisk klabb og babb på side 366 i boka ender vi opp med at den totale reaksjonsratekonstanten er
+\begin{equation}
+\label{horrible}
+	k=\frac{k_BT}{h}\overline{K^\ddag}=\frac{k_BT}{h}\frac{\overline{q^\ddag}}{q_Aq_B}e^{\Delta D^\ddag/k_BT},
+\end{equation}
+der $\overline{K^\ddag}$ kalles likevektskonstanten for aktivering. Denne kan relateres til den frie aktiveringsenergien $\Delta G^\ddag$ ved
+\begin{equation}
+	-k_BT\ln K^\ddag = \Delta G^\ddag = \Delta H^\ddag - T\Delta S^\ddag
+\end{equation}
+$\Delta G^\ddag$, $\Delta H^\ddag$ og $\Delta S^\ddag$ er termodynamiske størrelser som har en rimelig grei fysisk tolkning. $\Delta G^\ddag$ representerer en energibarriere som man må overkomme for å få reaksjonen til å skje. Den totale ratekonstanten blir
+\begin{align}
+\begin{split}
+	k&=\frac{k_BT}{h}\overline{K^\ddag}\\
+	&=\frac{k_BT}{h}e^{\frac{\Delta G^\ddag}{k_BT}}\\
+	&=\frac{k_BT}{h}e^{\frac{\Delta H^\ddag}{k_BT}}e^{\frac{\Delta S^\ddag}{k_B}}
+\end{split}
+\end{align}
+og hvis vi relaterer dette til Arrhenius' ligning \eqref{arrheniusratelaw} ser vi at $A$ må bli
+\begin{equation}
+	A=\frac{k_BT}{h}e^{\frac{\Delta S^\ddag}{k_B}}
+\end{equation}
+
+\paragraph{Primærisotopeffekten}
+Å bytte ut isotoper på strategiske steder er en nyttig metode for å finne ut av mekanismene bak kjemiske reaksjoner. Ved romtemperatur brytes for eksempel en \ce{C-H}-binding 8 ganger raskere enn en \ce{C-D}-binding. Vi kan bruke side 370 til 371 for å finne ut at
+\begin{equation}
+	\frac{k_H}{k_D}=e^{\frac{h\nu_{CH}}{k_BT}\left(\frac{\sqrt{2}}{2}-1\right)}
+\end{equation}
+
+\paragraph{Katalyse} Katalysatorer fungerer ved å stabilisere overgangstilstanden, slik at $\Delta G^\ddag$ synker. 
+
+\paragraph{Brønsteds lov} er at, dersom vi bruker en syre som katalysator, blir reaksjonen raskere jo sterkere syren vi bruker er. Den er at
+\begin{equation}
+	\ln k_a = -\alpha pK_a + c_a,
+\end{equation}
+der $c_A$ og $\alpha>0$ er konstanter. Dette innebærer et forhold på formen
+\begin{equation}
+	E_a=a\Delta G + b,
+\end{equation}
+der $E_a$ er aktiveringsbarrieren, $\Delta G=-k_BT\ln K_a$, og $a$ og $b$ er konstanter.

@@ -1,0 +1,190 @@
+
+\ctitle{Fysisk kinetikk}
+\paragraph{Dette kapittelet} er en innføring i diffusjon og hvordan partikler beveger seg gjennom flater og membraner.
+\cstitle{Fluks}
+\noindent \i{Fluksen} $J$ av et materiale gjennom en flate er mengden materiale som passerer gjennom flaten i løpet av en viss tid $\Delta t$, delt på arealet $A$ til flaten og tiden det tar. I andre sammenhenger, for eksempel elektromagnetisme, deler man ikke på arealet, så derfor er det kanskje er det egentlig rimeligere å snakke om $J$ som en fluks\emph{tetthet}, og den totale fluksen som et integral av en slik tetthet over hele arealet til flaten. Men her kaller vi altså $J$ for fluks. Mengden materiale vil være konsentrasjonen til materialet ganger volumet til materialet,
+\begin{equation}
+	\label{flux}
+	J=\frac{cV}{A\Delta t}=\frac{cA\Delta x}{A\Delta t}=c\frac{\Delta x}{\Delta t}=cv,
+\end{equation}
+der $v$ er den gjennomsnittlige hastigheten til partikler med konsentrasjon $c$.
+
+\cstitle{Fluks fra ytre krefter}
+Fluks kan oppstå på grunn av ytre krefter. Siden det er friksjon i systemet, antar vi en lineær sammenheng mellom kraften og hastigheten (når det påtrykkes en ytre kraft $f$, vil partiklene akselerere i noen nanosekunder før de oppnår en ``likevektshastighet'' der friksjonen akkurat veie opp for kraften. Denne hastigheten vil holdes konstant ved Newtons 1. lov fordi summen av krefter er $0$. Vi skriver derfor
+\begin{equation}
+	f=\zeta v
+\end{equation}
+Proporsjonalitetskonstanten $\zeta$ kalles \i{friksjonskoeffisient}en. Da blir \eqref{flux} til
+\begin{equation}
+	J=cv=\frac{cf}{\zeta}=Lf
+\end{equation}
+der $L$ er en generell proporsjonalitetskonstant.
+
+\cstitle{Ficks lover: Fluks fra konsentrasjonsgradienter}
+\paragraph{Ficks første lov} Systemer med en \i{konsentrasjonsgradient}, det vil si systemer der konsentrasjonen ikke er jevnt fordelt i rommet, er ikke i likevekt. \i{Ficks første lov}, som kan utledes fra kinetikk, men kan også ses på som en fundamental empirisk lov, sier at fluksen er proporsjonal med konsentrasjonsgradienten:
+\begin{equation}
+	\label{FicksFirst}
+	\vec{J}=-D\nabla c,
+\end{equation}
+og i bare en dimensjon får \eqref{FicksFirst} formen vi kommer til å bruke videre:
+\begin{equation}
+	\label{FicksFirstSimple}
+	J=-D\frac{dc}{dx}
+\end{equation}
+Proporsjonalitetskonstanten $D$ kalles \i{diffusjonskoeffisient}en. Ficks første lov er det samme matematiske resultatet som Ohms lov for elektrisk strømtetthet ($\vec{J}_e=\sigma \vec{E}$) og Fouriers lov for varmestrømning ($\vec{J}_q=-\kappa \frac{dT}{dx}$).
+
+\paragraph{Ficks andre lov} Fluksen inn i et volumelement trenger ikke å være det samme som fluksen ut av det samme volumelementet: partikler kan akkumuleres eller tappes. For å ta høyde for dette teller vi økningen i antall partikler $\Delta N$ i løpet av et lite tidsrom $\Delta t$. Hvis fluksen inn, $J_{\text{inn}}=J(x,t)$, er større enn $J_{\text{ut}}=J(x+\Delta x,t)$, vil antallet partikler i volumet øke med 
+\begin{equation}
+	\label{particleflux}
+	\Delta N=(J_{\text{inn}}-J_{\text{ut}})A\Delta t=-\Delta J A \Delta t,	
+\end{equation}
+per definisjon av $J$ \eqref{flux}. Dette antallet kan også uttrykkes ved konsentrasjonen: siden $N=Vc$, er
+\begin{equation}
+	\label{concentrationflux}
+	\Delta N=V\Delta c=A\Delta x\Delta c
+\end{equation}
+Ved å kombinere \eqref{particleflux} og \eqref{concentrationflux} får vi
+\begin{equation}
+	\frac{\Delta c}{\Delta t} = -\frac{\Delta J}{\Delta x}
+\end{equation}
+I grensen der $\Delta x \rightarrow dx$ og $\Delta t \rightarrow dt$ blir
+\begin{equation}
+	\label{f2intermediate}
+	\spdif{c}{t}=-\spdif{J}{x}
+\end{equation}
+Hvis vi så setter dette inn i \eqref{FicksFirstSimple} får vi
+\begin{equation}
+	\label{FicksSecondSimple}
+	\spdif{c}{t} = \spdif{}{x}D\spdif{c}{x} = D\frac{\partial^2 c}{\partial x^2}
+\end{equation}
+som kalles \i{Ficks andre lov}, eller \i{diffusjonsligningen}. Den generelle formen i tre dimensjoner er 
+\begin{equation}
+	\label{FicksSecond}
+	\spdif{c}{t}=-\nabla\cdot\vec{J}=D\nabla^2c
+\end{equation}
+
+\cstitle{Eksempler på diffusjon}
+\paragraph{Diffusjon gjennom en membran.} Vi ser på system med to kamre adskilt med en membran. Konsentrasjonen $c_l$ på venstresiden er høyere enn den konsentrasjonen $c_r$ på høyresiden. Denne konsentrasjonsforskjellen $\Delta c = c_l - c_r$ holdes aktivt konstant ved at vi legger til og fjerner partikler ``manuelt'' med ytre krefter, og vil drive partikler fra venstresiden til høyresiden. Vi vil prøve å utlede hvordan konsentrasjonen ser ut som funksjon av tid og rom. For å forenkle problemet antar vi \i{steady state},
+\begin{equation}
+	\spdif{c}{t}=0
+\end{equation}
+Dette er ikke det samme som likevekt, for $\spdif{c}{x}$ trenger ikke å være $0$ ved steady state! Vi kan være i steady state ved å holde systemet konstant med ytre krefter, men da er vi ikke på noe tidspunkt i likevekt. Likevekt er definert ved $dG=0$, eller $dF=0$, eller tilsvarende. Ved steady state blir \eqref{FicksSecondSimple} til 
+\begin{equation}
+	\frac{\partial^2 c}{\partial x^2} = 0
+\end{equation}
+Løsningen på dette er $c(x)=A_1x+A_2$, som man får ved å integrere opp med hensyn på $x$ to ganger. Dette betyr at konsentrasjonen inni membranen er en lineær funksjon av $x$. For å finne grensebetingelsene tar vi med en variant av partisjonkoeffisienten $K$ fra kapittel 16 \eqref{partitioncoefficient},
+\begin{equation}
+	K=\frac{c_{\text{membran}}}{c_{\text{løsning}}},
+\end{equation}
+som er en materialkonstant som avhenger av de to materialene. På grunn av denne definisjonen kan vi skrive $c(0)=Kc_l$ og $c(h)=Kc_r$. Ved å løse for initialbetingelsene kan konsentrasjonen i området $0<x<h$ beskrives med ligningen
+\begin{equation}
+	c(x)=\frac{K(c_r-c_l)}{h}x+Kc_l
+\end{equation}
+og fluksen blir 
+\begin{equation}
+	J=-D\spdif{c}{x}=\frac{KD}{h}(c_l-c_r)=\frac{KD}{h}\Delta c
+\end{equation}
+$K$ er en materialkonstant for membranen og løsningen, og $D$ er en materialkonstant for løsningen. Sammen kan de uttrykkes som en \i{permeabilitet} $P$ som vi kan slå opp i tabell. Den er definert som
+\begin{equation}
+	P=KD/h=\frac{J}{\Delta c}
+\end{equation}
+ofte snakker man også om \i{resistans} som $1/P$. Vi bruker de samme uttrykkene som i elektromagnetismen fordi det er helt analoge konsepter (vi bare bruker partikler her, mens man bruker ladning/ladningsbærere i elektromagnetismen).
+
+Merk at konsentrasjonen gjør et hopp fra $c_l$ til $Kc_l$ når man går fra løsningen til membranen (se figur 17.4 i boka). Dette er fordi partiklene har vanskeligere for å bevege seg inni membranen enn de har for å bevege seg i løsningen, slik at det blir en opphopning av partikler inni membranen.
+
+\paragraph{Diffusjon av partikler mot en kule} Dette eksempelet er relevant for miceller og proteiner. Vi antar igjen at vi kan opprettholde en steady state. I kulekoordinater får vi da, når vi antar at $c=c(r)$,
+\begin{equation}
+	\nabla^2c=\frac{1}{r}\frac{d^2}{dr^2}\left(rc\right)=0
+\end{equation}
+som kan integreres opp til
+\begin{equation}
+	c(r)=A_1+\frac{A_2}{r}
+\end{equation}
+Grensebetingelsene våre er gitt ved følgende antagelser/forenklinger:
+\begin{itemize}
+	\item $A_1=c_{\infty}$ er konsentrasjonen vi har i ``uendeligheten'' langt unna kula.
+	\item når en partikkel når overflaten av kula, absorberes den (eller det skjer en reaksjon med den) umiddelbart. Da er $c(a)=0$ konsentrasjonen ved overflaten av kula.
+\end{itemize}
+slik at
+\begin{equation}
+	c(r)=c_{\infty}\left(1-\frac{a}{r}\right)
+\end{equation}
+Da kan vi regne ut den radielle fluksen som
+\begin{equation}
+	J(r)=-D\frac{dc}{dr}=\frac{-Dc_{\infty}a}{r^2}
+\end{equation}
+I tilegg kan vi regne ut en \i{strøm}, som er antall kollisjoner per sekund ved $r=a$:
+\begin{equation}
+	I(a)=J(a)A=J(a)4\pi a^2=-4\pi Dc_{\infty}a
+\end{equation}
+Minustegnet indikerer at strømmen er i negativ $r$-retning, altså inn mot sentrum av kula.
+
+\cstitle{Smoluchowski-ligningen}
+\noindent Når partiklenes bevegelse drives av både en konsentrasjonsgradient og en ytre kraft, kan vi legge sammen de to bidragene som vi til nå har betraktet hver for seg,
+\begin{equation}
+	J=-D\spdif{c}{x}+\frac{cf}{\zeta}
+\end{equation}
+Så bruker vi \eqref{f2intermediate} (som vi brukte for å utlede Ficks andre lov) for å få \i{Smoluchowski-ligningen},
+\begin{equation}
+	\label{Smoluchowski}
+	\spdif{c}{t}=D\frac{\partial^2 c}{\partial x^2}-\frac{f}{\zeta}\spdif{c}{x}
+\end{equation}
+som er en kjekk partiell differensialligning for konsentrasjonen som ikke tar hensyn til noen fluks.
+
+\cstitle{Einstein-Smoluchowski-ligningen}
+\noindent Ved likevekt er $J=0$, og da må bidraget til fluksen fra konsentrasjonsgradienten og bidraget fra ytre krefter utligne hverandre (et eksempel på dette er en løsning av partikler i en beholder der partiklene har høyere tetthet enn løsemiddelet. Tyngdekraften vil trekke de tette partiklene ned, så diffusjon vil måtte motvirke dette ved likevekt), og da vil \eqref{Smoluchowski} reduseres til
+\begin{equation}
+	D\frac{dc}{dx}=\frac{cf}{\zeta}
+\end{equation}
+slik at
+\begin{equation}
+	D\frac{dc}{c}=\frac{fdx}{\zeta}
+\end{equation}
+Hvis vi antar at arbeidet $f$ utfører er reversibelt, blir $w=-\int fdx$, så
+\begin{equation}
+	D\ln\frac{c(x)}{c(0)}=-\frac{w(x)}{\zeta}
+\end{equation}
+eller
+\begin{equation}
+	\frac{c(x)}{c(0)}=e^{-w(x)/(\zeta D)}
+\end{equation}
+Et likevektssystem må også følge en Bolzmannfordeling:
+\begin{equation}
+	\frac{c(x)}{c(0)}=e^{-(E(x)-E(0))/k_BT}=e^{-w(x)/k_BT}
+\end{equation}
+som gir \i{Einstein-Smoluchowski-ligningen}
+\begin{equation}
+	D=\frac{k_BT}{\zeta}
+\end{equation}
+Dermed blir det mulig å finne friksjonskoeffisienten hvis du kjenner $D$. Friksjonskoeffisienten avhenger av geometrien til partiklene på en kjent måte, så hvis man kjenner den kan man synse litt om strukturen til partikler. Men det får bli en annen gang.
+
+\cstitle{Diffusjon når det foregår en kjemisk reaksjon}
+Når det foregår en kjemisk reaksjon der $c$ er konsentrasjonen til utgangsstoffet, vil denne konsentrasjonen naturligvis synke. Vi kan anta at dette er en førsteordens reaksjon slik at reaksjonsraten (altså hvor mye av utgangsstoffet som forsvinner) er proporsjonal med konsentrasjonen av utgangsstoffet til enhver tid,
+\begin{equation}
+	\label{firstorderrx}
+	\frac{dc}{dt}=-k_{\text{rx}}c
+\end{equation}
+Ved steady state gir \eqref{firstorderrx} i kombinasjon med Ficks andre lov at
+\begin{equation}
+	\label{party}
+	\frac{dc}{dt}=D\left(\frac{\partial^2 c}{\partial x^2}\right)-k_{\text{rx}}c=0
+\end{equation}
+Denne differensialligningen har løsning
+\begin{equation}
+	c(x)=A_1e^{-ax}+A_2e^{ax}
+\end{equation}
+der $a=\sqrt{k_{\text{rx}/D}}$. Grensebetingelsene er at vi har en eller annen kilde i $x=0$ som holder konsentrasjonen ved $c(0)=c_0$, og at konsentrasjonen er $0$ i uendeligheten. Da blir
+\begin{equation}
+	c(x)=c_0e^{-x\sqrt{k_rx/D}}
+\end{equation}
+Konsentrasjonen av utgangsstoffet faller altså eksponensielt med avstand fra kilden. Til sammenligning, hvis det ikke skjer noen reaksjon, det vil si hvis $k_r=0$, forenkles \eqref{party} slik at løsningen blir at konsentrasjonen faller lineært med avstand fra kilden.
+
+\cstitle{Onsager-relasjonene}
+Hvis et system har to forskjellige gradienter, for eksempel en temperaturgradient som driver varmestrømning og en potensialforskjell (ladningsgradient) som driver en elektrisk strøm, er disse prosessene ikke uavhengige, men koblet. Generelt har man at
+\begin{align}
+    J_1&=L_{11}f_1+L_{12}f_2 \\
+    J_2&=L_{21}f_1+L_{22}f_2
+\end{align}
+$L_ij$ er koblingskoeffisienter som beskriver hvordan $J_i$ påvirkes av $f_j$. Når $i\neq j$ forteller dette oss f.eks at en potensialforskjell også genererer en varmestrøm. Ofte er disse koeffisientene veldig små, men i materialer der de er store nok kan de forårsake interessante fenomener. Dette er relevant for funksjonelle materialer. 
+
+Lars Onsager er kjent for å ha vist at $L_{ij}=L_{ji}$.

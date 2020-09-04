@@ -1,0 +1,105 @@
+\ctitle{Elektrokjemisk likevekt}
+\paragraph{Dette kapittelet}
+Elektrostatisk potensial og kjemisk potensial kan kombineres til én størrelse: elektrokjemisk potensial. Nernsts ligning kan utledes fra likevektsbetingelser. 
+
+
+\cstitle{Elektrokjemisk potensial}
+Den indre energien $U$ er en funksjon av ekstensive variable: $U=U(S,V,\vec{N})$. Nå utvider vi denne med ladningene i systemet, slik at $U=U(S,V,\vec{N},\vec{q})$. Med $M$ ladninger har vi nå at
+\begin{equation}
+	dU=TdS-pdV+\sum_{j=1}^{N}\mu_jdN_j+\sum_{i=1}^{M}\psi_idq_i
+\end{equation}
+der $\psi_i$ er det elektrostatiske potensialet som føles av ionet $i$. Ofte er $\psi_i=\psi$ det samme for alle $i$, siden $\psi$ gjerne kommer fra elektroder eller ladde flater.
+Gibbs fri energi ($G=U+pV-TS$) blir
+\begin{equation}
+	\label{gibbsplusel}
+	dG=-SdT+Vdp0\sum_{j=1}^N\mu_jdN_j+\sum_{i=1}^M\psi_idq_i
+\end{equation}
+I virkeligheten har vi løsninger med molekylære ioner. Hvert ion har ladning $z_ie$ (eksempel: i Cu$^{2+}$ er $z=2$), slik at bidraget fra hvert specie er $q_i=z_ieN_i$. Siden det kjemiske potensialet kommer fra de samme speciene, blir \eqref{gibbsplusel} til
+\begin{equation}
+	dG=-SdT+Vdp+\sum_{j=1}^N(\mu_j+z_ie\psi_i)dN_i
+\end{equation}
+Nå definerer vi \i{elektrokjemisk potensial} som
+\begin{equation}
+	\mu_i'=\mu_i+z_ie\psi_i
+\end{equation}
+Ved konstant $p$ og $T$ inntreffer likevekt når det elektrokjemiske potensialet er likt overalt.
+
+\paragraph{Tolkning av det elektrokjemiske potensialet}
+Mens det kjemiske potensialet er den frie energien som kreves for å sette inn en partikkel, er det elektrokjemiske potensialet den frie energien som kreves for å sette inn et elektronøytralt ione\emph{par}. Dette er fordi vi har en veldig sterk, implisitt begrensning: elektronøytalitet må bevares.
+
+\cstitle{Nernsts ligning}
+Elektrostatisk potensial er en funksjon av posisjonen: $\psi = \psi(\vec{r})$. Vi behandler det enkle endimensjonale tilfellet $\psi=\psi(x)$ i en løsning som kun inneholder étt ionisk specie. Et ion kan befinne seg i posisjon $x_1$ eller i posisjon $x_2$. Da er likevektsbetingelsen at
+\begin{equation}
+	\label{elpoteq}
+	\mu'(x_1)=\mu'(x_2)
+\end{equation}
+Vi har fra før av at det kjemiske potensialet er $\mu(x)=\mu^o+k_BT\ln c(x)$ (der $c(x)$ er konsentrasjonen), slik at
+\begin{equation}
+	\label{elpotget}
+	\mu'(x)=\mu^o+k_BT\ln c(x)+ze\psi(x)
+\end{equation}
+Så setter vi inn \eqref{elpotget} i \eqref{elpoteq} og får ut \i{Nernsts ligning}:
+\begin{equation}
+	\label{nernst}
+	\ln\frac{c(x_2)}{c(x_1)}=-\frac{ze(\psi(x_2)-\psi(x_1))}{k_BT}
+\end{equation}
+En annen form for ligningen som kan være nyttig for å regne ut konsentrasjonen på ett sted basert på konsentrasjonen på et annet sted, er
+\begin{equation}
+	c(x_2)=c(x_1)e^{-\frac{1}{k_BT}ze(\psi(x_2)-\psi_(x_1))}
+\end{equation}
+
+Merk at dette er en generell fremgangsmåte for å utvide termodynamikken med en energi avhenger av posisjonen i rommet.
+
+\paragraph{Nøytrale salter} For et salt som ioniserer, for eksempel NaCl, er 
+\begin{equation}
+	\mu_{NaCl}=\mu'_{Na^+}+\mu'_{Cl^-}
+\end{equation}
+eller
+\begin{align}
+\begin{split}
+	\mu_{NaCl}=\mu_{Na^+}^o&+k_BT\ln c_{Na^+}+e\psi_{Na^+}\\+\mu_{Cl^-}^o&+k_BT\ln c_{Cl^-}-e\psi_{Cl^-}
+\end{split}
+\end{align}
+Når $\psi$ er uavhengig av romlig posisjon, må $\psi_{Na^+}=\psi_{Cl^-}$ på grunn av ladningsbevaring. Derfor er
+\begin{equation}
+	\mu_{NaCl}=\mu_{NaCl}^o+2k_BT\ln c_{NaCl}
+\end{equation}
+Denne forenklingen fungerer ikke hvis saltet ikke er fullstendig løselig, slik at $\mu_{NaCl}\neq\mu_{Na^+}$, eller hvis det befinner seg nær store ladde overflater som kolloider, slik at $\psi$ avhenger av rommet.
+
+Se slide 8/14 og 9/14 for en utledning av at
+\begin{equation}
+	\mu_l=\mu_l^o+k_BT\ln\frac{[C]^c}{[A]^a[B]^b}=\mu_l^o+k_B\ln Q
+\end{equation}
+
+\paragraph{Nernsts ligning for en elektrode} Vi ser på reaksjonen $M^{z+}+ze^-\rightarrow M$. Ved likevekt er $\mu_{s}'=\mu_{l}'$ (det elektrokjemiske potensialet for det faste stoffet er det samme som for den delen av stoffet som er løst opp i væske).
+I væskefasen er 
+\begin{equation}
+	\mu'_l=\mu_l^o+k_BT\ln Q+ze\psi_l
+\end{equation}
+I fast stoff sier vi at $Q=1$ (per konvensjon), slik at
+\begin{equation}
+	\mu'_s=\mu_s^o+ze\psi_s
+\end{equation}
+Ved likevekt har vi da at
+\begin{equation}
+	\mu_l^o+k_BT\ln Q+ze\psi_l=\mu_s^o+ze\psi_s
+\end{equation}
+Vi grupperer sammen de materialavhengige størrelsene som vi ikke er i stand til å måle på en side:
+\begin{equation}
+	ze\psi_0=\mu_s^o+ze\psi_s-\mu_l^o
+\end{equation}
+der $\psi_0$ kalles \i{halvcellepotensialet} for den gitte reaksjonen ved elektroden. Halvcellepotensialet slås opp i tabell. Vi har nå at
+\begin{equation}
+	ze\psi_l=ze\psi_0-k_BT\ln Q
+\end{equation}
+\i{Faradays konstant} er definert som $F=eN_A$. Hvis vi i tillegg husker at $R=N_Ak_B$, får vi uttrykket som man er vant til fra kjemien:
+\begin{equation}
+	\psi_l=\psi_0-\frac{RT}{zF}\ln Q
+\end{equation}
+Merk: ofte forenkler vi til $\psi\approx\psi_l$.
+
+\paragraph{Nernsts ligning i en elektrokjemisk celle} Vi ser på reaksjonen $A(s)+B^{z+}\rightarrow A^{z+}+B(s)$. Potensialforskjellen mellom dem er
+\begin{equation}
+	\Delta \psi=\psi_{0,B}-\psi_{0,A}-\frac{RT}{zF}\ln Q
+\end{equation}
+Halvcellepotensialene måles i forhold til hverande (vi er aldri interessert i absoluttverdien), og man bruker en hydrogenelektrode som referanse ($\psi_{0,H_2}=0V$). 

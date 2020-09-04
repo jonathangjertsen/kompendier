@@ -1,0 +1,32 @@
+%!TEX root = Nanomat.tex
+\usepackage{enumitem}
+\usepackage{float}
+
+% Marginer på appendiks
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist 
+
+% Fotnote
+\renewcommand{\footnoterule}{%
+  \kern -3pt
+  \hrule width \textwidth height 1pt
+  \kern 2pt
+}
+
+% Figurer
+\renewcommand{\figurename}{Figur}
+\usepackage{mdframed}
+\newcommand{\bmd}{\begin{mdframed}[backgroundcolor=lightgray,userdefinedwidth=\linewidth]}
+\newcommand{\emd}{\end{mdframed}}
+
+% Diameter
+\usepackage{wasysym}
+
+% TOC
+\usepackage{titletoc}
+\usepackage{setspace}
+\makeatletter
+\renewcommand\tableofcontents{%
+    \@starttoc{toc}%
+}
+\makeatother

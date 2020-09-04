@@ -1,0 +1,98 @@
+%!TEX root = Nanomat.tex
+\ctitletwo{NS1 Litografi og etseprosesser}
+\cstitletwo{Litografiteknikker}
+I denne sammenhengen betyr litografi at man lager et mønster i en tynnfilm som kalles en resist. Vi kategoriserer litografiteknikker etter hva slags interaksjon som brukes for å modifisere resisten:
+\begin{itemize}
+	\item I fotolitografi bestråler man resisten med lys.
+	\item I elektronlitografi bestråler man resisten med elektroner.
+	\item I ionelitografi bestråler man resisten med ioner.
+	\item I imprintlitografi trykker man ned på resisten med en støpeform.
+	\item I nærfeltlitografi\footnote{Hvis et er en gyldig oversettelse av near-field lithography.} bruker man diverse interaksjoner mellom en tynn spiss og overflaten på resisten.
+\end{itemize}
+En annen måte å kategorisere fotolitografiteknikker på, er måten mønstrene dannes i resisten:
+\begin{itemize}
+	\item I \emph{parallelle} metoder skriver man hele mønsteret samtidig med en maske. Dette gjelder fotolitografi og imprintlitografi. Parallelle metoder er ofte \emph{raske}, men har relativt \emph{lav oppløsning}.
+	\item I \emph{sekvensielle} metoder skriver man mønsteret punkt for punkt. Dette gjelder elektronlitografi, ionelitografi og nærfeltlitografi. Sekvensielle metoder tar ofte \emph{veldig lang tid}, men gir tilsvarende \emph{bedre oppløsning}.
+\end{itemize}
+Det at vi ikke har noen metoder som både er raske og har god oppløsning, er en av de viktigste grunnene til at vi ikke klarer å masseprodusere og kommersialisere materialer med strukturer på noen små nanometer.
+
+Her er noen litografiske metoder:
+\paragraph{Contact- og proximity photolithography} Dette er den eldste metoden for fotolitografi. Den innebærer at man lyser på resisten med UV-lys gjennom en \emph{maske} som blokkerer lyset i bestemte områder, men er gjennomsiktig de andre stedene. Masken er som regel en kvartsplate med krombelegg der man skal blokkere lyset. I dette tilfellet er masken enten i direkte kontakt med resisten (contact lit.) eller veldig nær resisten (proximity lit.), så da må størrelsen på strukturene i masken være den samme som størrelsen på strukturene man vil lage i substratet.  
+
+Oppløsningen til denne metoden er begrenset av diffraksjonseffekter -- vi kan altså ikke lage mønstre med strukturer som er mindre enn ca. bølgelengden til lyset vi bruker. Et problem som kun oppstår med contact photolithography, er defektene som kan oppstå fordi masken er i direkte kontakt med resisten.
+
+\paragraph{Projeksjonslitografi} Dette er en forbedring av den forrige metoden. Her holder man masken og substratet et stykke unna hverandre, og fokuserer lyset som kommer gjennom masken med linser. Da kan man la strukturene i masken være større enn de endelige strukturene som man skal lage i resisten. 
+
+% Trenger flere trinn
+\paragraph{Andre parallelle litografimetoder} Veldig kort:
+\begin{itemize}
+	\item I \emph{extreme UV lithography} bruker man UV-lys med veldig kort bølgelengde, for å få høyere oppløsning.  I \emph{røntgenlitografi} bruker man røntgenstråling, som har kortere bølgelengde enn UV, for å få enda høyere oppløsning. Dessverre er det ikke så mange materialer som er gjennomsiktige for røntgenstråler, så man må bruke veldig tynne masker.
+	\item I \emph{elektron-projeksjonslitografi} bruker man elektroner på samme måte som man bruker fotoner i fotolitogafi. Elektroner har mye kortere bølgelengde enn (de fleste) fotoner, og man unngår derfor diffraksjonseffekter i mye større grad. To problemer med elektronprojeksjonslitografi er at alle elektronene har samme ladning (og dermed ønsker å spre seg så langt utover som mulig) og at masken blir varmet opp og forvrengt av den sterke strømmen.
+	\item I \emph{ioneprojeksjonslitografi} gjør man det samme som over, bare med ioner. Siden ionene har så stor masse, eksponerer de resisten mer effektivt, men masken blir også tilsvarende påvirket.
+\end{itemize}
+
+\paragraph{Elektronstrålelitografi (EBL)} EBL er en sekvensiell metode der en elektronstråle lager et mønster i overflaten av en elektrosensitiv resist ved å scanne over den. Dette gir mye høyere oppløsning enn man kan oppnå med parallelle metoder. En annen fordel med EBL er at man ikke trenger å lage en fysisk maske først, så det er lett å modifisere mønsteret. EBL er den foretrukne måten å lage maskene til fotolitografi på.
+
+Merk at elektroner ikke fungerer ved å flytte på elektroner, men ved å bryte kjemiske bindinger og ionisere atomene de treffer. 
+
+% Proximity effects
+
+\paragraph{Fokusert ionestrålelitografi (FIB)} I FIB består strålen av ioner i stedet for elektroner. Ionenes høye masse gjør at de ikke sprer seg like mye utover i lengderetning etter at de har truffet materialet. For at ionene skal penetrere dypt nok inn i resisten bør man bruke ioner som ikke er alt for store og tunge.
+
+Noen bruksområder for FIB er
+\begin{itemize}
+	\item Å redusere tykkelsen til en prøve slik at den er egnet for observasjon i TEM.
+	\item Å kutte i prøver med høy presisjon, og skrive veldig presise mønstre på overflater.
+	\item Å litografere på inorganiske resister.
+	\item Å lage 3D-strukturer ved å variere dosen underveis i prosessen.
+\end{itemize}
+
+\cstitletwo{Fotoresister}
+\paragraph{Fotoresister} En fotoresist er et lag som puttes oppå overflaten av materialet man til slutt skal lage et mønster i, og som reagerer når det interagerer med lys/elektroner/ioner/whatever.\footnote{Ikke la deg lure av navnet, det trenger ikke å være fotolitografi for at man skal kunne kalle det en fotoresist. Ordet brukes fordi fotolitografi var den første slike prosessen man fant på, og folk foretrakk visst å fortsette med ``fotoresist'' i stedet for de langt kulere begrepene ``elektroresist'' og ``ionoresist''.} Den vanligste typen fotoresist er en polymer-resist, som består av en ikke-reaktiv \emph{matriks} som gir resisten de ønskede mekaniske egenskapene, pluss en reaktiv \emph{aktiv komponent} som er den komponenten i resisten som faktisk reagerer. Vi har to typer resist:
+\begin{itemize}
+	\item Dersom resisten blir \emph{mer løselig} når den reagerer, er den en \emph{positiv resist}. Hvis du har en fotosensitiv positiv resist og bestråler den med lys, og deretter løser opp resisten, vil du kun løse opp området som ble bestrålt med lys.
+	\item Dersom resisten blir \emph{mindre løselig} når den reagerer, er den en \emph{negativ resist}. Hvis du har en fotosensitiv negativ resist og bestråler den med lys, og deretter løser opp resisten, vil området du bestrålte være det som består.
+\end{itemize}
+Som vi alle ved fra halvleder, er trinnene for å lage mønster i fotoresisten som følger: 
+\begin{enumerate}
+	\item Løs opp polymerresisten i et løsemiddel, slik at den blir en væske.
+	\item \emph{Spin coat}: putt resisten på substratet og snurr godt på substratet.
+	\item \emph{Soft bake}: varm opp substratet til sånn \SI{100}{\celsius} for å fordampe vekk løsemiddel i resisten. Dette gir også resisten en mer uniform tykkelse.
+	\item \emph{Exposure}: bruk ditt ønskede litografiverktøy til å eksponere den delen av resisten som eksponeres skal, avhengig av om du har en positiv eller en negativ resist.
+	\item \emph{Development}: putt substrat og resist i et passende løsemiddel, som løser opp det som oppløses skal.
+	\item \emph{Post-exposure bake}: varm opp substratet til sånn \SI{120}{\celsius} for å fordampe bort løsemiddel fra development. I noen tilfeller fører dette trinnet også til at det som er igjen av resist inngår i krysslinkingsreaksjoner, og dermed blir hardere.
+\end{enumerate}
+De viktigste parameterne for et resistlag er:
+\begin{itemize}
+	\item \emph{Sensitivitet}: hvor mye eksponering skal til før resisten reagerer? Med ``mengde eksponering'' mener vi intensitet ganger tiden man bruker på å eksponere. Jo mer sensitiv resisten er, jo mindre eksponering skal til. Til industriell bruk ønsker vi oss sensitive resister som reagerer raskt.
+	\item \emph{Kontrast}: hvor raskt øker løseligheten med eksponeringstid? Ideelt sett ønsker vi oss uendelig kontrast, altså at vi har en kritisk dose og at resisten overhodet ikke reagerer vi dosen er lavere dette, mens den reagerer fullstendig så lenge dosen er høyere. I praksis skjer reaksjonen mer gradvis, men vi ønsker oss så høy kontrast som mulig. Jo høyere kontrast, jo mer presise kanter får vi.
+\end{itemize}
+Merk at disse parametrene ikke er materialkonstanter for resisten, men er knyttet til \emph{hele litografiprosessen}, altså vil også ting som løsemiddel og temperatur under development påvirke kontrasten.
+
+\paragraph{PMMA} PMMA er en resist som brukes i elektronstrålelitografi. PMMA er et tett nettverk av enorme makromolekyler. Når PMMA treffes av en elektronstråle, blir disse molekylene brutt opp i karbonbindingene gjennom radikalreaksjoner. Dette øker løseligheten til PMMA. Siden PMMA sin løselighet øker når den reagerer, er den en positiv resist.
+
+\cstitletwo{Mønsteroverføring}
+Etter at man har laget mønsteret man ønsker i resisten, finnes det flere metoder for å deretter lage et mønster i substratet/materialet.
+
+\paragraph{Subtraktiv mønsteroverføring - etsing} Ved subtraktiv mønsteroverføring printer man et mønster \emph{i} materialet sitt ved å etse bort de delene som ikke er dekket av resist. Deretter løser man opp resisten. La oss se på tre typer etsing:
+
+\paragraph{Wet-etching} I wet-etch dekker man prøven sin med en kjemisk løsning. Denne løsningen inneholder reaktanter som etser bort substratet, men bevarer resisten intakt. Dette er enkelt og greit, og det finnes mange typer etseløsninger for forskjellige typer materialer. Det er også en veldig rask prosess: man kan etse flere mikrometer i minuttet med denne metoden.
+
+Den store ulempen med wet-etching er at den som regel er isotrop, det vil si at den kjemiske løsningen etser likt i alle retninger. Dermed etser man etter hvert også bort materialet som er under fotoresisten. Dette gjør det endelige mønsteret på substratet mindre presist. 
+
+Unntaket er når vi etser et énkrystallint materiale. Da kan det være så stor forskjell i reaktiviteten til de forskjellige planene at etsing kun skjer i én retning.
+
+\paragraph{Dry-etching} I dry-etch bombarderer man overflaten med høyenergetiske ioner i vakuum. Dette løser problemet med wet-etching, for etsing skjer kun i vertikal retning.
+
+Det er imidlertid to ulemper med dry-etching. Det ene er at prosessen er ganske treig i forhold til wet-etch. Den andre ulempen er at prosessen som regel er ikke-selektiv: alle materialer på prøven, inkludert resisten, etses bort av ionene. Man må derfor sørge for at resisten er tykk nok til at den ikke etses bort helt.
+
+\paragraph{Reactive ion etching (RIE)} RIE er den vanligste etseprosessen for å lage nanoskala mønstre, og den innebærer både en fysisk og en kjemisk prosess. I RIE setter man på et elektrisk felt som oscillerer med radiofrekvens, og produserer dermed et plasma\footnote{Se kapittel 25.1, avsnitt ``DYI guide: hvordan lage plasma''.} fullt av positive ioner. Materialet som skal etses holdes ved et negativt potensial, slik at de positive ionene akselereres mot overflaten og slår løs materialet der. Dette er den fysiske delen av prosessen. Samtidig dannes det nøytrale radikaler, som reagerer på materialets overflate. Dette er den kjemiske delen av prosessen. 
+
+\ctitletwo{Additiv mønsteroverføring - liftoff og elektrolytisk vekst} Ved additiv mønsteroverføring printer man et mønster \emph{oppå} materialet sitt ved å putte materialet på de delene som ikke er dekket av resist. Deretter løser man opp resisten. La oss se på to typer additiv mønsteroverføring:
+
+\paragraph{Lift-off} Etter at du har laget mønsteret du skal ha i fotoresisten, dekker du hele greia med en tynnfilm av materialet du skal overføre. Så løser du opp resisten. Da står du igjen med tynnfilm kun der hvor det ikke var resist.
+
+\paragraph{Elektrolytisk vekst} I denne metoden setter du opp en elektrolytisk celle der reduksjonen skjer på substratet. Reduksjonen vil kun skje der det ikke er resist, da resisten ellers er i veien. Med denne metoden kan vi få større høyde/bredde-forhold i de endelige mønstrene. Hvis substratet ikke er elektrisk ledende, må man dekke substratet med en metallisk tynnfilm før man putter på resisten.
+
+En ulempe med slik vekst er at veksthastigheten avhenger av den krystallografiske orienteringen til kornene på overflaten, og siden man som regel bruker polykrystalline materialer som substrat vil veksten variere fra sted til sted.
+

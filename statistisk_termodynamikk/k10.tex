@@ -1,0 +1,311 @@
+\ctitle{Bolzmanns fordelingslov}
+\paragraph{Dette kapittelet}
+Bolzmanns fordelingslov gir sannsynlighetsfordelinger for energinivåer fra de underliggende energinivåene til atomer og molekyler. Partisjonsfunksjonen beskriver hvordan partikler er fordelt over de tilgjengelige energinivåene, og kan brukes til å forutsi termodynamiske egenskaper. 
+
+\cstitle{Notasjon og symboler}
+Vi ser på et system av $N$ partikler som til sammen, i en gitt mikrotilstand $j$, har energinivået $E_j$. $E_j$ er en sum av energier som inkluderer hver partikkels interne energi (som kan stamme fra rotasjons- eller vibrasjonstilstander, eller den interne konformasjonen til et molekyl) samt interaksjonsenergier mellom de forskjellige molekylene. Fra dette ønsker vi å regne ut sannsynligheten $p_j$ for at systemet er i tilstanden $j$.
+
+Vi bruker $E_j$ for et generelt system, og $\epsilon_j$ i det enkle tilfellet der vi ser på uavhengige partikler (som i en ideell gass).
+
+\cstitle{Utledning av Bolzmanns fordelingslov}
+Vi ser på et system med $N$ partikler av samme type. Dette systemet har $t$ mulige forskjellige energinivåer som er bestemt av fysikken bak problemet som skal løses. Vi skal nå utlede en funksjon som forteller hvordan de forskjellige partiklene er fordelt over de forskjellige energinivåene, gitt at vi bruker det kanoniske ensemblet. Det vil si at $(T,V,N)$ holdes konstant, og at forutsetningen for likevekt er at Helmholz fri energi er minimert:
+\begin{equation}
+	\label{helmholz_equilibrium}
+	\dFh=\dU-T\dSs=0
+\end{equation}
+For å finne $\dS$ bruker vi uttrykket for entropi som vi så i kapittel 5:
+\begin{equation}
+	\label{entropyprobability}
+	S=-k_B\sum_{j=1}^t p_j\ln p_j
+\end{equation}
+Vi deriverer med hensyn på $p_j$ for å få at 
+\begin{equation}
+	\dSs=-k_B\sum_{j=1}^t (1+\ln p_j)\dpp_j
+\end{equation}
+Vi finner $dU$ ved å postulere at den makroskopiske indre energien $U$ er gjennomsnittet av den mikroskopiske energien:
+\begin{equation}
+	\label{macromicroenergy}
+	U=\avg{E}=\sum_{j=1}^t p_jE_j,
+\end{equation}
+som gir at
+\begin{equation}
+	\dU=\sum_{j=1}^t (E_j\dpp_j+p_j\dEs_j)
+\end{equation}
+Vi har fra kvantemekanikken at $E_j$ ikke er avhengig av $S$ eller $T$: varme forandrer ikke energinivåene, kun populasjonene innenfor hvert energinivå - forandringen i disse populasjonene samsvarer her med $\dpp_j$ (imidlertid avhenger $\avg{E}$ av temperaturen, siden $\dpp_j$ inngår i uttrykket for denne). Dermed reduseres $\dU$ til
+\begin{equation}
+	\dU=\sum_{j=1}^t (E_j\dpp_j)
+\end{equation}
+Vi skal minimere $\dFh$, og 
+\begin{align}
+\label{dFwithnewstuff}
+\begin{split}
+	\dFh&=\dU-T\dSs\\
+	&=\sum_{j=1}^t (E_j\dpp_j) - T(-k_B\sum_{j=1}^t (1+\ln p_j)\dpp_j) \\
+	&=\sum_{j=1}^m (E_j+k_BT(1+\ln p_j))\dpp_j
+\end{split}
+\end{align}
+Videre har vi en begrensning: sannsynlighetene skal alltid summere opp til 1. Dette innebærer at differensialene til sannsynlighetene skal summere opp til 0 (hver endring i en sannsynlighet må innebære en motsatt endring i en annen sannsynlighet). Dette kan uttrykkes med en Lagrangemultiplikator:
+\begin{equation}
+	\alpha\sum_{j=1}^t dp_j=0
+\end{equation}
+Siden denne summen er 0, gjør det ikke noe om vi legger den til i \eqref{dFwithnewstuff} og får at
+\begin{equation}
+	dF = \sum_{j=1}^t \left( E_j+k_BT(1+\ln p_j)+\alpha \right) dp_j=0
+\end{equation}
+Dette er egentlig et system av $t$ ligninger, og vi krever at summanden er 0 for hver verdi av $j$: $E_j+k_BT(1+\ln p_j)+\alpha$ for alle $j$. Dette kan vi stokke om på for å få at
+\begin{equation}
+	\ln p_j=-\frac{E_j}{k_BT}-\frac{\alpha}{k_BT}-1,
+\end{equation}
+altså at
+\begin{equation}
+	p_j=e^{-E_j/k_BT-\alpha/k_BT-1}
+\end{equation}
+Vi kan bli kvitt Lagrangemultiplikatoren ved å skrive begrensningen vår på ``vanlig'' måte:
+\begin{equation}
+	1=\sum_{j=1}^t p_j = \sum_{j=1}^t e^{{-E_j/k_BT}-\alpha/k_BT-1}
+\end{equation}
+for å få at
+\begin{equation}
+	p_j=\frac{p_j}{1}=\frac{e^{-E_j/k_BT-\alpha/k_BT-1}}{\sum_{j=1}^t e^{-E_j/k_BT-\alpha/k_BT-1}}
+\end{equation}
+Kansellering gir oss \i{Bolzmanns fordelingslov}
+\begin{equation}
+	p_j=\frac{e^{-E_j/k_BT}}{\sum_{j=1}^t e^{-E_j/k_BT}}
+\end{equation}
+som er det samme som
+\begin{equation}
+	\label{Bolzmanndistributionlaw}
+	p_j=Q^{-1}e^{-E_j/k_BT}
+\end{equation}
+der $Q$ er \i{partisjonsfunksjonen}
+\begin{equation}
+	\label{partition_definition}
+	Q=\sum_{j=1}^t e^{-E_j/k_BT}
+\end{equation}
+og telleren i \eqref{Bolzmanndistributionlaw} kalles \i{Bolzmann-faktoren} for energinivået. 
+
+I kapittel 5 maksimerte vi entropien med en fysisk bibetingelse om gjennomsnittlig energi. Hvis vi ser tilbake på \eqref{prematureboltzmanndistribution} og sammenligner med \eqref{Bolzmanndistributionlaw}, ser vi at Lagrangemultiplikatoren $\beta$ som sørger for at betingelsen om gjennomsnittlig energi beholdes, er $1/k_BT$. 
+
+Ofte er det mer interessant å finne de relative populasjonene av partikler med energinivåer $i$ og $j$:
+\begin{equation}
+	\frac{N_j}{N_i}=\frac{p_j}{p_i}=e^{-(E_i-E_j)/k_BT}
+\end{equation}
+Eksponensialfordelingen forteller oss at mange partikler vil ha lav energi og få partikler vil ha høy energi. Dette virker rimelig: systemet er bundet til å ha en konstant energi (siden vi har en konstant gjennomsnittlig energi, må den totale energien $t\avg{\epsilon}$ være konstant). Da finnes det flere måter å lage et system der de fleste partiklene har diverse lave energinivåer, enn det finnes for å lage systemer der noen få partikler har så høye energinivåer at nesten alle andre har lav eller ingen energi.
+
+\cstitle{Kinetisk gassteori}
+Dette er bare ett eksempel på bruk av Boltzmannfordelinger - vi skal se på flere i neste kapittel, når vi får energinivåene våre fra kvantemekanikken. Men først et eksempel fra klassisk fysikk. \i{Maxwell-Boltzmann-fordelingen} av partikkelhastigheter er grunnlaget for kinetisk gassteori, som er en viktig modell innen klassisk fysikk. Siden vi i klassisk fysikk ser på kontinuerlige fordelinger av energier, kan vi erstatte summer med integraler i det kommende eksempelet.
+
+\paragraph{Endimensjonalt system} Vi ser på en gass som en samling partikler med masse $m$, hastighet $v$ og kinetisk energi $\epsilon(v)=\frac{1}{2}mv^2$, som befinner seg i en beholder med konstant volum og temperatur (altså gjelder det vi har utledet i forrige seksjon). Videre antar vi at vi ser på et endimensjonalt system. I én dimensjon vil sannsynligheten $p(v)$ for at en partikkel har hastighet $v$ være
+\begin{equation}
+	p(v)=\frac{e^{-\epsilon(v)/k_BT}}{\int_{-\infty}^{+\infty}e^{-\epsilon(v)/k_BT}dv} = \frac{e^{-mv^2/2k_BT}}{\int_{-\infty}^{+\infty}e^{-mv^2/2k_BT}dv}
+\end{equation}
+Så bruker vi det kjente bestemte integralet $\int_{-\infty}^{\infty}e^{-ax^2}dx=\sqrt{\pi/a}$ og at $a=m/2kT,\ x=v$:
+\begin{equation}
+	p(v) = \left(\frac{m}{2\pi k_BT}\right)^{1/2}e^{-mv^2/2k_BT}
+\end{equation}
+Bredden til denne fordelingen er gitt ved ``mean square velocity'' $\avg{v^2}$, som er
+\begin{align}\begin{split}
+	\avg{v^2}&=\int_{-\infty}^{+\infty}v^2p(v)\dv\\&=\left(\frac{m}{2\pi k_BT}\right)^{1/2}\int_{-\infty}^{+\infty}v^2e^{-mv^2/2k_BT}\dv
+\end{split}
+\end{align}
+Etter en del regning blir
+\begin{equation}
+	\avg{v^2}=k_BT/m
+\end{equation}
+slik at partiklene har en gjennomsnittlig kinetisk energi
+\begin{equation}
+	\avg{\epsilon_k}=\frac{1}{2}m\avg{v^2}=\frac{1}{2}k_BT
+\end{equation}
+
+\paragraph{Flerdimensjonalt system} I flere dimensjoner er $v^2=v_x^2+v_y^2+v_z^2$ ved Pythagoras lov. I en ideell gass er dessuten $v_x$, $v_y$ og $v_z$ uavhengige av hverandre, slik at $\avg{v^2}=\avg{v_x^2}+\avg{v_y^2}+\avg{v_z^2}$. I tre dimensjoner blir dermed den gjennomsnittlige kinetiske energien
+\begin{equation}
+	\frac{1}{2}m\avg{v}=\frac{3}{2}k_BT
+\end{equation}
+Generelt vil hver frihetsgrad i systemet gi et gjennomsnittlig bidrag på $\frac{1}{2}k_BT$ per partikkel. Vi kommer tilbake til dette i neste kapittel.
+
+Til sist: siden de tre komponentene er uavhengige, blir den totale sannsynlighetsfordelingen produktet av tre sannsynlighetsfordelinger:
+\begin{align}
+    p(v)&=p(v_x)p(v_y)p(v_z)\\
+    &=\left(\frac{m}{2\pi k_BT}\right)^{3/2}e^{m(v_x^2+v_y^2+v_z^2)/2k_BT} \\
+    &=\left(\frac{m}{2\pi k_BT}\right)^{3/2}e^{mv^2/2k_BT}
+\end{align}
+
+\cstitle{Hva er partisjonsfunksjonen?}
+Partisjonsfunksjonen er summen av Bolzmann-faktorer, og beskriver hvordan partiklene er fordelt over de tilgjengelige tilstandene. Vi har at
+\begin{align}\begin{split}
+	\label{Q_absolute}
+	Q&=\sum_{j=1}^{t}e^{-E_j/k_BT}\\&=e^{-E_1/k_BT}+e^{-E_2/k_BT}+...+e^{-E_t/k_BT}
+\end{split}\end{align}
+Ofte er det nyttigere å beskrive $Q$ gjennom energiforskjeller (siden vi sjelden finner absolutte verdier fra eksperimenter). Da definerer vi at grunntilstanden $E_1=0$:
+\begin{equation}
+	\label{Q_relative}
+	Q=1+\sum_{j=2}^t e^{-(E_j-E_1)/k_BT}
+\end{equation}
+En intuitiv tolkning av $Q$ er at den er antallet tilstander som er tilgjengelig for systemet ``i praksis''. Antallet tilstander som systemet teoretisk sett kan være i er alltid $t$, som er bestemt av fysikken bak problemet, men ved lave temperaturer vil det være få partikler som befinner seg i de høyere energitilstandene, slik at de høyere tilstandene ``i praksis'' ikke er tilgjengelige. La oss se på de to ekstremtilfellene: 
+
+Hvis temperaturen er svært lav, eller alle energinivåer over grunntilstanden er svært høye, vil nesten alle partiklene befinne seg i grunntilstanden. Dette ser vi også ved at alle ledd unntatt det første i \eqref{Q_relative} blir forsvinnende små (siden de er eksponensialfunksjonen av store negative tall): $Q$ går mot 1.
+
+Hvis temperaturen er svært høy, eller energinivåene er små, vil det befinne seg partikler i alle tilstandene som er tilgjengelige for systemet. Dette ser vi også ved at potensene i \eqref{Q_relative} går mot 0 slik at hvert ledd går mot 1, og $Q$ går mot $t$.
+
+\cstitle{Tilstandstetthet}
+Noen ganger kan forskjellige tilstander ha det samme enerignivået, se fig. 10.1 i boka for et enkelt eksempel. Antallet tilstander som kan ha energinivå $E_l$ kaller vi \emph{tilstandstettheten} til $E_l$, og vi skriver den som $W(E_l)$. Tilstandstetthet er dermed en generalisering av multiplisitet, og derfor bruker vi samme bokstav. Vi kan nå finne partisjonsfunksjonen ved å summere over alle makrotilstander:
+\begin{equation}
+	Q=\sum_{l=1}^{l_{\text{max}}} W(E_l)e^{-E_l/k_BT}
+\end{equation}
+slik at sannsynligheten for at systemet er i makrotilstanden $l$ blir 
+\begin{equation}
+	p_l=Q^{-1}W(E_l)e^{-E_l/k_BT}
+\end{equation}
+
+\cstitle{Partisjonsfunksjoner for samlinger av uavhengige partikler}
+\paragraph{Når partiklene ikke er identiske} Som et enkleste mulige eksempel: la oss se på et system av to uavhengige partikler $A$ og $B$ (vi kan altså skjelne mellom dem) med energinivåer på henholdsvis $\epsilon_n^A$ og $\epsilon_m^B$, der $n=1,2,...,a$ og $m=1,2,...b$. De to partiklene regnes som uavhengige subsystemer med hver sin partisjonsfunksjon 
+\begin{align}
+	q_A&=\sum_{n=1}^a e^{-\epsilon_n^A/k_BT} \\
+	q_B&=\sum_{m=1}^b e^{-\epsilon_m^B/k_BT}
+\end{align}
+Partisjonsfunksjonen $Q$ for hele systemet vil være alle kombinasjoner av energinivåer det er mulig å lage med de to partiklene: 
+\begin{align}
+\begin{split}
+	Q&=\sum_{j=1}^t e^{E_j/k_BT}\\&=\sum_{n=1}^a\sum_{m=1}^b e^{-(\epsilon_n^A+\epsilon_m^B)/k_BT}\\&=\sum_{n=1}^a\sum_{m=1}^b e^{-\epsilon_n^A/k_BT}e^{-\epsilon_m^B/k_BT}
+\end{split}
+\end{align}
+Siden alle par av $\epsilon_n^A$ og $\epsilon_m^B$ vil være uavhengige av hverandre, kan summen faktoriseres ut til et produkt av to summer:
+\begin{equation}
+	Q=\sum_{n=1}^a e^{-\epsilon_n^A/k_BT} \sum_{m=1}^b e^{-\epsilon_m^B/k_BT}.	
+\end{equation}
+Dermed er
+\begin{equation}
+	Q=q_Aq_B
+\end{equation}
+Mer generelt, i et system av $N$ partikler der vi antar at hver partikkel har lik partisjonsfunksjon, blir
+\begin{equation}
+	Q=q^N
+\end{equation}
+
+\paragraph{Når partiklene er identiske} I gass er molekylene identiske, det er umulig å skille ett molekyl fra et annet. Hvis vi summerer opp som i avsnittet over, vil vi ikke kunne faktorisere ut dobbeltsummen til et produkt av to summer. Siden det ikke er mulig å skille mellom at partikkel $A$ har energinivå $i$ mens partikkel $B$ har energinivå $j$, og at partikkel $B$ har energinivå $i$ mens partikkel $A$ har energinivå $j$, vil vi telle samme energitilstand $2!$ ganger (unntatt når $i=j$, men ofte er det så mange energinivåer at dette er ekstremt sjeldent). I et system av $N$ identiske, uavhengige partikler får vi dermed at 
+\begin{equation}
+	Q=\frac{q^N}{N!}
+\end{equation}
+
+\cstitle{Partisjonsfunksjonen forutsier termodynamiske egenskaper}
+Mange termodynamiske størrelser kan uttrykkes som funksjoner av partisjonefunksjonen.
+\paragraph{Total indre energi ($U$)} La oss sette inn uttrykket vårt for $p_j$ (Bolzmanns fordelingslov) inn i \eqref{macromicroenergy}:
+\begin{equation}
+	U = \sum_{j=1}^t p_jE_j = Q^{-1}\sum_{j=1}^t E_j e^{-\beta E_j}
+\end{equation}
+der $\beta=1/k_BT$. Siden 
+\begin{equation}
+	Q=\sum_{j=1}^t e^{-\beta E_j}	
+\end{equation}
+har vi at 
+\begin{equation}
+	\frac{dQ}{d\beta}=-\sum_{j=1}^t E_j e^{-\beta E_j}.
+\end{equation}
+Da ser vi at
+\begin{equation}
+	U = -\frac{1}{Q}\frac{dQ}{d\beta}.
+\end{equation}
+Siden vi generelt har (ved kjerneregelen) at 
+\begin{equation}
+	\frac{1}{y}\frac{dy}{dx}=\frac{d\ln y}{dx},
+\end{equation}
+får vi at
+\begin{equation}
+	U = - \frac{d\ln Q}{d\beta} = - \frac{d\ln Q}{dT}\frac{dT}{d\beta}
+\end{equation}
+Siden $T = 1/k_B\beta$ blir $\frac{dT}{d\beta}=-1/k_B\beta^2=-k_BT^2$, så
+\begin{equation}
+	U = k_BT^2\frac{d\ln Q}{dT}
+\end{equation}
+
+\paragraph{Gjennomsnittlig energi per partikkel ($\avg{\epsilon}$)} Vi får et lignende uttrykk for den gjennomsnittlige energien per partikkel. Hvis vi antar at vi kan skjelne mellom partiklene ($Q=q^N$) får vi at
+\begin{align}
+\label{epsilonwhendistinguishable}
+\begin{split}
+	\avg{\epsilon}&=U/N \\ &= \frac{k_BT^2}{N}\frac{d\ln q^N}{dT} \\ &= \frac{k_BT^2}{N}\frac{d(N\ln q)}{dT} \\ &= k_BT^2\frac{d\ln q}{dT}
+\end{split}
+\end{align}
+eventuelt
+\begin{equation}
+	\label{epsilonwithbeta}
+	\avg{\epsilon}=-\spdif{\ln q}{\beta}
+\end{equation}
+Hvis vi ikke kan skjelne mellom partiklene ($Q=q^N/N!$) er $\ln Q = N\ln q - \ln N!$. Siden $\spdif{\ln N!}{T}=0$, forsvinner bidraget fra $N!$, så gjennomsnittlig energi per partikkel blir det samme uansett om vi kan skjelne mellom dem eller ikke.
+
+\paragraph{Entropi} Fra Bolzmanns fordelingslov får vi at $\ln p_j=\ln(1/Q)-\frac{E_j}{k_BT}=-(\ln Q+\frac{E_j}{k_BT})$. La oss sette dette inn i uttrykket vårt for entropi \eqref{entropyprobability}: 
+\begin{align}
+\begin{split}
+	S&=k_B\sum_{j=1}^t p_j(\ln Q+\frac{E_j}{k_BT})\\&=k_B\ln Q\sum_{j=1}^t p_j + \frac{1}{T}\sum_{j=1}^t E_jp_j \\&= k_B\ln Q+U/T
+\end{split}
+\end{align}
+altså blir 
+\begin{equation}
+	S=k_B\ln Q+kT\frac{\partial \ln Q}{\partial T}
+\end{equation}
+
+\paragraph{Helmholtz fri energi, kjemisk potensial og trykk} Nå kan sette inn de nye uttrykkene for $U$ og $S$ inn i andre kjente uttrykk for å uttrykke flere termodynamiske størrelser gjennom $Q$. For eksempel Helmholz fri energi:
+\begin{equation}
+	F = U - TS = -k_BT\ln Q
+\end{equation}
+fra Helmholz fri energi får vi kjemisk potensial
+\begin{equation}
+	\mu = \pdif{F}{N}{T,V} = -k_BT\pdif{\ln Q}{N}{T,V}
+\end{equation}
+og trykk
+\begin{equation}
+	\label{pressurefrompartition}
+	p = \pdif{F}{V}{T,N}=k_BT\pdif{\ln Q}{V}{T,N}
+\end{equation}
+
+\paragraph{Oppsummering: termodynamiske størrelser fra partisjonsfunksjonen}
+I kanonisk-ensemblet - ved konstant $(T,V,N)$ - har vi altså utledet at
+\begin{align*}
+    U&=k_BT^2\pdif{\ln Q}{T}{V,N} \\
+    S&=k_B\ln Q+\frac{U}{T} \\
+    F&=-k_BT\ln Q \\
+    \mu&=-k_BT\pdif{\ln Q}{N}{T,V} \\
+    p&=k_BT\pdif{\ln Q}{V}{T,V}
+\end{align*}
+
+\cstitle{Schottkys to-tilstandsmodell}
+Her er et eksempel på hvordan vi kan gå via partisjonsfunksjonene for å finne en masse makroskopiske termodynamiske egenskaper ut i fra energinivåene.
+
+Vi har et system med $N$ partikler som vi kan skjelne mellom, og hver partikkel kan ha ett av to energinivå: $0$ eller $\epsilon_0=0$. La oss nå finne gjennomsnittlig energi for hver partikkel, varmekapasitet, og fri energi fra partisjonsfunksjonen. Partisjonsfunksjonen er, for $t=2$,
+\begin{equation}
+	q=1+e^{-\beta\epsilon_0}.
+\end{equation}
+
+\paragraph{Energi per partikkel} blir, fra \eqref{epsilonwithbeta},
+\begin{equation}
+	\avg{\epsilon}=-\frac{1}{q}\spdif{q}{\beta}=\frac{\epsilon_0e^{-\beta\epsilon_0}}{1+e^{-\beta\epsilon_0}}
+\end{equation}
+Når $T$ går mot $\infty$ går $\beta$ mot $0$, så $\avg{\epsilon}$ går mot $\epsilon_0/2$ - partiklene spres jevnt utover de tilgjengelige energinivåene. Når $T$ går mot $0$ går $\beta$ mot $\infty$, så $\avg{\epsilon}$ går mot 0 - alle partiklene går i grunntilstanden.
+
+\paragraph{Varmekapasitet} For å finne $C_V$ bruker vi definisjonen $C_V=\pdif{U}{T}{V,N}$ og at $U=N\avg{\epsilon}$, slik at
+\begin{align}
+\begin{split}
+	C_V &=N\pdif{\avg{\epsilon}}{T}{V,N} \\
+	&=N\pdif{\avg{\epsilon}}{\beta}{V,N}\spdif{\beta}{T} \\
+	&=-\frac{N}{k_BT^2}\pdif{\epsilon}{\beta}{V,N} \\
+	&=-\frac{N}{k_BT^2}\frac{-\epsilon_0^2e^{-\beta\epsilon_0}}{(1+e^{-\beta\epsilon_0})^2} \\
+	&=\frac{N\epsilon_0^2e^{-\beta\epsilon_0}}{k_BT^2(1+e^{-\beta\epsilon_0})^2}
+\end{split}
+\end{align}
+Denne funksjonen begynner i 0 ved $T=0$, øker raskt til den når et maksimum, og synker så nesten-eksponensielt etterhvert som $T$ øker.
+
+\paragraph{Entropi} Entropien er
+\begin{align}
+\begin{split}
+	S&=U/T+k_B\ln Q \\
+	&=\frac{N\epsilon_0e^{-\beta\epsilon_0}}{T(1+e^{-\beta\epsilon_0})}+k_BN\ln(1+e^{-\beta\epsilon_0})
+\end{split}
+\end{align}
+
+\paragraph{Helmholtz fri energi} blir
+\begin{align}
+\begin{split}
+	F&=k_BT\ln Q \\
+	&=-Nk_BT\ln q \\
+	&=-Nk_BT\ln(1+e^{-\beta\epsilon_0})
+\end{split}
+\end{align}

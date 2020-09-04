@@ -1,0 +1,155 @@
+\ctitle{Statistisk mekanikk for enkle gasser og faste stoffer}
+\paragraph{Dette kapittelet}
+Energinivåene til partikler er løsninger av Schrödingerligningen. Ut i fra disse løsningene kan vi utlede partisjonsfunksjoner.
+
+\cstitle{Oppsummering av kvantemekanikk}
+Tilstandene til atomer og molekyler beskrives av kvantemekanikk. De grunnleggende resultatene fra kvantemekanikken (som ikke skal utledes i dette kurset) kommer fra løsninger av Schrödingerligningen $\hat{H}(\psi_i)=E_i\psi_i$. $\psi$ er \i{bølgefunksjonen}, som har den egenskapen at $\psi^2$ er den romlige sannsynlighetsfordelingen til partiklene man ser på. $E_i$ er konstante energinivå. $\hat{H}$ er \i{Hamiltonoperatoren}, som kan være mye rart avhengig av situasjonen og begrensningene man setter, slik at den utvidede formen til ligningen kan bli noe fæle greier som $-\left(\frac{h^2}{8\pi^2m}\right)\frac{d^2\psi(x)}{dx^2}+\hat{V}(x)\psi(x)=E_i\psi(x)$ ($\hat{V}(x)$ er en potensiell-energi-operator som også kan være mye rart). Poenget er at denne differensialligningen kun har løsninger for visse verdier av $E_i$ (som kalles egenverdiene til ligningen) - derfor er energi kvantisert. I neste seksjon skal vi studere resultatene kvantemekanikken gir oss i bestemte situasjoner. Vi skriver $\epsilon_i$ i stedet for $E_i$ fordi vi ser på enkle systemer av uavhengige partikler. Når vi har funnet $\epsilon_i$ kan vi også finne partisjonsfunksjonen ved å summere opp alle Bolzmannfaktorene \eqref{partition_definition}.
+
+\cstitle{Modellsystemer i kvantemekanikk}
+Kvantemekanikken gir oss modellsystemer som gir energinivåene en partikkel har som resultat av translasjon, rotasjon og vibrasjon. Utledningen av disse står i boka, men hovedresultatene er:
+
+\paragraph{Translasjon} En partikkel er fanget i en 1-dimensjonal boks som starter i $x=0$ og ender i $x=L$ (fordi den potensielle energien er 0 mellom $x=0$ og $x=L$, og $\infty$ ellers). Energinivåene $\epsilon_n^{\text{trans}}$ er da gitt som
+\begin{equation}
+	\epsilon_n^{\text{trans}}=\frac{(nh)^2}{8mL^2}
+\end{equation}
+der $h$ er Plancks konstant, $m$ er partikkelens masse, og $n$ er et \i{kvantetall} som må være et heltall. Man kan approksimere partisjonsfunksjonen ved å bytte ut summen i \eqref{partition_definition} med et integral, som gir at
+\begin{equation}
+	q_{\text{trans}}=L\sqrt{\frac{2\pi mk_BT}{h^2}}
+\end{equation}
+Dette kan generaliseres til 3 dimensjoner. I en boks med sidekanter $a$, $b$ og $c$ er 
+\begin{equation}
+	\epsilon_{n_x,n_y,n_z}^{\text{trans}}=\frac{h^2}{8m}\left(\frac{n_x^2}{a^2}+\frac{n_y^2}{b^2}+\frac{n_z^2}{c^2}\right)
+\end{equation}
+mens partisjonsfunksjonen er produktet av tre uavhengige partisjonsfunksjoner i en dimensjon for hver retning:
+\begin{align}
+\begin{split}
+	q_{\text{\text{trans}}} &= q_xq_yq_z \\ &= \left(\frac{2\pi mk_BT}{h^2}\right)^{3/2}abc \\ &=\left(\frac{2\pi mk_BT}{h^2}\right)^{3/2}V=\frac{V}{\Lambda^3}
+\end{split}
+\end{align}
+der $\Lambda^3$ er et referansevolum som gjerne er på molekylær størrelse.
+
+\paragraph{Vibrasjon} Vibrasjonen i bindingene mellom molekyler approksimeres ved å se på bindinger som fjær mellom atomer med en fjærkonstant og en potensiell energi som øker kvadratisk med lengden på bindingen (som i klassisk fysikk). Hvis man ser på en enkelt partikkel som er bundet til noe annet, får denne energinivåer
+\begin{equation}
+	\epsilon_v^{\text{vib}}=\left(v+\frac{1}{2}\right)h\nu
+\end{equation}
+Merk at $v$ er kvantetallet for vibrasjon, mens $\nu$ er vibrasjonsfrekvensen - de er ikke det samme! Merk også at det laveste energinivået er $\epsilon_0=\frac{h\nu}{2}$, så systemet vibrerer med en viss energi også ved $T=0K$. Partisjonsfunksjonen finner man ved å se at den blir en geometrisk rekke med verdi
+\begin{equation}
+	q_{\text{vib}}=\frac{1}{1-e^{-h\nu/k_BT}}
+\end{equation}
+
+\paragraph{Rotasjon} Vi bruker ``rigid rotor''-modellen for å modellere rotasjon. Da ser vi på et diatomisk molekyl som to punktmasser, forbundet med en stiv stav, som roterer rundt massesenteret for de to partiklene. Da får vi at
+\begin{equation}
+	\epsilon_l^{\text{rot}}=\frac{l(l+1)h^2}{8\pi^2I}.
+\end{equation}
+I tillegg til $l$ er det forbundet et annet kvantetall, $m$, med hver energitilstand. $m$ kan ha verdiene $-l,-l+1,...-1,0,1,...,l-1,l$, som innebærer en tilstandstetthet på $(2l+1)$ for hver verdi av $l$. Derfor blir
+\begin{equation}
+	q_{\text{rot}} = \sum_{l=0}^\infty\sum_{m=-l}^le^{-\epsilon_l/k_BT}=\sum_{l=0}^\infty(2l+1)e^{-\epsilon_l/k_BT}
+\end{equation}
+Ved høye temperaturer kan den approksimeres med
+\begin{equation}
+	q_{\text{rot}} = \frac{8\pi^2Ik_BT}{\sigma h^2}
+\end{equation}
+der $\sigma$ er en symmetrifaktor lik antallet ekvivalente orienteringer av molekylet. 
+
+\paragraph{Elektronisk eksitasjon} Ved lave temperaturer er de elektroniske energinivåene så høye at nesten alle partiklene er i grunntilstanden, slik at $q_{\text{electro}} \approx g_0$, der $g_0$ er tilstandstettheten til grunntilstanden.
+
+\paragraph{Den totale partisjonsfunksjonen} Atomer og molekyler kan ha energi via alle sine frihetsgrader. Nå som vi kjenner energinivåene og partisjonsfunksjonene som korresponderer til de forskjellige frihetsgradene, kan vi summere opp de forskjellige energibidragene for å finne de totale energinivåene:
+\begin{equation}
+	\epsilon_{\text{total}} = \epsilon_{\text{trans}}+\epsilon_{\text{vib}}+\epsilon_{\text{rot}}+\epsilon_{\text{electro}}
+\end{equation}
+Den totale partisjonsfunksjonen blir produktet av partisjonsfunksjonen for hver frihetsgrad:
+\begin{equation}
+	q_{\text{total}} = q_{\text{trans}}q_{\text{vib}}q_{\text{rot}}q_{\text{electro}}
+\end{equation}
+
+\cstitle{Egenskaper for ideelle gasser fra kvantemekanikk}
+La oss se hva kvantemekanikken forutsier om en ideell gass av uskillbare partikler ($Q=q^N/N!$). 
+
+\paragraph{Helmholtz fri energi} for en ideell gass blir
+\begin{align}
+\begin{split}
+	F&=-k_BT\ln Q\\&=-k_BT\ln\frac{q^N}{N!}\\&=-Nk_BT\ln q+k_BT\ln N!
+\end{split}
+\end{align}
+
+\paragraph{Trykk} Vi har at
+\begin{equation}
+	p = \pdif{F}{V}{T,N} = -Nk_BT\pdif{\ln q}{V}{T,N}
+\end{equation}
+Merk at vi ikke trenger å regne ut hele partisjonsfunksjonen - som regel er vi kun interessert i en eller annen partiellderivert av logaritmen til den. I dette tilfellet trenger vi kun den delen av $q$ som avhenger av $V$, siden det er $V$ vi skal derivere med hensyn på. Siden den eneste faktoren i $q$ som avhenger av $V$ er $q_{\text{trans}}=\frac{V}{\Lambda^3}$, blir 
+\begin{align}
+\begin{split}
+	p &= Nk_BT\pdif{\ln q}{V}{T,N} \\
+	&= Nk_BT\pdif{\ln q_{\text{trans}}}{V}{T,N} \\
+	&= Nk_BT\spdif{}{V}\left(\ln\frac{V}{\Lambda^3}\right) \\
+	&= Nk_BT\spdif{}{V}\left(\ln V - 3\ln\Lambda^3\right) \\
+	&= \frac{Nk_BT}{V},
+\end{split}
+\end{align}
+sånn i tilfelle du synes den ideelle gassloven ikke har blitt utledet mange nok ganger allerede.
+
+\paragraph{Indre energi} er gitt som
+\begin{equation}
+	U=Nk_BT^2\frac{\partial \ln q}{\partial T}
+\end{equation}
+For translasjon er $q_t\propto T^{3/2}$ (la oss kalle proporsjonalitetskonstanten $c_0$), så
+\begin{equation}
+	U_t=\frac{Nk_BT^2}{q}\frac{\partial q}{\partial T}=\frac{Nk_BT^2}{c_0T^{3/2}}\frac{3}{2}c_0T^{1/2}=\frac{3}{2}Nk_BT
+\end{equation}
+Dette er den indre energien til en ideell gass.
+
+Hva om vi har en gass av ikke-rotasjonssymmetriske molekyler? For rotasjon er $q_r\propto T^{3/2}$, og vi får tilsvarende at
+\begin{equation}
+	U_r=\frac{3}{2}Nk_BT,
+\end{equation}
+Rotasjonsbidraget legges til den totale energien, så $U=U_t+U_r$. 
+
+Hvis molekylene er lineære (f.eks diatomære), reduseres $U_r$ til $Nk_BT$, fordi rotasjon om aksen til molekylet i praksis er det samme som ingen rotasjon i det hele tatt - dermed forsvinner én av de to frihetsgradene for rotasjon. Generelt har vi at hver frihetsgrad for translasjon eller rotasjon bidrar med $\frac{1}{2}Nk_BT$. Hver $\frac{1}{2}k_BT$-enhet kalles en \emph{ekvipartisjon} (som er litt perifert, men se s. 212-216 for mer info).
+
+\paragraph{Entropi} Den absolutte entropien til en monoatomær ideell gass blir det som står under. Likheten mellom første og siste ledd kalles \emph{Sackur-Tetrode-ligningen}.
+\begin{align}
+\begin{split}
+	S &= k_B\ln Q + U/T \\
+	&= k_B\ln\frac{q^N}{N!} + \frac{(3/2)Nk_BT}{T} \\
+	&\approx Nk_B\ln q-k(N\ln N - N) + \frac{3}{2}Nk_B \\
+	&=Nk_B\left(\ln q - \ln N + \frac{5}{2}\right) \\
+	&=Nk_B\ln\frac{qe^{5/2}}{N} \\
+	&=Nk_B\ln\left(\left(\frac{2\pi mk_BT}{h^2}\right)^{3/2}\left(\frac{e^{5/2}}{N}\right)V\right)
+\end{split}
+\end{align}
+I siste ledd bruker vi at kun translasjon bidrar til partisjonsfunksjonen i en ideell monoatomær gass.
+
+\paragraph{Kjemisk potensial} Til sist skal vi se på det kjemiske potensialet. Dette er kanskje det viktigste som gjøres i dette kapittelet, siden kapittel 13-16 fokuserer på det kjemiske potensialet. 
+
+Vi begynner med å skrive om Helmholtz fri energi med Stirlings approksimasjon,
+\begin{equation}
+	F=-k_BT\ln\frac{q^N}{N!}\approx Nk_BT(-\ln q + \ln N - 1)
+\end{equation}
+Det kjemiske potensialet er
+\begin{align}\label{chemicalpotentialquantum}\begin{split}
+	\mu &= \pdif{F}{N}{T,V}\\ 
+	&=k_BT(-\ln q + \ln N - 1) + \frac{Nk_BT}{N} \\
+	&=-k_BT\ln\frac{q}{N}
+\end{split}\end{align}
+La oss finne ut hvordan $\mu$ avhenger av trykk. Vi har en ideell gass (ref. tittelen på dette delkapittelet), så $q=q_{\text{trans}}=\frac{V}{\Lambda^3}$. Eventuelt kan vi skrive $q=q_0V$, der $q_0=\Lambda^{-3}$ når $q=q_{\text{trans}}$, men helt generelt er $q_0$ bare partisjonsfunksjonen der vi har trukket ut en faktor $V$. Den ideelle gassloven gir at
+\begin{equation}
+	\label{partitionstuff}
+ 	\frac{q}{N}=\frac{q_0V}{N}=\frac{q_0k_BT}{p}
+\end{equation} 
+Siden både $q$ og $N$ er dimensjonsløse tall, må størrelsen $q_0k_BT$ ha enhet trykk for at den siste brøken skal gi mening. Denne størrelsen kalles ``standard state pressure'', og noteres $p_{\text{int}}^o$. Med andre ord er
+\begin{equation}
+	p_{\text{int}}^o=q_0k_BT=k_BT\left(\frac{2\pi m k_BT}{h^2}\right)^{3/2}q_rq_vq_e.
+\end{equation}
+Subskript ``int'' indikerer at $p_{\text{int}}^o$ er en ``intern egenskap'' for molekylet. Vi har med andre ord slengt sammen alt av kvantemekanisk graps inn i en og samme materialkonstant som kan slås opp i tabell. Dermed kan vi si ha det bra til kvantemekanikken inntil videre. Hvis vi nå putter inn $q_0k_BT=p_{\text{int}}^o$ i \eqref{partitionstuff}, og så putter \eqref{partitionstuff} i \eqref{chemicalpotentialquantum}, får vi at
+\begin{equation}
+	\label{chemicalpotentialproper}
+	\mu = -k_BT\ln\frac{q_0k_BT}{p}=k_BT\ln \frac{p}{p_{\text{int}}^o}
+\end{equation}
+Dette skrives ofte, med litt misbruk av notasjon, som
+\begin{equation}
+	\label{idealgaschemicalpotential}
+	\mu = \mu^o + k_BT\ln p,
+\end{equation}
+der $\mu^o=-k_BT\ln p_{\text{int}}^o$, som kalles ``standard state chemical potential'', også er en materialkonstant som vi slår opp i tabell.
+
+Vi kommer til å bruke \eqref{idealgaschemicalpotential} mye i de neste 3 kapitlene, men merk at den må omformes til noe tilsvarende \eqref{chemicalpotentialproper} for at man skal kunne regne på det, fordi det ikke gir mening å ta logaritmen av et tall som ikke er dimensjonsløst.

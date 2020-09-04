@@ -1,0 +1,14 @@
+\usepackage{graphicx}
+\ifbool{smallmargins}{\usepackage[margin=1.5cm,includefoot,footskip=30pt,marginparwidth=9cm,marginparsep=3mm]{geometry}}{\usepackage[margin=4cm,includefoot,footskip=30pt,marginparwidth=9cm,marginparsep=3mm]{geometry}}
+\ifbool{utf8}{\usepackage[utf8]{inputenc}\usepackage[T1]{fontenc}}{}
+\ifbool{math}{\usepackage{amsmath}\usepackage{mathrsfs}}{}
+\ifbool{breqn}{\usepackage{breqn}}{}
+\ifbool{color}{\usepackage[usenames,dvipsnames]{xcolor}}{}
+\ifbool{compactlist}{\usepackage{enumitem}\setlist{noitemsep,nolistsep}}{}
+\ifbool{index}{\usepackage{makeidx}}{}
+\ifbool{si}{\usepackage{siunitx}}{}
+\ifbool{microtype}{\usepackage{microtype}}{}
+\ifbool{multicol}{\usepackage{multicol}}{}
+\ifbool{chemistry}{\usepackage[version=3]{mhchem}}{}
+\ifbool{linespread}{\linespread{1.2}}{}
+\ifbool{paralist}{\usepackage{paralist}}{}

@@ -1,0 +1,22 @@
+\documentclass{article} % Could be changed, but paper works well
+\usepackage{etoolbox} % REQUIRED
+
+\input{config.tex} % REQUIRED, copied from ../lib/config_template.tex
+
+\input{../lib/packages.tex} % Optional but required for grandtitle, multicol and index
+
+\input{../lib/commands.tex} % Optional but required for grandtitle, multicol and index
+
+\input{../lib/vectors_and_differentials.tex}
+
+\input{custompreamble.tex}
+
+\begin{document}
+
+\grandtitle{Nanomaterialer}
+
+\input{fetchchapters.tex}
+
+\ifbool{index}{\printindex}
+
+\end{document}
