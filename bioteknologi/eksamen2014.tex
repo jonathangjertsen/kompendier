@@ -1,0 +1,69 @@
+\section{Løsningsforslag til ordinær eksamen 2014}
+
+Notat fra forelesning 20. og 22. april 2015. Det som er nevnt her tilsvarer en fullgod besvarelse.
+
+\newcommand{\e}{\emph}
+
+\subsection{Begreper}
+\e{Forklar med 1-2 setninger følgende begreper}:
+\begin{enumerate}
+	\item \e{Peptidbinding}: Kovalent binding mellom to aminosyrer, der det primære aminet og karboksylgruppa inngår.
+	\item \e{Enzym}: Et protein som fungerer som en biologisk katalysator; senker aktiveringsenergien til reaksjoner i kroppen.
+	\item \e{Vektor}: DNA-transportør; et verktøy for å få et gen inn i en celle. Man skiller ofte mellom virale og ikke-virale vektorer.
+	\item \e{Stamcelle}: Celle som har mulighet til å 1) dele seg uten å differensiere seg, og 2) differensiere (bli til noe annet). 
+	\item\e{Genom}: Hele det genetiske materialet til en organisme.
+\end{enumerate}
+
+\subsection{Celler, metabolisme og industriell bioteknologi}
+
+\paragraph{Beskriv en prokaryot celle} Besvares med markert tegning som inkluderer: Cytoplasmamembran og cellevegg, cytoplasma, kromosomalt DNA som flyter fritt (ikke i en cellekjerne) og plasmider, ribosomer, vili/flagella. Størrelse skal også nevnes: små i forhold til eukaryote celler, ca. \SI{2}{\micro\meter}.
+
+\paragraph{Skisser anaerobt spor for glukose til melkesyre. Hvor mye melkesyre dannes per mol glukose og hvilke energibærere (energy carriers) bruker cellen i metabolismen?} Tegn den delen av Figur \ref{fig:glucose} som inkluderer glukose og melkesyre, eventuelt med TCA som alternativ rute etter pyruvat. Siden vi får 2 mol pyruvat pr. mol glukose, og 1 mol melkesyre pr. mol pyruvat, dannes det 2 mol melkesyre pr. mol glukose. Cellen bruker \ce{ATP} mellom glukose og pyruvat, og \ce{NAD}/\ce{NADH} (elektronbærere) mellom pyruvat og melkesyre.
+
+\paragraph{Forklar begrepene taktisk og strategisk tilpasning} Taktisk tilpasning er 
+\begin{inparaenum}[(i)]
+	\item på enzymnivå,
+	\item en rask prosess (skjer på sekundnivå), og
+	\item skjer ved allosteri. Enzymet har, i tillegg til et aktivt sete der substrat blir til produkt, et regulatorisk (allosterisk) sete som binder små molekyler som ikke nødvendigvis trenger å ligne på verken enzym eller substrat.
+\end{inparaenum}
+Allosteri kan skje på to måter. Den ene er allosterisk inhibering. For eksempel kan et enzym som omdanner glukose til glukose-6-fosfat, ha et allosterisk sete der melkesyre kan binde seg for å stoppe omdanningen av glukose og dermed produksjonen av melkesyre lenger ned i prosessen. Når et produkt forhindrer enzymproduksjonen av seg selv, kalles det feedback-inhibering. Da fungerer melkesyre som en inhibitor. Den andre typen allosteri er allosterisk aktivering, som fungerer akkurat motsatt ved at en aktivator gjør det aktive setet tilgjengelig for substratet.
+
+Strategisk tilpasning er
+\begin{inparaenum}[(i)]
+	\item på gennivå (regulering av genuttrykket), og
+	\item en treg prosess (skjer over timer/dager).
+\end{inparaenum}
+Det finnes to typer enzymer: 
+\begin{inparaenum}[(i)]
+	\item konstitutive enzymer, som produseres kontinuerlig, og 
+	\item induserbare enzymer, som produseres ved behov.
+\end{inparaenum}
+For eksempel kan en organisme begynne å produsere enzymer som bryter ned laktose i et miljø med mye laktose og lite glukose. DNA har en promotor-region før genene for degradering av laktose, som RNA-polymerase kan binde seg til for å transkribere genene. Mellom promotor og genene er det en operator-region, der det normalt sitter fast et allosterisk enzym som bøyer DNA-et i en sløyfe og forhindrer polymerasen fra å virke. Laktose binder seg til dette enyzmet og forandrer formen på det slik at det ikke lenger kan binde seg til DNA. Når det allosteriske enzymet slipper, kan RNA polymerase uttrykke genene for degradering av laktose.
+
+\subsection{Genetikk}
+
+\paragraph{Hva er DNA? Beskriv oppbygging.} DNA er en polymer av 
+\begin{inparaenum}[(i)]
+	\item sukker - deoksyribose,
+	\item fosfat, og
+	\item baser (A/Adenin, G/Guanin, T/Tymin og C/Cytosin).
+\end{inparaenum}
+Nukleotidkjedene er bygget opp ved at sukker og fosfat alternerer og danner en ryggrad, og basene sitter på sukkeret. DNA er laget av do slike kjeder, som er koblet sammen via hydrogenbindinger mellom basene. De to kjedene er komplementære: der det er A på den ene er det T på den andre, og der det er C på den ene er det G på den andre. Kjedene er også antiparallelle (den ene går fra 3'-enden til 5'-enden, den andre går motsatt vei. 3' og 5' har å gjøre med hvordan sukkeret på enden er bundet til fosfatet og basen). Formen til DNA-molekylet er en dobbeltheliks.
+
+\paragraph{Hvordan overføres informasjon fra DNA til proteiner?} Fra DNA dannes RNA (via transkripsjon), og fra RNA dannes protein (Via translasjon). Transkripsjon: RNA-polymerase setter seg på en promotorregion i DNA, lager RNA basert på DNA-nukleotidsekvensen, og stopper når den møter på en stoppkode. RNA er forskjellig fra DNA ved at det er en enkelttråd og at tymin er byttet ut med uracil (U). Translasjon: 3 og 3 baser (en gruppering av 3 baser kalles et kodon) koder for hver aminosyre i polypeptidet/proteinet som syntetiseres. Dette skjer ved at t-RNA, som har 3 baser i den ene enden og den korresponderende aminosyren i den andre enden, kobles til det respektive kodonet inne i et ribosom. Ribosomet kobler aminosyren til resten av polypeptidkjeden, og t-RNA dyttes ut til fordel for neste t-RNa som koder for neste kodon.
+
+\paragraph{Beskriv kloning av et gen fra en eukaryot celle for uttrykk i en bakterie.} I prokaryoter kan DNA-et transkriberes rett til mRNA. I eukaryoter består DNAet av eksoner (som koder for proteiner) med introner (ikke-kodende DNA) innblandet. Dette transkriberes til mRNA som så går gjennom en prosess der intronene spaltes av, slik at kun eksonene ligger igjen. Denne prosesseringen skjer kun i eukaryote celler. Derfor vil man få med seg intronene i mRNAet hvis man bare setter inn DNA fra eukaryoter i prokaryoter, og dette gir ikke-funksjonelle proteiner.
+
+Derfor starter vi med mRNA som allerede har blitt prosessert. Vi bruker revers transkriptase, et enzym som finnes i retrovirus, for å danne cDNA (copy DNA) som deretter kan klippes med restriksjonsenzym. Plasmider fra bakteriekulturen kuttes med samme restriksjonsenzym. Plasmidet som brukes må ha 
+\begin{inparaenum}[(i)]
+	\item en promotor, og
+	\item en seleksjonsmarkør (typisk antibiotikaresistens).
+\end{inparaenum}
+Plasmid og cDNA limes så sammen med en ligase for å lage et genmodifisert plasmid. Dette settes inn i en prokaryot cellekultur som las gro en stund før man tilfører antibiotika slik at kun bakteriene med genmodifiserte plasmider overlever.
+
+Hele svaret bør illustreres med passende skisser.
+
+\subsection{Bioteknologisk løsning}
+\e{Diskuter kloning av sau som en bioteknologisk løsning. Presenter og diskuter under overskriftene i) problem, ii) argument og iii) implikasjoner. Relevante spørsmål som bør besvares i oppgaven er: Hva er klon? Hvordan kan en klone en organisme? Hvorfor gjør en dette? Hvilke konsekvenser har det for organismen? Hvilke konsekvenser har det for andre?}
+
+Viktige momenter å få med her er: definisjon av klon (og at det finnes naturlige kloner). Hvorfor vi ønsker å klone (strengt tatt mest for å øve på å klone og lære hvordan organismer kan oppstå). Kloningsprosessen (illustreres best med figur der man begynner med å tegne 3 sauer - eggdonor, kjernedonor og surrogatmor - og forklarer hvordan man tar ut kjernen, setter inn i egg og setter inn i surrogatmor). Hvordan påvirkes klonen av de 3 sauene (genom, mitokondrielt DNA, miljø fra surrogatmoren). Historien til Dolly: antall mislykkede forsøk og spontanaborter. 

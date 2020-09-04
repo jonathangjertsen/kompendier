@@ -1,0 +1,212 @@
+\ctitle{Magnetostatikk}
+\cstitle{Magnetisk kraft, strømelement, Biot-Savarts lov}
+\noindent Den magnetiske kraften mellom to punktladninger som beveger seg i et vakuum er
+\begin{equation}
+	\vF=Q_2\vv_2\times\left(\frac{\mu_0}{4\pi}\frac{Q_1\vv_1\times\hat{\vec{R}}}{R^2}\right)
+\end{equation}
+der $R$ er avstanden mellom dem og $\hat{\vec{R}}$ peker fra ladning 1 til ladning 2. Tilsvarende det elektriske feltet definerer man en magnetisk flukstetthet $\vB$ på grunn av en ladning $Q_1$ med hastighet $\vv_1$ som 
+\begin{equation}
+	\vB=\frac{\mu_0}{4\pi}\frac{Q_1\vv_1\times\hat{\vec{R}}}{R^2}
+\end{equation}
+slik at
+\begin{equation}
+	\vF=Q_2\vv_2\times\vB.
+\end{equation}
+Magnetfelt kan superponeres,
+\begin{equation}
+	\vB=\frac{\mu_0}{4\pi}\frac{\sum_{i=1}^m Q_i\vv_i\times\unit{R}_i}{R_i^2}.
+\end{equation}
+Vi kjenner som regel ikke hastigheten til de ulike ladningene, men strømmen som den samlede bevegelsen av ladninger genererer. Denne strømtettheten er generelt
+\begin{equation}
+	\vec{J}\dv=\sum_{i=1}^n(N_i\dv)Q_i\vv_i,
+\end{equation}
+der $n$ er de forskjellige typene ladningsbærere. Denne summen kan i stedet uttrykkes som en sum over alle $m$ ladninger,
+\begin{equation}
+	\vec{J}\dv=\sum_{i=1}^mQ_i\vv_i,
+\end{equation}
+slik at
+\begin{equation}
+	\vB=\frac{\mu_0}{4\pi}\frac{\vec{J}\dv\times\unit{R}}{R^2}
+\end{equation}
+Ved å integrere opp $\vB$-feltet fra en kontinuerlig romlig fordelt strømtetthet bestående av slike \emph{strømelement}er $\vec{J}\dv$ får vi Biot-Savarts lov,
+\begin{equation}
+	\vB=\frac{\mu_0}{4\pi}\iiint_v\frac{\vec{J}\dv\times\unit{R}}{R^2}.
+\end{equation}
+Hvis strømmen er fordelt på en tynn linje er $\vec{J}\dv=\vec{J}\dSs\dls=J\dSs\dl=I\dl$, så
+\begin{equation}
+	\vB=\frac{\mu_0}{4\pi}\oint_C\frac{I\dl\times\unit{R}}{R^2}
+\end{equation}
+Hvis strømmen er fordelt på en flate definerer vi en flatstrømtetthet slik at $I\dl=\vec{J}_s\dx\dl=\vec{J}_s\dSs$ og
+\begin{equation}
+	\vB=\frac{\mu_0}{4\pi}\iint_S\frac{\vec{J}_s\dSs\times\unit{R}}{R^2}.
+\end{equation}
+
+\cstitle{Magnetiske krefter og moment}
+\paragraph{Lorentz-kraft} Kraften som virker på en ladning som beveger seg i et område med både $\vE$- og $\vB$-felt kan oppsummeres i Lorentz-kraften
+\begin{equation}
+	\vF=Q(\vE+\vv\times\vB)
+\end{equation}
+
+\paragraph{Magnetisk moment} Den magnetiske kraften på et strømelement er
+\begin{equation}
+	\dF=\sum_{i=1}{m}Q_i\vv_i\times\vB=\vJ\dv\times\vB
+\end{equation}
+eller for en linjestrøm
+\begin{equation}
+	\dF=I\dl\times\vB,
+\end{equation}
+slik at netto kraft på en strømsløyfe blir
+\begin{equation}
+	F=\oint_C I\dl\times\vB.
+\end{equation}
+I et uniformt $\vB$-felt blir den netto kraften på sløyfa null,
+\begin{equation}
+	F=\oint_C I\dl\times\vB=\left(\oint_C I\dl\right)\times\vB=0,
+\end{equation}
+men dette er bare summen av krefter. Det finnes likevel krefter lokalt som vil komprimere, strekke og rotere sløyfa. Se figur 3.5  i JS for en utledning av at momentet på en (rektangulær) sløyfe blir
+\begin{equation}
+	\vT=I\vS\times\vB.
+\end{equation}
+Det magnetiske momentet defineres som
+\begin{equation}
+	\vm=I\vS,
+\end{equation}
+så
+\begin{equation}
+	\vT=\vm\times\vB.
+\end{equation}
+Dette gjelder også for vilkårlige sløyfer i et uniformt $\vB$-felt.
+
+\cstitle{Magnetisk fluks og vektorpotensial}
+\p{Magnetisk fluks} Den magnetiske flyksen gjennom en flate er definert som 
+\begin{equation}
+	\Phi_S=\iint_S\vB\cdot\dS.
+\end{equation}
+For en lukket $S$ er $\Phi_S$ alltid 0,
+\begin{equation}
+	\oiint_S\vB\cdot\dS=0,
+\end{equation}
+som ved divergensteoremet er ekvivalent med at
+\begin{equation}
+	\nabla\cdot\vB=0
+\end{equation}
+Se s. 59 i JS for en utledning av dette. Det er ekvivalent med at magnetiske flukslinjer alltid biter seg selv i halen, det vil si at de ikke kan starte noe sted.
+
+\p{Vektorpotensial} Siden $\nabla\cdot\vB=0$ kan $\vB$ representeres som curlen til et vektorpotensial $\vA$,
+\begin{equation}
+	\vB=\nabla\times\vA
+\end{equation}
+Hvis vi antar at
+\begin{equation}
+	\vA=\frac{\mu_0}{4\pi}\frac{\vJ\dv}{r},
+\end{equation}
+får vi Biot-Savarts lov ut av det,
+\begin{align}
+	\vB=\nabla\times\vA&=\frac{\mu_0}{4\pi}\nabla\left(\frac{1}{r}\right)\times(\vJ\dv)\\&=\frac{\mu_0}{4\pi}\frac{(-1)}{r^2}\unit{r}\times(\vJ\dv)\\&=\frac{\mu_0}{4\pi}\frac{\vJ\dv\times\unit{r}}{r^2},
+\end{align}
+så da sier vi at det vi antok var riktig. Da kan vi superponere for å få at
+\begin{equation}
+	\vA=\frac{\mu_0}{4\pi}\iiint_v\frac{\vJ\dv}{r}
+\end{equation}
+eller
+\begin{equation}
+	\vA=\frac{\mu_0}{4\pi}\oint_C\frac{I\dl}{r}.
+\end{equation}
+Dette gidder vi å styre og herje på med fordi Biot-Savarts lov for $\vA$ er mye enklere enn den tilsvarende loven for $\vB$, og det forenkler en del beregninger.
+
+\cstitle{Ampères lov for konstante strømmer}
+\noindent Amperes lov er at sirkluasjonen av flukstetthet rundt en lukket sløyfe er proporsjonal med strømmen som går gjennom en flate begrenset av sløyfa,
+\begin{equation}
+	\oint_C\vB\cdot\dl=\mu_0I_{\text{total gjennom }S}=\mu_0\iint_S\vJ\cdot\dS,
+\end{equation}
+som kan bevises med Biot-Savarts lov og et argument for strukturen til $\vA$, se JS s. 61. Stokes' teorem gir ligningen på differensialform,
+\begin{equation}
+	\nabla\times\vB=\mu_0\vJ.
+\end{equation}
+
+\cstitle{Magnetiske felt i materialer}
+\noindent Materialer inneholder mikroskopikse strømsløyfer i form av partikler eller domener med kvantemekanisk spinn som orienterer seg etter den magnetiske flukstettheten og produserer et eget $\vB$-felt som respons på et ytre påtrykt $\vB$-felt. Disse strømsløyfene har magnetisk dipolmoment
+\begin{equation}
+	\vm=I\vS_m,
+\end{equation}
+og vi definerer en magnetiseringsvektor tilsvarende polariseringsvektoren i elektrostatikken,
+\begin{equation}
+	\vM\dv=\sum_{\dv}\vm,
+\end{equation}
+som hvis alle strømsløyfene er identiske gir at $\vM=N\vm$. Dette er ikke tilfellet, men magnetiseringen kan representeres slik. Hvis vi lar $\vJ$ herfra stå for fri strøm (som ikke er bundet i magnetiske dipoler), blir
+\begin{align}
+	\oint_C\vB\cdot\dl&=\mu_0I_{\text{total gjennom S}}\\&=\mu_0\left(\iint_S\vec{J}\cdot\dS+I_{\text{gjennom S pga. magn. dipoler}}\right).
+\end{align}
+Ved å se at kun strømsløyfene som går rundt $C$ kan bidra til det andre leddet, og at disse strømsløyfene bidrar til det andre leddet i den grad de har et dipolmoment som er parallellt med $\dl$, får vi at $I_{\text{gjennom S pga. magn. dipoler}}=\oint_C\vM\cdot\dl$, så
+\begin{equation}
+	\oint_C\vB\cdot\dl=\mu_0\left(\iint_S\vJ\cdot\dS+\oint_C\vM\dl\right),
+\end{equation}
+altså er
+\begin{equation}
+	\oint_C\left(\vB/\mu_0-\vM\right)\cdot\dl=\iint_S\vJ\cdot\dS,
+\end{equation}
+så definerer vi
+\begin{equation}
+	\vH=\frac{\vB}{\mu_0}-\vM
+\end{equation}
+slik at
+\begin{equation}
+	\oint_C\vH\cdot\dl=\iint_S\vJ\cdot\dS
+\end{equation}
+eller på lokal form via Stokes' teorem,
+\begin{equation}
+	\nabla\times\vH=\vJ.
+\end{equation}
+Merk at det her er $\vB$ som blir analog med $\vD$, mens $\vH$ er analog med $\vE$.
+
+For lineære, isotrope, homogene materialer er
+\begin{equation}
+	\vM=\chi_m\vH
+\end{equation}
+så
+\begin{equation}
+	\vB=\mu_0(\vH+\vM)=\mu_0(1+\chi_m)\vH=\mu_r\mu_0\vH=\mu\vH
+\end{equation}
+
+\cstitle{Magnetiske materialer}
+\noindent Magnetiske materialer tilhører en av disse kategoriene:
+\begin{enumerate}
+	\item Diamagnetiske materialer, der $\mu_r<1$, men $\mu\approx 1$
+	\item Paramagnetiske materialer, der $\mu_r>1$, men $\mu\approx 1$
+	\item Ferromagnetiske materialer, som er ikke-lineære, men som man definerer en slags gjennomsnittlig effektiv permeabilitet for. Denne er mye større enn 1.
+\end{enumerate}
+I ferromagnetiske materialer avhenger $\vM$ av både det påtrykte feltet og historikken til det påtrykte feltet. Hvis det påtrykte feltet varierer periodisk vil magnetiseringen følge en lukket kurve som vi kaller en hysteresekurve, se figur 3.17 i JS.
+
+\cstitle{Grensebetingelser for B og H}
+\noindent Tilsvarende beregninger som da vi regnet grensebetingelser for $\vD$ og $\vE$ gir at
+\begin{equation}
+	B_{1n} = B_{2n}
+\end{equation}
+og
+\begin{equation}
+	\vH_{1t}-\vH_{2t}=\vJ_s\times\unit{n},
+\end{equation}
+som i spesialtilfellet der det ikke er noen flatestrøm blir til
+\begin{equation}
+	\vH_{1t}=\vH_{2t}
+\end{equation}
+Se s. 73 i JS.
+
+\cstitle{Magnetiske kretser}
+\noindent En viktig konsekvens av grensebetingelsene for $\vB$ og $\vH$ er at magnetiske feltlinjer liker å holde seg inne i materialer med høy $\mu_r$. At dette er tilfelle kan vi se ved å se på størrelsen til $\vB$ på hver side av en grenseflate mellom et lineært medium med $\mu_r\gg 1$ og vakuum, der det ikke går noen strøm. Hvis vakuum er medium 1, gir Pythagoras at
+\begin{equation}
+	|\vB_1|^2=B_{1n}^2+B_{1t}^2=B_{1n}^2+\mu_0^2H_{1t}^2=B_{2n}^2+\mu_0^2H_{2t}^2
+\end{equation}
+Tilsvarende utregning for medium 2 blir
+\begin{equation}
+	|\vB_2|^2=B_{2n}^2+B_{2t}^2=B_{2n}^2+\mu_0^2\mu_r^2H_{2t}^2
+\end{equation}
+Fordi $\mu_r\gg 1$, blir $|\vB_2| \gg |\vB_1|$ hvis normalkomponentene ikke er for store. Dette gjør at vi kan anse $\mu$ som en slags ``konduktivitet'' for magnetiske kretser, dersom $\mu\gg 1$. I grensen der $\mu\rightarrow\infty$ blir analogien eksakt fordi permittiviteten er uendelig mye større inni kretsen enn utenfor (på samme måte som konduktiviteten i en leder er uendelig mye større enn konduktiviteten til vakuum, som er 0). De analoge størrelsene er
+\begin{enumerate}
+	\item Den magnetiske flukstettheten $\vB$ i en magnetisk krets tilsvarer den elektriske strømtettheten $\vJ$ i en elektrisk krets
+	\item Den magnetiske fluksen $\Phi_S=\iint_S\vB\cdot\dS$ i en magnetisk krets tilsvarer den elektriske strømmen $I=\iint_S\vJ\cdot\dS$ i en elektrisk krets
+	\item Loven om at $\oiint_S\vB\cdot\dS=0$ i en magnetisk krets tilsvarer loven om at $\oiint_S\vJ\cdot\dS=0$ i en elektrisk krets (men: den første gjelder alltid, den andre gjelder kun i den statiske grensen!).
+	\item Ytre $\vH$-felt driver en magnetisk flukstetthet ($\vB=\mu\vH$) på samme måte som et ytre $\vE$-felt driver en elektrisk strøm ($\vJ=\sigma\vE$).
+	\item Permittiviteten $\mu$ i en magnetisk krets tilsvarer konduktiviteten $\sigma$ i en elektrisk krets. 
+\end{enumerate}
+Flere analogier vil bli synlige i siste kapittel, når vi lar feltene variere med tiden.

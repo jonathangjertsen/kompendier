@@ -1,0 +1,305 @@
+
+\ctitle{Elektrodynamikk}
+
+\cstitle{Emf}
+\noindent Emf, kort for elektromotorisk spenning, er i elektrostatikken definert som summen av eksterne krefter som virker på ladninger i en krets $k$, delt på ladningen. Slike krefter kan være de kjemiske kreftene i et batteri. Emfen er altså
+\begin{equation}
+	e=\oint_k\vf\cdot\dl
+\end{equation}
+der $\vf$ er kraften per ladning, slik at $e$ har enhet volt. Vi har så langt ikke beveget oss bort fra elektrostatikken, og $\oint_k\vE\cdot\dl=0$ gjelder fortsatt. Da er det greit å si at
+\begin{equation}
+	e=\oint_k\vf\cdot\dl+0=\oint_k\vf\cdot\dl+\oint_k\vE\cdot\dl=\oint_k(\vf+\vE)\cdot\dl.
+\end{equation}
+Denne definisjonen brukes i elektrodynamikken, og da får den med seg bidraget både fra eksterne krefter og de induserte sirkulerende $\vE$-feltene som kan oppstå når $\vB$-feltet får lov til å variere med tiden.
+
+\cstitle{Faradays induksjonslov}
+En sløyfe uten emf flyttes i et tidsuavhengig $\vB$-felt. Hvert linjeelement $\dl$ forskyves med en lengde $\dr$ og har en hastighet $\vv=\frac{\dr}{\dt}$. En ladning på linjeelementet vil oppleve en kraft $Q\vv\times\vB$ slik at kraften per ladning blir $\vf=\vv\times\vB$. Da blir emf
+\begin{equation}
+	e=\ci\vf\cdot\dl=\ci(\vv\x\vB)\cdot\dl=\frac{1}{\dt}\ci(\dr\x\vB)\cd\dl
+\end{equation}
+Siden $(\vec{a}\x\vec{b})\cd\vec{c}=\vec{b}\cd(\vec{c}\x\vec{a})$ blir
+\begin{equation}
+	e=\frac{1}{\dt}\ci\vB\cdot(\dl\x\dr)=-\frac{1}{\dt}\ci\vB\cd(\dr\x\dl)
+\end{equation}
+$\dr\x\dl$ er endringen av flaten som omsluttes av $C$ i løpet av $\dt$ (JS figur 4.2), så
+\begin{equation}
+	e=-\frac{\text{d}}{\dt}\is\vB\cd\dS=-\frac{\text{d}\Phi}{\dt}
+\end{equation}
+Dette er Faradays lov.
+
+\paragraph{Faradays lov på differensialform} Hvis $C$ er i ro slik at $\vf=0$ kan vi bruke Stokes teorem til å si at
+\begin{equation}
+	e=\ci\vE\cd\dl=\is\nabla\x\vE\cd\dS=-\frac{\text{d}}{\dt}\is\vB\cd\dS=-\is\spdif{\vB}{t}\cd\dS
+\end{equation}
+Siden dette gjelder for alle $S$ må
+\begin{equation}
+	\nabla\x\vE=-\spdif{\vB}{t}
+\end{equation}
+
+\paragraph{Faradays lov i en spole} I en spole med $N$ viklinger, der fluksen i hver vikling er $\Phi_i$, blir det indusert en emf for hver spenning lik $e_i=-\frac{\dPhi_i}{\dt}$. Vi definerer total fluks $\Phi=\sum_{i=1}^N\Phi_i$ og den totale emfen blir
+\begin{equation}
+	e=-\frac{\dPhi}{\dt}=-\sum_{n=1}^N\frac{\dPhi_i}{\dt}
+\end{equation}
+Hvis fluksen gjennom hver vikling er den samme, blir
+\begin{equation}
+	e=-N\frac{\dPhi_i}{\dt}
+\end{equation}
+
+\cstitle{Kretser}
+En krets kan bestå av batterier med samlet emf $V_b$ og samlet resistans $R$, da er summen av emf
+\begin{equation}
+	\sum e = \oint_k(\vf_b+\vf_m+\vE)\cd\dl
+\end{equation}
+der $\vf_b$ er kraft per ladning fra batteriene og $\vf_m$ er kraft per ladning ved Faradays lov. Siden $\oint_k(\vf_m+\vE)\cd\dl=-\text{d}\Phi/\dt$ blir
+\begin{equation}
+	\sum e = V_b + \left(-\frac{\dPhi}{\dt}\right)
+\end{equation}
+Utenfor resistansen er $\vf_b+\vf_m=-\vE$, og inni resistansen er kildekreftene neglisjerbare sasmmenlignet med det elektriske feltet slik at $e_R=\int_R\vE\cd\dl=V_R=RI$, og dermed er
+\begin{equation}
+	\sum e = V_b+\left(-\frac{\dPhi}{\dt}\right) = RI,
+\end{equation}
+som tolkes som at summen av emf, som består av spenning fra kildekrefter pluss bidrag fra endringer i magnetisk fluks, driver strøm gjennom resistansen.
+
+\cstitle{Induktans}
+Hvis det går strøm i en lukket strømsløyfe (eller en spole eller en tilsvarende komponent), vil denne strømmen generere et magnetfelt. Feltlinjene fra dette magnetfeltet passerer et tverrsnitt som er omsluttet av strømsløyfa; det går en netto fluks gjennom tverrsnittet. Størrelsen
+\begin{equation}
+	L=\frac{\Phi}{I}
+\end{equation}
+kalles komponentens \emph{selvinduktans}. Hvis $I$ endrer seg, vil også $\Phi$ endre seg, og da vil det induseres en emf siden ($e=-\frac{\dPhi}{\dt}$) som igjen kan endre strømmen. Selvinduktansen gir et mål på størrelsen av denne effekten. Selvinduktansen avhenger kun av $\mu$ og geometriske parametre i lineære medier ($\Phi\propto B$ ved definisjon av fluks, $B\propto H$ i et lineært medium og $H\propto I$ ved Ampères lov). Merk at $\Phi=N\Phi_{\text{tverrsnitt}}$ i en spole med $N$ viklinger.
+
+Den tilsvarende effekten som forskjellige strømsløyfer har på hverandre kalles \emph{gjensidig induktans}, definert som
+\begin{equation}
+	L_{ij}=\frac{\Phi_{ij}}{I_i},
+\end{equation}
+der $\Phi_{ij}$ er fluksen gjennom spole $j$ på grunn av strømmen $I_i$ i spole $i$. Den kalles gjensidig induktans fordi $L_{ij}=L_{ji}$, som er nyttig fordi den ene kan være enklere å regne ut enn den andre.
+
+Induktanser forteller oss hvor mye emf som induseres av en gitt variasjon i strøm, siden
+\begin{equation}
+	e_{ij}=-\frac{\dPhi_{ij}}{\dt}=-L_{ij}+frac{\dI_i}{\dt}.
+\end{equation}
+
+\cstitle{Energi og krefter i magnetiske felt}
+\paragraph{Lagret magnetisk energi} Vi kan kombinere lærdommen fra de to forrige seksjonene for å se på $n$ kretser med sine egne kilder, induktanser, resistanser og strømmer:
+\begin{equation}
+	e_j+\left(-\frac{\dPhi_j}{\dt}\right)=R_jI_j
+\end{equation}
+Kilden til spole $j$ leverer en effekt $P_j=e_jI_j$ slik at arbeidet i løpet av $\dt$ som utføres blir
+\begin{equation}
+	\dA_j=e_jI_j\dt=\left(R_jI_j+\frac{\dPhi}{\dt}\right)I_j\dt=R_jI_j^2\dt+I_j\dPhi_j,
+\end{equation}
+som vi summerer over alle kretsene for å få det totale arbeidet som utføres av kildene,
+\begin{equation}
+	\dA=\sum_{j=1}^nR_jI_j^2\dt+\sum_{j=1}^nI_j\dPhi_j,
+\end{equation}
+Det første leddet er det Joulske tapet i resistansene, så det postuleres at resten av arbeidet går med til å endre den lagrede energien i systemet. Denne endringen er altså
+\begin{equation}
+	\dA_m=\sum_{j=1}^nI_j\dPhi_j
+\end{equation}
+Den totale endringen $\dPhi_j$ i $\Phi_j$ er summen av endringer på grunn av gjensidigeinduktanser, så
+\begin{equation}
+	\dPhi_j=\sum_{j=1}^n\dPhi_{ij},
+\end{equation}
+i hvert fall i lineære medier. Siden $Phi_{ij}=L_{ij}I_i$ er $\dPhi_{ij}=L_{ij}\dI_i$, så
+\begin{equation}
+	\dA_m=\sum_{j=1}^nI_j\sum_{i=1}^nL_{ij}I_j\dI_i.
+\end{equation}
+Den lagrede magnetiske energien i spolene er
+\begin{equation}
+	W_m=\frac{1}{2}\sum_{i=1}^n\sum_{j=1}^nL_{ij}I_iI_j.
+\end{equation}
+Bevis:
+\begin{equation}
+	\spdif{W_m}{I_k}=\frac{1}{2}\left(\sum_{j=1}^nL_{kj}I_j+\sum_{i=1}^nL_{ik}I_i\right)=\sum_{i=1}^nL_{kj}I_j
+\end{equation}
+så
+\begin{equation}
+	\dA_m=\sum_{k=1}^n\spdif{W_m}{I_k}\dI_k.
+\end{equation}
+Den totale endringen over tidsintervallet $(0,T)$ blir 
+\begin{equation}
+	A_m=\int_0^T\frac{\dA_m}{\dt}\dt=\int_0^T\sum_{k=1}^n\spdif{W_m}{I_k}\frac{\dI_k}{\dt}\dt
+\end{equation}
+og siden $\frac{\dW}{\dt}=\sum_{k=1}^n\spdif{W_m}{I_k}\frac{\dI_k}{\dt}\dt$, blir
+\begin{equation}
+	A_m=\int_0^T\frac{\dW_m}{\dt}\dt=W_m(T)-W_m(0)=\frac{1}{2}\sum_{i=1}^n\sum_{j=1}^nL_{ij}I_iI_j
+\end{equation}
+Så den lagrede magnetiske energien ved tiden $t=T$ er lik arbeidet som har blitt utført av kildene for å endre strømmene fra 0 til $I_i$ i hver enkelt spole.
+
+\paragraph{Magnetiske krefter} I et \emph{isolert, tapsfritt system} vil eventuelle magnetiske krefter som systemet utfører, gå på bekostning av den lagrede magnetiske energien. Hvis den ene delen flyttes $\dx$ i $\unit{x}$ retning blir altså
+\begin{equation}
+	\vF\cd\unit{x}\dx=-\dW_m,
+\end{equation}
+så $\unit{x}$ komponenten av $\vF$ er $F_x=-\spdif{W_m}{x}$. Tilsvarende utregning i andre retninger gir at
+\begin{equation}
+	\vF=-\nabla W_m
+\end{equation}
+
+I et \emph{system der strømmene holdes konstant av en ekstern kilde}, vil endringen i magnetisk energi være arbeidet som utføres av kilden minus det som går med til mekanisk arbeid på grunn av forflytningen,
+\begin{equation}
+	\dW_m=\dA_m-\vF\cd\unit{x}\dx,
+\end{equation}
+og siden $\dA_m=\sum_{i=1}^n\sum_{j=1}^n I_iI_j\dL_{ij}$ mens $\dW_m=\frac{1}{2}\sum_{i=1}^n\sum_{j=1}^n I_iI_j\dL_{ij}$ blir $\dA_m=2\dW_m$ slik at $-\dW_m=-\vF\cd\unit{x}\dx$, og med tilsvarende utregning som forrige avsnitt blir
+\begin{equation}
+	\vF=+\nabla W_m.
+\end{equation}
+At dette er det samme som i forrige tilfelle med motsatt fortegn er ``nærmest en tilfeldighet'' - det finnes ikke noen ``enkel'' måte å komme fra det ene resultatet til det andre på.
+
+\cstitle{Forskyvningsstrøm}
+\paragraph{Ladningsbevarelse} Loven om ladningsbevarelse kan formuleres som at
+\begin{equation}
+	\cs\vJ\cd\dS=-\frac{\text{d}}{\dt}\iv\rho\dv,
+\end{equation}
+der venstresiden er netto strøm ut av $S$ og høyresiden er minus endringen av ladning innenfor $S$ per tidsenhet. Hvis volumet ikke endres med tiden gir divergensteoremet at
+\begin{equation}
+	\iv\nabla\cd\vJ\dv=\cs\vJ\cd\dS=-\frac{\text{d}}{\dt}\iv\rho\dv=-\iv\spdif{\rho}{t}\dv,
+\end{equation}
+så siden volumet er vilkårlig blir
+\begin{equation}
+	\nabla\cd\vJ=-\spdif{\rho}{t}
+\end{equation}
+\paragraph{Ampère-Maxwells lov} Utregningen over stemmer ikke med Ampères lov slik den ble formulert i magnetostatikken, som er at $\nabla\x\vH=\vJ$, siden vi da får at $0=\nabla\cd(\nabla\x\vH)=\nabla\cd\vJ=-\spdif{\rho}{t}$, men dette er ikke nødvendigvis tilfelle i elektrodynamikken. Derfor modifiserer vi Ampères lov. Siden $\nabla\cd\vJ+\spdif{\rho}{t}=0$ (fra forrige ligning), lar vi dette være divergensen til curlen til $\vH$. Gauss' lov ($\nabla\cd\vD=\rho$) gir da at
+\begin{equation}
+	\nabla\cd(\nabla\x\vH)=\nabla\cd\vJ+\spdif{\nabla\cd\vD}{t}=\nabla\cd\left(\vJ+\spdif{\vD}{t}\right),
+\end{equation}
+og da er det nærliggende å la den modifiserte loven bli
+\begin{equation}
+	\nabla\x\vH=\vJ+\spdif{\vD}{t},
+\end{equation}
+som er Ampère-Maxwells lov. $\spdif{\vD}{t}$ kalles forskyvningsstrømtetthet, som er en kilde til magnetisk felt på lik linje med strømtetthet.
+
+\cstitle{Maxwells ligninger}
+\noindent Maxwells ligninger på differensialform er
+\begin{align}
+    \nabla\x\vE=-\spdif{\vB}{t} &\sameas \ci\vE\cd\dl=-\cs\spdif{\vB}{t}\cd\dS \\
+    \nabla\x\vH=\vJ+\spdif{\vD}{t} &\sameas \ci\vH\cd\dl=\cs\left(\vJ+\spdif{\vD}{t}\right)\cd\dS \\
+    \nabla\cd\vD=\rho &\sameas \cs\vD\cd\dS=\iv\rho\dv \\
+   	\nabla\cd\vB=0 &\sameas \cs\vB\cd\dS = 0
+\end{align}
+der
+\begin{align}
+    \vD&=\epsilon_0\vE+\vP \\
+    \vB&=\mu_0(\vH+\vM)
+\end{align}
+Samtidig gjelder grensebetingelsene for $\vE$, $\vD$, $\vB$ og $\vH$ i elektrodynamikken fordi de nye tilleggsleddene blir null for integrasjonssylindre og -sløyfer med neglisjerbar høyde.
+
+\cstitle{Lorenzpotensialer}
+\paragraph{Lorenzpotensialer} Siden
+\begin{align}
+    \vB&=\nabla\x\vA \\
+    \nabla\x\vE&=-\spdif{\vB}{t}
+\end{align}
+er
+\begin{equation}
+	\nabla\x\vE=-\spdif{\nabla\x\vA}{t}=-\nabla\x\spdif{\vA}{t}
+\end{equation}
+og
+\begin{equation}
+	\nabla\x\left(\vE+\spdif{\vA}{t}\right)=0
+\end{equation}
+Siden $\vE+\spdif{\vA}{t}$ har null curl kan det representeres som et skalarpotensial,
+\begin{equation}
+	\vE+\spdif{\vA}{t}=-\nabla V
+\end{equation}
+som for statiske felt reduserer til det vanlige potensialet og her generaliseres. Nå kan vi uttrykke feltet ut i fra kun potensialer slik vi gjorde med $\vB$,
+\begin{equation}
+	\vE=-\nabla V - \spdif{\vA}{t}.
+\end{equation}
+\paragraph{Justeringstransformasjoner} Slik vi har definert dem nå er ikke $\vA$ og $V$
+ entydig bestemt; hvis vi gjør transformasjonen $\vA'=\vA+\nabla f;\ V'=V-\spdif{f}{t}$, vil vi fortsatt ha at
+\begin{equation}
+	\nabla\x\vA'=\nabla\x\vA+\nabla\x\nabla f=\nabla\x\vA+0=\nabla\x\vA=\vB	
+\end{equation}
+og 
+\begin{align}
+	-\nabla V'-\spdif{\vA'}{t}&=-\nabla V+\nabla\spdif{f}{t}-\spdif{\vA}{t}-\spdif{\nabla f}{t}\\
+	&=-\nabla V-\spdif{\vA}{t}\\
+	&=\vE
+\end{align}
+siden $\spdif{}{t}\nabla f=\nabla\spdif{}{t}f$ (rekkefølgen på partiellderiverte er likegyldig).
+
+En slik transformasjon gjøres for å oppnå Lorenz-betingelsen,
+\begin{equation}
+	\nabla\cdot\vA=-\epsilon\mu\spdif{V}{t}
+\end{equation}
+som brukes videre for å utlede hensiktsmessige bølgeligninger.
+
+\paragraph{Bølgeligninger for potensialene} I et lineært, isotropt og homogent medium der $\vD=\epsilon\vE$ gir Gauss' lov at
+\begin{align}
+	\rho=\nabla\cd\vD=\epsilon\nabla\cd\vE&=\epsilon\nabla\left(-\nabla V-\spdif{\vA}{t}\right)\\&=-\epsilon\left(\nabla^2 V + \spdif{\nabla\cd\vA}{t}\right)\\&=-\epsilon\left(\nabla^2 V - \epsilon\mu\frac{\partial^2 V}{\partial t^2}\right)
+\end{align}
+eller
+\begin{equation}
+	\nabla^2 V-\epsilon\mu\spdif{^2 V}{t^2}=-\rho/\epsilon
+\end{equation}
+som er en tredimensjonal bølgeligning for $V$ med $-\rho/\epsilon$ som kildeledd.
+
+Tilsvarende (litt mer trøblete, krever litt vektoridentiteter) utregning gir
+\begin{equation}
+	\nabla^2 \vA-\epsilon\mu\spdif{^2 \vA}{t^2}=-\mu\vJ
+\end{equation}
+som er en tredimensjonal bølgeligning for $\vA$ med $-\mu\vJ$ som kildeledd.
+
+\paragraph{Løsning av bølgeligningene} Vi begynner med å løse ligningen for et område med ladningstetthet lik null unntatt en punktladning $\rho(t)dv$ i origo (bidrag fra mange slike løsninger kan så summeres opp fordi bølgeligningen er lineær). Unntatt i origo har vi at
+\begin{equation}
+	\nabla^2 V-\epsilon\mu\spdif{^2 V}{t^2}=0
+\end{equation}
+I kulekoordinater er
+\begin{equation}
+	\nabla^2 V = \frac{1}{r^2}\spdif{}{r}\left(r^2\spdif{V}{r}\right)+\frac{1}{r^2\sin\theta}\spdif{}{\theta}\left(\sin\theta\spdif{V}{\theta}\right)+\frac{1}{r^2\sin^2\theta}\spdif{^2 V}{\phi^2}
+\end{equation}
+siden $V=V(r)$ reduserer dette til
+\begin{equation}
+	\nabla^2 V = \frac{1}{r^2}\spdif{}{r}\left(r^2\spdif{V}{r}\right)
+\end{equation}
+Hvis vi så lar
+\begin{equation}
+	V=\frac{U}{r}
+\end{equation}
+blir
+\begin{equation}
+	\spdif{^2 U}{r^2}-\epsilon\mu\spdif{^2 U}{t^2}=0
+\end{equation}
+som er en endimensjonal bølgeligning med løsning
+\begin{equation}
+	U(r,t)=f(t-r/c)+g(t+r/c)
+\end{equation}
+der $c=1/\sqrt{\epsilon\mu}$. Da blir
+\begin{equation}
+	V=\frac{1}{r}f(t-r/c)+\frac{1}{r}g(t+r/c)
+\end{equation}
+som er summen av henholdsvis en bølge som beveger seg i positiv $r$-retning og en bølge som beveger seg i negativ $r$-retning, med en amplitude som er proporsjonal med $1/r$. Siden det er ufysisk (bryter kausalitet) at det skulle gå en bølge innover mot ladningen som genererte bølgen, må det andre leddet droppes slik at
+\begin{equation}
+	V=\frac{1}{r}f(t-r/c)
+\end{equation}
+denne løsningen må være en generalisering av det statiske tilfellet
+\begin{equation}
+	V=\frac{\rho(t)\dv}{4\pi\epsilon r},
+\end{equation}
+så
+\begin{equation}
+	V=\frac{\rho(t-r/c)\dv}{4\pi\epsilon r}.
+\end{equation}
+Potensialet fra en romlig fordelt ladning får vi ved å integrere opp:
+\begin{equation}
+	V(\vr,r)=\frac{1}{4\pi\epsilon}\iv\frac{\rho(\vr',t-R/c)\dv'}{R}
+\end{equation}
+der $\vr$ er observasjonspunktet, $\vr'$ er et punkt i kilden og $\vR=\vr-\vr'$ er avstanden mellom observasjonspunktet og kildepunktet. Helt tilsvarende blir
+\begin{equation}
+	\vA(\vr,r)=\frac{\mu}{4\pi}\iv\frac{\vJ(\vr',t-R/c)\dv'}{R}
+\end{equation}
+Disse generelle løsningene kalles retarderte potensialer, fordi punkter lenger vekk fra kilden blir forsinket.
+
+\cstitle{Poyntings vektor}
+\noindent En vektoridentitet gir at
+\begin{equation}
+	-\nabla\cd(\vE\x\vH)=\vE\cd\nabla\x\vH-\vH\cd\nabla\x\vE
+\end{equation}
+som gir at
+\begin{equation}
+	-\nabla\cd(\vE\x\vH)=\vJ\cd\vE+\vE\cd\spdif{\vD}{t}+\vH\cd\spdif{\vB}{t}
+\end{equation}
+som kan integreres opp og skrives om via divergensteoremet til at
+\begin{equation}
+	-\cs(\vE\x\vH)\cd\dS=\iiint_v\left(\vJ\cd\vE+\vE\cd\spdif{\vD}{t}+\vH\cd\spdif{\vB}{t}\right)\dv
+\end{equation}
+De tre leddene i integranden på høyre side er henholdsvis joulsk effekttap, arbeid som må utføres per tid for å endre elektrisk felt og arbeid som må utføres per tid for å endre det magnetiske feltet. Summen av slik effekt er lik venstresiden, som tolkes som en ``strøm'' av effekt inn i $S$, eller en energimengde som går inn i $S$ per enhet tid. Da må $\vE\x\vH$, som kalles Poyntnings vektor, være en effekttetthet (med enheter \si{\watt\per\meter\squared}). 

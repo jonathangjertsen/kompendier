@@ -1,0 +1,260 @@
+\ctitle{Elektrostatikk}
+\cstitle{Elektriske krefter og felt}
+\noindent Coulombs lov er at kraften som virker på en testladning $q$ fra en ladning $Q$ er 
+\begin{equation}
+	\vec{F}=\frac{Qq}{4\pi\epsilon_0R^2}\hat{\vec{R}},\ R>0
+\end{equation}
+Superposisjonsprinsippet gir at kraften fra $n$ ladninger er summen av kraften fra hver enkelt ladning, altså 
+\begin{equation}
+	\vec{F}=\sum_{i=1}^n \frac{Q_iq}{4\pi\epsilon_0R_i^2}\hat{\vec{R}}_i=\frac{q}{4\pi\epsilon_0}\sum_{i=1}^n\frac{Q_i}{R_i^2}\hat{\vec{R}}_i
+\end{equation}
+Kraften fra en ladning som er kontinuerlig fordelt utover et volum, en flate eller en kurve er integralet over det gjeldende området. For et generelt slikt område $\Omega$ med en ladningstetthet $\rho$ (slik at $dQ=\rho d\Omega$) er
+\begin{equation}
+	\vec{F}=\frac{q}{4\pi\epsilon_0}\int_\Omega \frac{\rho\text{d}\Omega}{R^2}
+\end{equation}
+Det elektriske feltet er kraften delt på testladningen
+\begin{equation}
+	\vec{E}=\vec{F}/q,	
+\end{equation}
+så ligningene for elektrisk felt blir som de samme for kraft bortsett fra en faktor $q$.
+
+\cstitle{Skalarpotensial}
+\noindent Arbeidet $w_A$ som kreves for å flytte testladningen fra et punkt $A$ til et referanse punkt $\text{ref.}$ i et elektrisk felt er integralet av kraften over denne strekningen,
+\begin{equation}
+	w_A=\int_A^{\text{ref.}}\vec{F}\cdot\text{d}\vec{l}=q\int_A^{\text{ref.}}\vec{E}\cdot\text{d}\vec{l},
+\end{equation}
+og skalarpotensialet i punktet $A$ er definert som dette arbeidet delt på $q$,
+\begin{equation}
+	V_A=\int_A^{\text{ref.}}\vec{E}\cdot\text{d}\vec{l}
+\end{equation}
+Ofte settes referansepunktet til uendeligheten, slik at potensialet fra en punktladning i en avstand $R$ fra ladningen blir
+\begin{equation}
+	V=\frac{Q}{4\pi\epsilon_0}\int_R^\infty\frac{\drs}{r^2}=\frac{Q}{4\pi\epsilon_0R},
+\end{equation}
+og potensialet fra en kontinuerlig fordelt ladning blir
+\begin{equation}
+	V=\frac{1}{4\pi\epsilon_0}\int_\Omega\frac{\rho\text{d}\Omega}{R}
+\end{equation}
+Ofte er vi heller interessert i potensialforskjellen $V_{AB}$ mellom punktet $A$ og $B$,
+\begin{equation}
+	V_{AB} = V_B-V_A = \int_A^B\vec{E}\cdot\text{d}\vec{l}
+\end{equation}
+Dette integralet er uavhengig av vei; det elektriske feltet er konservativt. Med andre ord har vi for alle lukkede integrasjonskurver at
+\begin{equation}
+	\oint_C\vec{E}\cdot\text{d}\vec{l}=0
+\end{equation}
+som via Stokes teorem kan omformuleres til
+\begin{equation}
+	\nabla\times\vec{E}=0
+\end{equation}
+Ved å regne ut $V_B-V_A$ for en $B$ infinitesimalt unna  $A$ ($A=(x,y,z),\ B=(x+dx,y+dy,z+dz)$) kan det vises at dette er ekvivalent med
+\begin{equation}
+	\vec{E}=-\nabla V
+\end{equation}
+En geometrisk tolkning av dette er at $\vec{E}$ til enhver tid peker den veien $V$ minker raskest.
+
+\cstitle{Gauss' lov}
+\noindent Gauss' lov er at 
+\begin{equation}
+	\epsilon_{0}\oiint_{S}\vec{E}\cdot\dS=Q_{\text{inni S}}
+\end{equation}
+som kan vises ut i fra Coulombs lov og divergensteoremet. Dette impliserer at, hvis $\vec{E}=0$ overalt på en lukket flate, så er summen av ladning inne i flaten lik 0. Men hvis summen av ladning inne i en lukket flate er 0 trenger ikke $\vec{E}$ å være 0 overalt på flaten, kun integralet (den totale fluksen) trenger å være lik 0. Men i problemer med høy symmetri kan ofte $\vec{E}$ settes utenfor integralet slik at det blir 0 likevel.
+
+\cstitle{Felt i dielektriske medier}
+\noindent I mange materialer finnes det ladning som er bundet opp i dipoler. Hvis det påtrykkes et eksternt elektrisk felt på et materiale vil slike dipoler rette seg etter feltet og motvirke det påtrykte feltet. Det totale feltet blir dermed mindre. Samtidig vil det bli en netto ladning på flaten (den siden der dipolene peker med positiv ende utover blir positiv, den andre siden blir negativ). I praksis fører dette til at utregningene må gjøres med en modifisert versjon av Gauss' lov som handler om et modifisert felt vi kaller $\vec{D}$ og en modifisert permittivitet $\epsilon\neq\epsilon_0$. Modifikasjonen begynner med å definere elektrisk dipolmoment $\vec{p}$ for en dipol der en ladning $+Q$ og en ladning $-Q$ er separert med en posisjonsvektor $\vec{d}$ som peker fra negativ til positiv ladning,
+\begin{equation}
+	\vec{p}=Q\vec{d}
+\end{equation}
+Tettheten av slike dipolmoment uttrykkes med en polarisasjonsvektor $\vec{P}$ slik at
+\begin{equation}
+	\vec{P}\text{d}v=\sum_{\text{d}v}\vec{p}
+\end{equation}
+er det totale dipolmomentet i volumelementet $\text{d}v$. Når alle dipolene er identiske er 
+\begin{equation}
+	\vec{P}=N\vec{p}
+\end{equation}
+der $N$ er antall dipoler per volumenhet.
+
+Dipoler inne i en lukket flate bidrar med null netto ladning siden både positiv og negativ ladning er inne i flaten. Derfor ser vi kun på dipoler som kun har en av endene inne i flaten. Inne i et flateelement $\text{d}S$ har vi $N$ dipoler med totalt dipolmoment $\vec{P}\text{d}v$. Vi får kun bidrag fra den delen av $\vec{P}$ som er parallell med $\dS$, altså får vi et bidrag av bunden ladning lik $-\vec{P}\cdot\dS$. Minustegnet kommer av at $\vec{p}$ (og dermed $\vec{P}$) peker fra negativ til positiv ladning og at $\dS$ peker ut av flaten. Derfor, hvis $\vec{P}$ peker samme retning som $\dS$ slik at prikkproduktet blir positivt, må nettoladningen inne i flaten være negativ, og vice versa.
+
+Den totale ladningen i $S$ som er bundet opp i dipoler blir dermed integralet over flaten,
+\begin{equation}
+	Q_{\text{bunden i }S} = -\oiint_S\vec{P}\cdot\dS.
+\end{equation}
+Den delen av $Q_{\text{total i }S}$ som \emph{ikke} er bundet opp i dipoler blir
+\begin{equation}
+	Q_{\text{fri i S}}=Q_{\text{total i S}}-Q_{\text{bunden i }S}=Q_{\text{total i }S}+\oiint_S\vec{P}\cdot\dS
+\end{equation}
+som med Gauss' lov blir at
+\begin{equation}
+	Q_{\text{fri i S}}=\epsilon_0\oiint_S\vec{E}\cdot\dS+\oiint_S\vec{P}\cdot\dS=\oiint_S(\epsilon_0\vec{E}+\vec{P})\cdot\dS.
+\end{equation}
+Da er det praktisk å definere et nytt, abstrakt felt,
+\begin{equation}
+	\vec{D}=\epsilon_0\vec{E}+\vec{P},
+\end{equation}
+slik at vi får det enkle uttrykket
+\begin{equation}
+	\oiint_S\vec{D}\cdot\dS=Q_{\text{fri i }S}
+\end{equation}
+som kalles Gauss' lov i et medium. Hvis vi definerer en fri romladningstetthet $\rho$ slik at $\iiint_v\rho\text{d}v=Q_{\text{fri i }S}$, og bruker divergensteoremet til å vise at
+\begin{equation}
+	\oiint_S\vec{D}\cdot\dS=\iiint_v\nabla\cdot\vec{D}\text{d}v,
+\end{equation}
+blir vi nødt til å konkludere med at
+\begin{equation}
+	\nabla\cdot\vec{D}=\rho
+\end{equation}
+som er Gauss' lov på differensialform (eller ``lokal'' form, fordi den handler om feltet i et punkt i stedet for den ``globale'' formen som handler om integralet av feltet over en flate).
+
+Mange materialer er av typen vi kaller \emph{lineære, isotrope, homogene medier}, som responderer på påtrykt elektrisk felt på en enkel måte: 
+\begin{inparaenum}[(i)]
+ \item sammenhengen mellom polarisering og påtrykt felt er lineær (materialet er lineært),
+ \item størrelsen på polariseringen er uavhengig av retningen på $\vec{E}$ (materialet er isotropt), og
+ \item polariseringen er uavhengig av posisjon i materialet (materialet er homogent).
+\end{inparaenum}
+Den første egenskapen gjør at
+\begin{equation}
+	\vec{P}=\epsilon_0\chi_e\vec{E},
+\end{equation}
+der $\chi_e$ er elektrisk susceptibilitet. Den andre egenskapen gjør at $\chi_e$ er en skalar størrelse (og ikke en vektor som man prikker $\vec{E}$ med. Den tredje egenskapen gjør at $\chi_e$ ikke er en funksjon av posisjon. I slike medier er
+\begin{equation}
+	\vec{D}=\epsilon_0\vec{E}+\vec{P}=\epsilon_0(1+\chi_e)\vec{E}=\epsilon_0\epsilon_r\vec{E}=\epsilon\vec{E},
+\end{equation}
+der $\epsilon_r$ og $\epsilon$ er henholdsvis relativ og absolutt permittivitet.
+
+\cstitle{Poissons og Laplace' ligning}
+\noindent I lineære, isotrope, homogene medier kan vi utlede det følgende fra Gauss' lov på differensialform:
+\begin{equation}
+	\rho=\nabla\cdot\vec{D}=\nabla\cdot\epsilon\vec{E}=\nabla\cdot(-\epsilon\nabla V)=-\epsilon\nabla^2 V
+\end{equation}
+eller
+\begin{equation}
+	\nabla^2 V = -\frac{\rho}{\epsilon}
+\end{equation}
+som er Poissons ligning. I deler av rommet som er ladningsfrie, det vil si punkter i rommet der $\rho=0$, forenkles Poissons ligning til Laplace' ligning,
+\begin{equation}
+	\nabla^2 V = 0.
+\end{equation}
+Disse ligningene er differensialligninger som kan brukes til å bestemme både potensialet og det elektriske feltet i et gitt område, dersom man har passende grensebetingelser. Slike grensebetingelser er typisk at $V=V_0$ eller $V=0$ på en metallflate eller i uendeligheten.
+
+Hvis en løsning på et elektrostatisk problem tilfredsstiller Poissons ligning i et område, og er det den skal være på randen av $v$, da er det den rette løsningen i $v$. Dette er nødvendig å forstå for å kunne burke speilladningsmetoden.
+
+\cstitle{Grensebetingelser for E og D}
+\noindent I grenseflaten mellom to medier er det to nyttige relasjoner vi kan bruke for å finne feltet på den ene siden dersom feltet på den andre siden er kjent.
+
+Den første er at tangensialkomponenten av det elektriske feltet den samme på hver side av flaten,
+\begin{equation}
+	\vec{E}_{1t}=\vec{E}_{2t}.
+\end{equation}
+For å vise dette bruker man at $\oint_C\vec{E}\cdot\text{d}\vec{l}=0$ og integrerer langs en lukket integrasjonssløyfe med neglisjerbar høyde, ref. figur 2.18 i JS.
+
+Den andre er at forskjellen i normalkomponenten til $\vec{D}$-feltet er lik ladningstettheten på flaten,
+\begin{equation}
+	D_{1n}-D_{2n}=\rho_s.
+\end{equation}
+For å vise dette bruker man at $\oiint_S\vec{D}\cdot\dS=Q_{\text{fri i }S}=\rho_sS$ og integrerer over en lukket integrasjonssylinder med neglisjerbar høyde, ref. rigur 2.18 i JS. Hvis det ikke er noen fri ladning på flaten - for eksempel hvis mediet er \emph{rent dielektrisk} - får vi spesialtilfellet $D_{1n}=D_{2n}$.
+
+\cstitle{Ideelle ledere}
+\noindent I ideelle ledere beveger ladningene seg fritt omkring, slik at de umiddelbart posisjonerer seg til å oppnå en likevekt når det kommer et påtrykt felt. Dette er en tilnærming, men når feltet er statisk eller oscillerer med lav frekvens, rekker ladningene å ``følge med'' det elektriske feltet. Da kan tilnærmingen brukes, og det gir følgende egenskaper (uttrykket ``inne i'' ekskluderer overflaten):
+\begin{enumerate}
+	\item $\vec{P}=\vec{0}$ \tab{overalt inne i en ideell leder (per definisjon).}
+	\item $\vec{E}=\vec{0}$ \tab{overalt inne i en ideell leder. Alt påtrykt felt kanselleres ved at ladningene beveger seg slik at feltet fra disse ladningene kompenserer for det påtrykte feltet.}
+	\item $\vec{D}=\vec{0}$ \tab{overalt inne i en ideell leder, på grunn av de to øvrige egenskapene og definisjonen av $\vec{D}$.}
+	\item $\rho=0$ \tab{overalt inne i en ideell leder - all overskuddsladning samles som flateladning på overflaten.}
+	\item $V=\text{konst.}$ \tab{overalt på overflaten, siden en potensialforskjell mellom to punkter på flaten blir $V_{AB}=\int_A^B 0 \text{d}\vec{l}=0$.}
+	\item $\vec{E}_t=0$ \tab{overalt på overflaten, på grunn av grensebetingelsen for $\vec{E}_t$ og den andre egenskapen; alle feltlinjene inn i en ideell leder står normalt på lederen.}
+	\item $D_n=\rho_s$ \tab{overalt på overflaten, på grunn av grensebetingelsen for $D_n$ og den tredje egenskapen.}
+\end{enumerate}
+
+\cstitle{Kapasitans}
+\noindent Vi har to ideelle ledere, som er adskilt av et lineært isotropt medium med permittivitet $\epsilon$. En spenningskilde har flyttet en ladning $Q$ fra den nedre lederen til den øvre (slik at den nedre lederen har netto ladning $-Q$ og den øvre har netto ladning $Q$). Dette har ført til at den øvre lederen har et potensial $V$ i forhold til den andre. Dette systemet er en kondensator med en kapasitans definert som 
+\begin{equation}
+	C=Q/V,
+\end{equation}
+og siden $V\propto Q$ (bruk definisjon av potensial, så lineært medium-forenkling, så Gauss' lov) vil dette ikke være avhengig av $V$ eller $Q$, men kun $\epsilon$ og geometrien i systemet.
+
+For seriekoblede kondensatorer (der det ikke går feltlinjer mellom de ulike kondensatorne er (se eksempel 2.16 og 2.17 i JS)
+\begin{equation}
+	C=\frac{Q}{V}=\frac{Q}{\sum_{i=1}^n V_i} = \frac{1}{\sum_{i=1}^n 1/C_i}
+\end{equation}
+og for parallellkoblede kondensatorer er
+\begin{equation}
+	C=\frac{Q}{V}=\frac{\sum_{i=1}^n Q_i}{V} = \sum_{i=1}^n C_i
+\end{equation}
+som forøvrig er motsatt av tilfellet for motstander.
+
+Strømmen er definert som ladningen som går mot den øvre lederen per enhet tid, $I=\frac{\text{d}Q}{\text{d}t}=\frac{\text{d}(CV)}{\text{d}t}$, slik at
+\begin{equation}
+	I=C\frac{\text{d}V}{\text{d}t}.
+\end{equation}
+
+\cstitle{Lagret energi i elektriske felt}
+\noindent Energien som kreves for å flytte en ladning $Q$ fra nedre til øvre leder som beskrevet i forrige seksjon, er $CV^2/2$. Dette vises ved å se på arbeidet som kreves for å flytte $\text{d}q$ når vi allerede har flyttet $q$. Dette må være $dA_e=V(q)dq$, der $V(q)=\frac{q}{C}$. Dette skal vi gjøre fra $q=0$ til $q=Q$, så
+\begin{equation}
+	A_e=\int_0^QV(q)\text{d}q=\frac{1}{C}\int_0^Qq\text{d}q=\frac{Q^2}{2C}=\frac{CV^2}{2}.
+\end{equation}
+Siden denne energien ligger lagret som energi i kondensatoren, betegnes den $W_e$ tilsvarende andre energistørrelser.
+
+Det er ofte nyttig å se på energien som knyttet til selve det elektriske feltet. Da bruker vi en energitetthet $w_e$ som viser seg å være
+\begin{equation}
+	w_e=\frac{1}{2}\vec{D}\cdot\vec{E},
+\end{equation}
+i lineære medier, som for isotrope medier forenkles til
+\begin{equation}
+	w_e=\frac{1}{2}\epsilon E^2.
+\end{equation}
+Dette kunne vi også kommet frem til ved å regne på energien i en parallellkondensator i et lineært, isotropt og homogent medium; da er volumet lik $Sd$, kapasitansen lik $\epsilon S/d$ og spenningen lik $Ed$:
+\begin{equation}
+	w_e=\frac{W_e}{v}=\frac{W_e}{Sd}=\frac{\frac{1}{2}CV^2}{Sd}=\frac{\frac{1}{2}\frac{\epsilon S}{d}(Ed)^2}{Sd}=\frac{1}{2}\epsilon E^2.
+\end{equation}
+
+\cstitle{Strøm, strømtetthet, effekttap og ladningsbevarelse}
+\p{Strømtetthet} Strøm i et volumelement $\text{d}v$ oppstår ved at $N\text{d}v$ ladningsbærere med ladning $q$ beveger seg med en gjennomsnittshastighet $\vec{v}$ (merk at antallet ladningsbærere er $N\text{d}v$, ikke $N$, selv om $N$ ofte brukes for å betegne et antall - her er altså $N$ en ladningsbærertetthet med enhet \si{\per\meter\cubed}). Strømmtetthet defineres som
+\begin{equation}
+	\vec{J}=Nq\vec{v},
+\end{equation}
+og kan utvides til en sum hvis det finnes flere typer ladningsbærere.
+
+\p{Strøm} \emph{Strømmen} gjennom et tverrsnitt $S$ er definert som ladningen som passerer tverrsnittet i løpet av $\dt$, dvs. $\frac{\dQ}{\dt}$. Hva er egentlig $\dQ$? Vel, i løpet av $\dt$ har ladningene gjennom et flateelement $\dSs$ beveget seg en avstand opp til $|\vec{v}|\dt$, slik at de fyller en skjev sylinder med volum $\dv=\dSs|\vec{v}|\dt\cos\alpha=\vec{v}\cdot\dS\dt$ (der $\alpha$ er vinkelen mellom $\vec{v}$ og $\dS$). Denne sylinderen inneholder ladningen $\dQ=Nq\dv=Nq\vec{v}\cdot\dS\dt=\vec{J}\cdot\dS\dt$, så strømmen gjennom $\dSs$ blir $\dI=\frac{\dQ}{\dt}=\vec{J}\cdot\dS$ og den totale strømmen gjennom hele $S$ blir
+\begin{equation}
+	I=\iint_S\vec{J}\cdot\dS
+\end{equation}
+
+\p{Ohms lov} I mange materialer gjelder Ohms lov, at strømtettheten er proporsjonal med det påtrykte elektriske feltet,
+\begin{equation}
+	\vec{J}=\sigma\vec{E}.
+\end{equation}
+Konduktiviteten $\sigma$ er $0$ for en perfekt isolator (som vakuum) og $\infty$ for en ideell leder (som en superleder, gitt at $\vec{E}$ er statisk eller oscillerer med lav frekvens).
+
+\p{Effekttap} Arbeidet som utføres av $\vec{E}$ på en ladning i løpet av $\dt$ er $\dW=\vec{F}\cdot\ds=q\vec{E}\cdot\vec{v}\dt$, og arbeidet som utføres på $N\dv$ ladninger er
+\begin{equation}
+	W=N\dv q\vec{E}\cdot\vec{v}\dt=\vec{J}\cdot{E}\dv\dt
+\end{equation}
+Dette må være energi som går tapt, for hvis det ikke hadde vært noe elektrisk felt skulle strømmen kunne blitt opprettholdt selv om det ikke var noe elektrisk felt ved Newtons 1. lov. \emph{Effekt}tapet per volumenhet blir
+\begin{equation}
+	p_J=\vec{J}\cdot\vec{E},
+\end{equation}
+og det totale effekttapet i volumet $v$ blir
+\begin{equation}
+	P_J=\iiint_v\vec{J}\cdot{E}\dv.
+\end{equation}
+Dette kalles joulsk eller ohmsk tap.
+
+\p{Ladningsbevarelse} Vi ser på et volum $v$ omsluttet av en lukket flate $S$. Ladningen i $v$ er $Q=\iiint_v\rho\dv$ og strømmen ut av $S$ er $I_S=\oiint_S\vec{J}\cdot\dS$. På grunn av prinsippet om ladningsbevarelse må strøm gå på bekostning av ladningen i $v$, $I_S=-\frac{\dQ}{\dt}$, slik at
+\begin{equation}
+	\oiint_S\vec{J}\cdot\dS=-\frac{\text{d}}{\dt}\iiint_v\rho\dv
+\end{equation}
+som med divergensteoremet kan omformes til
+\begin{equation}
+	\nabla\cdot\vec{J}=-\spdif{\rho}{t}
+\end{equation}
+I spesialtilfellet der strømmene er uavhengige av tiden, det vil si når vi har konstante strømmer, er
+\begin{equation}
+	\oiint_S\vec{J}\cdot\dS=0
+\end{equation}
+og
+\begin{equation}
+	\nabla\cdot\vec{J}=0.
+\end{equation}
+De to ligningene over er Kirchoffs strømlov.

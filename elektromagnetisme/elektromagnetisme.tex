@@ -1,0 +1,40 @@
+\documentclass{article} % Could be changed, but paper works well
+\usepackage{etoolbox} % REQUIRED
+
+\input{config.tex} % REQUIRED, copied from ../lib/config_template.tex
+
+\input{../../lib/packages.tex} % Optional but required for grandtitle, multicol and index
+
+\input{../../lib/commands.tex} % Optional but required for grandtitle, multicol and index
+
+\input{../../lib/vectors_and_differentials.tex}
+\newcommand{\p}[1]{\paragraph{#1}}
+\newcommand{\sameas}{\Leftrightarrow}
+
+\usepackage{mathtools}  
+\mathtoolsset{showonlyrefs}  
+\usepackage{esint}
+\usepackage{tabto}
+\NumTabs{1}
+
+\begin{document}
+
+\grandtitle{TFE4120 Elektromagnetisme - hovedpunkter}
+Dette er en kort oppsummering uten grundige forklaringer eller eksempler - en ``huskeliste'' av ting som skal forstås. ``JS'' refererer her til Johannes Skaars kompendium.
+\paragraph{\color{Black} Status:} Stort sett {\color{Green} \bf ferdig}.
+\begin{flushright}Jonathan\end{flushright}
+\ifbool{multicol}{\begin{multicols}{2}}{}
+	\setcounter{section}{1}
+
+	\input{electrostatics.tex}
+
+	\input{magnetostatics.tex}
+
+	\input{electrodynamics.tex}
+
+	\input{eksempel.tex}
+
+\ifbool{multicol}{\end{multicols}}{}
+\ifbool{index}{\printindex}
+
+\end{document}

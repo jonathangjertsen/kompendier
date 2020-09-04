@@ -1,0 +1,93 @@
+% Tikz!
+%\usepackage{tikz}
+%\usetikzlibrary{shapes.geometric, arrows}
+% Norske bokstaver
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+% Mindre marger
+\usepackage[cm]{fullpage}
+% Appendiks
+\usepackage[titletoc]{appendix}
+% Farger!
+\usepackage[usenames,dvipsnames]{xcolor}
+\newcommand{\titlecolor}{OliveGreen}
+% Opplisting inni avsnitt
+\usepackage{paralist}
+% Kompakte lister
+\usepackage{enumitem}
+% Figurer
+\usepackage{graphicx}
+\renewcommand{\figurename}{Figur}
+% Bedre interaksjon mellom figurer og tokolonne-oppsett
+\usepackage{float}
+% Kjemiske formler
+\usepackage[version=3]{mhchem}
+% Lenker
+\usepackage{hyperref}
+% Tokolonne-oppsett
+\usepackage{multicol}
+% Indeks
+\usepackage{makeidx}
+% Mikrotypografiske forbedringer
+\usepackage{microtype}
+% SI
+\usepackage{siunitx}
+\usepackage{textcomp}
+% Egendefinerte titler
+\newcommand{\grandtitle}[1]
+{{
+	\color{\titlecolor}
+	\begin{centering}
+	\resizebox{1\hsize}{!}
+	{
+		#1
+	}
+	\bigskip
+	\end{centering}
+}}
+\newcommand{\ctitle}[1]
+{{
+	\color{\titlecolor}
+	\begin{centering}\section{#1}\end{centering}
+	\hrule height 0.5pt \bigskip
+}}
+\newcommand{\cstitle}[1]
+{{
+	\color{\titlecolor}
+	\begin{centering}\subsection{#1}\end{centering}
+}}
+% Indeksering
+\renewcommand{\indexname}{Register}
+\newcommand{\ix}[1]{\index{#1}#1}
+\newcommand{\idx}[1]{\index{#1}\emph{#1}}
+\makeatletter
+\renewenvironment{theindex}
+  {\if@twocolumn
+      \@restonecolfalse
+   \else
+      \@restonecoltrue
+   \fi
+   \setlength{\columnseprule}{0pt}
+   \setlength{\columnsep}{35pt}
+   \begin{multicols}{3}[\section*{\indexname}]
+   \markboth{\MakeUppercase\indexname}%
+            {\MakeUppercase\indexname}%
+   \thispagestyle{plain}
+   \setlength{\parindent}{0pt}
+   \setlength{\parskip}{0pt plus 0.3pt}
+   \relax
+   \let\item\@idxitem}%
+  {\end{multicols}\if@restonecol\onecolumn\else\clearpage\fi}
+\makeatother
+% Fotnote
+\renewcommand{\footnoterule}{%
+  \kern -3pt
+  \hrule width \textwidth height 1pt
+  \kern 2pt
+}
+% Innholdsfortegnelse
+\usepackage{setspace}
+\usepackage{tocloft}
+\setcounter{tocdepth}{1}
+\renewcommand{\contentsname}{Innhold}
+\renewcommand{\cftbeforesecskip}{0pt}
