@@ -4,6 +4,10 @@ Dette repoet har LaTeX-kode for kompendiene jeg skrev på studiet.
 
 **PDFs ligger her: http://random.timini.no/jonathrg/kompendier**
 
+# Last ned
+
+Hvis du ikke vil bruke git kan du laste ned en kopi ved å klikke på "Source code (zip)" her: https://github.com/jonathangjertsen/kompendier/releases/latest
+
 # Hvordan lage et kompendium
 
 "Template"-mappa kan brukes som utgangspunkt for et nytt kompendium.
