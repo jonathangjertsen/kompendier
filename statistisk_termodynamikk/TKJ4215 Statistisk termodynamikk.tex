@@ -1,0 +1,20 @@
+\documentclass{article} % Could be changed, but paper works well
+\usepackage{etoolbox} % REQUIRED
+
+\input{config.tex} % REQUIRED, copied from ../lib/config_template.tex
+
+\input{../lib/packages.tex}
+\input{../lib/commands.tex}
+
+\begin{document}
+
+\grandtitle{Statistisk termodynamikk}
+\grandtitle{i kjemi og biologi (TKJ4215)}
+\ifbool{multicol}{\begin{multicols}{2}}{}
+
+    \input{fetchchapters.tex}
+
+\ifbool{multicol}{\end{multicols}}{}
+\ifbool{index}{\printindex}
+
+\end{document}

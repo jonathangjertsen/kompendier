@@ -1,0 +1,35 @@
+name: Build docs
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pull
+        uses: actions/checkout@v2
+      #- name: Compile - Statterm
+      #  uses: xu-cheng/latex-action@v2
+      #  with:
+      #    root_file: "TKJ4215 Statistisk termodynamikk.tex"
+      #    working_directory: statistisk_termodynamikk
+      - name: Compile - Nanomaterialer
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: "TMT4320 Nanomaterialer.tex"
+          working_directory: nanomaterialer
+      - name: Compile - Elektromagnetisme
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: "elektromagnetisme.tex"
+          working_directory: elektromagnetisme
+      - name: Compile - Bioteknologi
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: "TBT4170 Bioteknologi.tex"
+          working_directory: bioteknologi
+      - name: Upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: Kompendier
+          path: |
+            "**/*.pdf"
+            !Template/template.pdf

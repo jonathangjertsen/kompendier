@@ -1,36 +1,18 @@
-% Konfigurer ved å endre andre argument av \setbool-kommandoene under.
-
+% what???
+\input{../lib/config_template.tex}
 \newbool{compactsetup}
 \setbool{compactsetup}{true}
-
-% Spar trær med to-kolonne-oppsett
-\newbool{multicol}
-\setbool{multicol}{\ifbool{compactsetup}{true}{false}}
-
-% Kompakte lister
 \newbool{compact}
 \setbool{compact}{\ifbool{compactsetup}{true}{false}}
-
-% Små marger
-\newbool{smallmargins}
-\setbool{smallmargins}{\ifbool{compactsetup}{true}{false}}
-
-% Bilder
+\setbool{compactlist}{\ifbool{compactsetup}{true}{false}}
 \newbool{img}
 \setbool{img}{false}
-
-% Indeks
-\newbool{index}
-\setbool{index}{false}
+\setbool{index}{true}
 \newbool{indexplus}
 \setbool{indexplus}{true}
-
-% Forsøk å droppe indentering på starten av subseksjon
 \newbool{noindent}
 \setbool{noindent}{\ifbool{compactsetup}{true}{false}}
-
 \newbool{p1}
 \setbool{p1}{true}
-
 \newbool{p2}
 \setbool{p2}{true}
